@@ -1,0 +1,113 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load i18n %}
+
+{% block title %}{% trans "Solutions de financement" %} – Win Win Capital{% endblock %}
+{% block meta_description %}{% trans "Crédit personnel, scolaire et PME. Découvrez nos solutions de financement responsable adaptées à votre capacité de remboursement." %}{% endblock %}
+
+{% block content %}
+
+<!-- HERO -->
+<section class="bg-win-dark py-24">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <span class="text-xs font-semibold tracking-widest uppercase text-win-orange">{% trans "Crédits responsables" %}</span>
+    <h1 class="text-5xl font-extrabold text-white mt-3 max-w-3xl leading-tight">{% trans "Solutions de financement" %}</h1>
+    <div class="w-12 h-1 bg-win-green mt-6"></div>
+    <p class="text-gray-400 mt-4 max-w-xl text-lg">{% trans "Le crédit est un outil de développement lorsqu'il reste compatible avec la capacité de remboursement." %}</p>
+  </div>
+</section>
+
+<!-- TYPES DE CRÉDIT -->
+<section class="py-20 bg-white">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    {% if products %}
+    <div class="grid md:grid-cols-3 gap-8">
+      {% for product in products %}
+      <div class="rounded-xl overflow-hidden border border-gray-100 hover-lift">
+        <div class="h-2 bg-win-green"></div>
+        <div class="p-8">
+          <h3 class="text-2xl font-bold text-win-dark">{{ product.name }}</h3>
+          <p class="text-gray-500 mt-3 leading-relaxed">{{ product.description }}</p>
+          <a href="{% url 'contact:become_client' %}" class="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-win-green hover:text-win-orange smooth-transition">
+            {% trans "Faire une demande" %}
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+          </a>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+    {% else %}
+    <div class="grid md:grid-cols-3 gap-8 mb-16">
+      <div class="rounded-xl overflow-hidden border border-gray-100 hover-lift">
+        <div class="h-2 bg-win-green"></div>
+        <div class="p-8">
+          <div class="w-14 h-14 rounded-xl bg-green-50 flex items-center justify-center mb-5">
+            <svg class="w-7 h-7 text-win-green" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/></svg>
+          </div>
+          <h3 class="text-2xl font-bold text-win-dark">{% trans "Crédit Personnel" %}</h3>
+          <p class="text-gray-500 mt-3 leading-relaxed">{% trans "Financement de vos projets personnels avec des conditions adaptées à vos revenus et à votre situation." %}</p>
+          <a href="{% url 'contact:become_client' %}" class="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-win-green hover:text-win-orange smooth-transition">{% trans "Faire une demande" %} <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg></a>
+        </div>
+      </div>
+      <div class="rounded-xl overflow-hidden border border-gray-100 hover-lift">
+        <div class="h-2 bg-win-orange"></div>
+        <div class="p-8">
+          <div class="w-14 h-14 rounded-xl bg-yellow-50 flex items-center justify-center mb-5">
+            <svg class="w-7 h-7 text-win-orange" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 14l9-5-9-5-9 5 9 5zm0 0l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0112 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z"/></svg>
+          </div>
+          <h3 class="text-2xl font-bold text-win-dark">{% trans "Crédit Scolaire" %}</h3>
+          <p class="text-gray-500 mt-3 leading-relaxed">{% trans "Accès facilité à l'éducation grâce à un financement dédié pour les frais de scolarité de vos enfants." %}</p>
+          <a href="{% url 'contact:become_client' %}" class="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-win-orange hover:text-win-green smooth-transition">{% trans "Faire une demande" %} <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg></a>
+        </div>
+      </div>
+      <div class="rounded-xl overflow-hidden border border-gray-100 hover-lift">
+        <div class="h-2" style="background:linear-gradient(90deg,#7FD8BE,#F5A623)"></div>
+        <div class="p-8">
+          <div class="w-14 h-14 rounded-xl bg-green-50 flex items-center justify-center mb-5">
+            <svg class="w-7 h-7 text-win-green" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+          </div>
+          <h3 class="text-2xl font-bold text-win-dark">{% trans "Crédit PME" %}</h3>
+          <p class="text-gray-500 mt-3 leading-relaxed">{% trans "Soutien au développement de votre activité entrepreneuriale avec un accompagnement personnalisé." %}</p>
+          <a href="{% url 'contact:become_client' %}" class="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-win-green hover:text-win-orange smooth-transition">{% trans "Faire une demande" %} <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg></a>
+        </div>
+      </div>
+    </div>
+    {% endif %}
+
+    <!-- POLITIQUE D'OCTROI -->
+    <div class="rounded-2xl p-10 bg-win-dark mt-12">
+      <div class="grid lg:grid-cols-2 gap-12 items-start">
+        <div>
+          <span class="text-xs font-semibold tracking-widest uppercase text-win-green">{% trans "Notre politique" %}</span>
+          <h2 class="text-3xl font-extrabold text-white mt-3">{% trans "Une politique d'octroi responsable" %}</h2>
+          <div class="w-12 h-1 bg-win-green mt-4 mb-6"></div>
+          <p class="text-gray-400 leading-relaxed">{% trans "Nous analysons chaque demande avec rigueur pour vous proposer un financement réellement adapté à votre capacité de remboursement." %}</p>
+        </div>
+        <div class="grid grid-cols-2 gap-4">
+          <div class="p-5 rounded-xl border border-win-green border-opacity-20 bg-win-green bg-opacity-5">
+            <div class="text-xs font-semibold text-win-green mb-2">01</div>
+            <h4 class="font-semibold text-white text-sm">{% trans "Analyse de capacité" %}</h4>
+            <p class="text-gray-500 text-xs mt-1">{% trans "Étude rigoureuse de votre situation financière réelle" %}</p>
+          </div>
+          <div class="p-5 rounded-xl border border-win-orange border-opacity-20 bg-win-orange bg-opacity-5">
+            <div class="text-xs font-semibold text-win-orange mb-2">02</div>
+            <h4 class="font-semibold text-white text-sm">{% trans "Stabilité des revenus" %}</h4>
+            <p class="text-gray-500 text-xs mt-1">{% trans "Vérification de la régularité des revenus" %}</p>
+          </div>
+          <div class="p-5 rounded-xl border border-win-green border-opacity-20 bg-win-green bg-opacity-5">
+            <div class="text-xs font-semibold text-win-green mb-2">03</div>
+            <h4 class="font-semibold text-white text-sm">{% trans "Utilité économique" %}</h4>
+            <p class="text-gray-500 text-xs mt-1">{% trans "Évaluation de la valeur réelle du projet" %}</p>
+          </div>
+          <div class="p-5 rounded-xl border border-win-orange border-opacity-20 bg-win-orange bg-opacity-5">
+            <div class="text-xs font-semibold text-win-orange mb-2">04</div>
+            <h4 class="font-semibold text-white text-sm">{% trans "Anti-surendettement" %}</h4>
+            <p class="text-gray-500 text-xs mt-1">{% trans "Protection systématique contre l'accumulation des dettes" %}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% endblock %}

@@ -1,0 +1,75 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load i18n %}
+
+{% block title %}{% trans "Protection client & Conformité" %} – Win Win Capital{% endblock %}
+{% block meta_description %}{% trans "Politique de protection des clients, conformité réglementaire, crédit responsable et procédure de réclamation." %}{% endblock %}
+
+{% block content %}
+
+<section class="bg-win-dark py-24">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <span class="text-xs font-semibold tracking-widest uppercase text-win-orange">{% trans "Engagement client" %}</span>
+    <h1 class="text-5xl font-extrabold text-white mt-3 max-w-3xl leading-tight">{% trans "Protection client & Conformité" %}</h1>
+    <div class="w-12 h-1 bg-win-green mt-6"></div>
+  </div>
+</section>
+
+<section class="py-20 bg-white">
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-4">
+
+    <div class="flex items-start gap-4 p-6 rounded-xl border border-gray-100 hover:border-win-green smooth-transition hover:bg-green-50">
+      <div class="w-12 h-12 rounded-xl bg-green-50 flex items-center justify-center flex-shrink-0">
+        <svg class="w-6 h-6 text-win-green" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/></svg>
+      </div>
+      <div>
+        <h3 class="font-bold text-win-dark text-lg">{% trans "Confidentialité des données" %}</h3>
+        <p class="text-gray-500 text-sm mt-2 leading-relaxed">{% trans "Toutes les informations personnelles de nos clients sont strictement confidentielles et ne sont jamais transmises à des tiers sans consentement explicite. Nous respectons les réglementations en vigueur sur la protection des données personnelles." %}</p>
+      </div>
+    </div>
+
+    <div class="flex items-start gap-4 p-6 rounded-xl border border-gray-100 hover:border-win-orange smooth-transition hover:bg-orange-50">
+      <div class="w-12 h-12 rounded-xl bg-yellow-50 flex items-center justify-center flex-shrink-0">
+        <svg class="w-6 h-6 text-win-orange" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+      </div>
+      <div>
+        <h3 class="font-bold text-win-dark text-lg">{% trans "Protection des déposants" %}</h3>
+        <p class="text-gray-500 text-sm mt-2 leading-relaxed">{% trans "La sécurité de votre épargne est notre priorité absolue. Nos organes de surveillance et d'audit veillent en permanence à la solidité financière de l'institution et à la protection des fonds déposés." %}</p>
+      </div>
+    </div>
+
+    <div class="flex items-start gap-4 p-6 rounded-xl border border-gray-100 hover:border-win-green smooth-transition hover:bg-green-50">
+      <div class="w-12 h-12 rounded-xl bg-green-50 flex items-center justify-center flex-shrink-0">
+        <svg class="w-6 h-6 text-win-green" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 6l3 1m0 0l-3 9a5.002 5.002 0 006.001 0M6 7l3 9M6 7l6-2m6 2l3-1m-3 1l-3 9a5.002 5.002 0 006.001 0M18 7l3 9m-3-9l-6-2m0-2v2m0 16V5m0 16H9m3 0h3"/></svg>
+      </div>
+      <div>
+        <h3 class="font-bold text-win-dark text-lg">{% trans "Crédit responsable" %}</h3>
+        <p class="text-gray-500 text-sm mt-2 leading-relaxed">{% trans "Nous n'octroyons jamais un crédit qui dépasse la capacité de remboursement réelle du client. Notre politique de prévention du surendettement est au cœur de nos pratiques de financement." %}</p>
+      </div>
+    </div>
+
+    <div class="flex items-start gap-4 p-6 rounded-xl border border-gray-100 hover:border-win-orange smooth-transition hover:bg-orange-50">
+      <div class="w-12 h-12 rounded-xl bg-yellow-50 flex items-center justify-center flex-shrink-0">
+        <svg class="w-6 h-6 text-win-orange" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/></svg>
+      </div>
+      <div>
+        <h3 class="font-bold text-win-dark text-lg">{% trans "Procédure de réclamation" %}</h3>
+        <p class="text-gray-500 text-sm mt-2 leading-relaxed">{% trans "Tout client insatisfait peut déposer une réclamation formelle auprès de notre service client ou directement auprès du Comité de Surveillance. Chaque réclamation est traitée dans un délai de 5 jours ouvrables." %}</p>
+        <a href="{% url 'contact:contact' %}" class="mt-3 inline-block text-sm font-semibold text-win-orange hover:text-win-green smooth-transition">{% trans "Déposer une réclamation" %} →</a>
+      </div>
+    </div>
+
+    <div class="flex items-start gap-4 p-6 rounded-xl border border-gray-100 hover:border-win-green smooth-transition hover:bg-green-50">
+      <div class="w-12 h-12 rounded-xl bg-green-50 flex items-center justify-center flex-shrink-0">
+        <svg class="w-6 h-6 text-win-green" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"/></svg>
+      </div>
+      <div>
+        <h3 class="font-bold text-win-dark text-lg">{% trans "Respect réglementaire" %}</h3>
+        <p class="text-gray-500 text-sm mt-2 leading-relaxed">{% trans "Win Win Capital opère en conformité totale avec la réglementation des institutions de microfinance en vigueur au Gabon et dans la zone CEMAC. Nous faisons l'objet de contrôles réguliers par les autorités compétentes." %}</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+{% endblock %}

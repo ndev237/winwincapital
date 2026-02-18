@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load i18n %}
+
+{% block title %}{{ page.seo_title|default:page.title }} – Win Win Capital{% endblock %}
+{% block meta_description %}{{ page.meta_description|default:page.excerpt }}{% endblock %}
+
+{% block content %}
+
+<section class="bg-win-dark py-24">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <h1 class="text-5xl font-extrabold text-white mt-3 max-w-3xl leading-tight">{{ page.title }}</h1>
+    <div class="w-12 h-1 bg-win-green mt-6"></div>
+    {% if page.excerpt %}<p class="text-gray-400 mt-4 max-w-xl text-lg">{{ page.excerpt }}</p>{% endif %}
+  </div>
+</section>
+
+<section class="py-20 bg-white">
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="prose prose-lg max-w-none text-gray-600">
+      {{ page.content|safe }}
+    </div>
+  </div>
+</section>
+
+{% endblock %}

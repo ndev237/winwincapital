@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load i18n %}
+
+{% block title %}{% trans "Demande envoyée" %} – Win Win Capital{% endblock %}
+
+{% block content %}
+
+<section class="bg-win-dark min-h-screen flex items-center py-24">
+  <div class="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8 text-center w-full">
+
+    <!-- ICÔNE SUCCÈS -->
+    <div class="w-24 h-24 rounded-full bg-win-green bg-opacity-20 flex items-center justify-center mx-auto mb-8">
+      <div class="w-16 h-16 rounded-full bg-win-green flex items-center justify-center">
+        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/>
+        </svg>
+      </div>
+    </div>
+
+    <span class="text-xs font-semibold tracking-widest uppercase text-win-green">{% trans "Confirmation" %}</span>
+    <h1 class="text-4xl font-extrabold text-white mt-3">{% trans "Votre demande a été envoyée !" %}</h1>
+    <div class="w-12 h-1 bg-win-green mx-auto mt-4 mb-6"></div>
+    <p class="text-gray-400 text-lg leading-relaxed">
+      {% trans "Merci de nous avoir contactés. Un conseiller de Win Win Capital vous recontactera dans les plus brefs délais pour donner suite à votre demande." %}
+    </p>
+
+    <!-- DÉLAI -->
+    <div class="mt-8 p-6 rounded-xl bg-white bg-opacity-5 border border-white border-opacity-10 inline-block">
+      <div class="flex items-center gap-3">
+        <svg class="w-6 h-6 text-win-orange" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+        <span class="text-white text-sm">{% trans "Délai de réponse : 24 à 48h ouvrables" %}</span>
+      </div>
+    </div>
+
+    <!-- ACTIONS -->
+    <div class="flex flex-wrap justify-center gap-4 mt-10">
+      <a href="{% url 'pages:home' %}" class="bg-win-green hover:bg-opacity-90 text-white px-8 py-3.5 rounded-lg font-semibold smooth-transition">{% trans "Retour à l'accueil" %}</a>
+      <a href="{% url 'pages:agencies' %}" class="border-2 border-win-orange text-win-orange hover:bg-win-orange hover:text-white px-8 py-3.5 rounded-lg font-semibold smooth-transition">{% trans "Voir nos agences" %}</a>
+    </div>
+
+    <!-- CONTACT DIRECT -->
+    <p class="mt-10 text-gray-500 text-sm">
+      {% trans "Besoin d'une réponse urgente ?" %}
+      <a href="tel:+24177000000" class="text-win-green hover:text-win-orange smooth-transition font-medium ml-1">{% trans "Appelez-nous directement" %}</a>
+    </p>
+
+  </div>
+</section>
+
+{% endblock %}

@@ -1,0 +1,113 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load i18n %}
+
+{% block title %}{% trans "Devenir client" %} – Win Win Capital{% endblock %}
+{% block meta_description %}{% trans "Rejoignez Win Win Capital. Ouvrez votre compte et bénéficiez de nos services financiers responsables." %}{% endblock %}
+
+{% block content %}
+
+<section class="bg-win-dark py-24">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <span class="text-xs font-semibold tracking-widest uppercase text-win-orange">{% trans "Rejoindre Win Win Capital" %}</span>
+    <h1 class="text-5xl font-extrabold text-white mt-3 max-w-3xl leading-tight">{% trans "Devenir client" %}</h1>
+    <div class="w-12 h-1 bg-win-green mt-6"></div>
+    <p class="text-gray-400 mt-4 max-w-xl">{% trans "L'ouverture de compte se fait uniquement en agence afin de garantir la sécurité juridique de chaque client." %}</p>
+  </div>
+</section>
+
+<section class="py-20 bg-white">
+  <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+    {% if messages %}
+    {% for message in messages %}
+    <div class="mb-6 p-4 rounded-lg {% if message.tags == 'success' %}bg-green-50 border border-green-200 text-green-700{% else %}bg-red-50 border border-red-200 text-red-700{% endif %}">{{ message }}</div>
+    {% endfor %}
+    {% endif %}
+
+    <div class="grid lg:grid-cols-2 gap-14 items-start">
+      <!-- PROCESSUS -->
+      <div>
+        <span class="text-xs font-semibold tracking-widest uppercase text-win-green">{% trans "Comment ça marche" %}</span>
+        <h2 class="text-3xl font-extrabold text-win-dark mt-2">{% trans "3 étapes simples" %}</h2>
+        <div class="w-12 h-1 bg-win-green mt-4 mb-8"></div>
+        <div class="space-y-6">
+          <div class="flex items-start gap-4">
+            <div class="w-9 h-9 rounded-full bg-win-green flex items-center justify-center flex-shrink-0 font-bold text-sm text-white">1</div>
+            <div>
+              <h4 class="font-semibold text-win-dark">{% trans "Remplissez le formulaire" %}</h4>
+              <p class="text-gray-500 text-sm mt-1">{% trans "Donnez-nous vos informations de base et précisez votre besoin." %}</p>
+            </div>
+          </div>
+          <div class="flex items-start gap-4">
+            <div class="w-9 h-9 rounded-full bg-win-green flex items-center justify-center flex-shrink-0 font-bold text-sm text-white">2</div>
+            <div>
+              <h4 class="font-semibold text-win-dark">{% trans "Un conseiller vous contacte" %}</h4>
+              <p class="text-gray-500 text-sm mt-1">{% trans "Notre équipe vous rappelle pour prendre rendez-vous dans l'agence la plus proche." %}</p>
+            </div>
+          </div>
+          <div class="flex items-start gap-4">
+            <div class="w-9 h-9 rounded-full bg-win-orange flex items-center justify-center flex-shrink-0 font-bold text-sm text-white">3</div>
+            <div>
+              <h4 class="font-semibold text-win-dark">{% trans "Rendez-vous en agence" %}</h4>
+              <p class="text-gray-500 text-sm mt-1">{% trans "Finalisation du dossier avec les pièces requises et ouverture officielle." %}</p>
+            </div>
+          </div>
+        </div>
+        <div class="mt-8 p-5 rounded-xl bg-green-50 border border-green-100">
+          <p class="text-sm text-gray-600"><span class="font-semibold text-gray-800">{% trans "Pièces généralement requises :" %}</span> {% trans "Pièce d'identité valide, justificatif de domicile, photo d'identité." %}</p>
+        </div>
+      </div>
+
+      <!-- FORMULAIRE -->
+      <div class="bg-white rounded-2xl shadow-xl border border-gray-100 p-8">
+        <h3 class="text-xl font-bold text-win-dark mb-6">{% trans "Prendre rendez-vous" %}</h3>
+        <form method="post" class="space-y-5">
+          {% csrf_token %}
+          <div class="grid grid-cols-2 gap-4">
+            <div>
+              <label class="block text-sm font-medium text-gray-700 mb-1.5">{{ form.first_name.label }} *</label>
+              {{ form.first_name }}
+              {% if form.first_name.errors %}<p class="text-red-500 text-xs mt-1">{{ form.first_name.errors.0 }}</p>{% endif %}
+            </div>
+            <div>
+              <label class="block text-sm font-medium text-gray-700 mb-1.5">{{ form.last_name.label }} *</label>
+              {{ form.last_name }}
+              {% if form.last_name.errors %}<p class="text-red-500 text-xs mt-1">{{ form.last_name.errors.0 }}</p>{% endif %}
+            </div>
+          </div>
+          <div>
+            <label class="block text-sm font-medium text-gray-700 mb-1.5">{{ form.phone.label }} *</label>
+            {{ form.phone }}
+            {% if form.phone.errors %}<p class="text-red-500 text-xs mt-1">{{ form.phone.errors.0 }}</p>{% endif %}
+          </div>
+          <div>
+            <label class="block text-sm font-medium text-gray-700 mb-1.5">{{ form.email.label }}</label>
+            {{ form.email }}
+          </div>
+          <div>
+            <label class="block text-sm font-medium text-gray-700 mb-1.5">{{ form.need.label }} *</label>
+            {{ form.need }}
+            {% if form.need.errors %}<p class="text-red-500 text-xs mt-1">{{ form.need.errors.0 }}</p>{% endif %}
+          </div>
+          <div>
+            <label class="block text-sm font-medium text-gray-700 mb-1.5">{{ form.preferred_agency.label }}</label>
+            {{ form.preferred_agency }}
+          </div>
+          <div>
+            <label class="block text-sm font-medium text-gray-700 mb-1.5">{{ form.additional_info.label }}</label>
+            {{ form.additional_info }}
+          </div>
+          <div class="flex items-start gap-2">
+            {{ form.consent_data_processing }}
+            <label class="text-xs text-gray-500 leading-relaxed">{{ form.consent_data_processing.label }} <a href="{% url 'pages:privacy' %}" class="text-win-green hover:underline">{% trans "politique de confidentialité" %}</a></label>
+          </div>
+          {% if form.consent_data_processing.errors %}<p class="text-red-500 text-xs">{{ form.consent_data_processing.errors.0 }}</p>{% endif %}
+          <button type="submit" class="w-full bg-win-green hover:bg-opacity-90 text-white py-3.5 rounded-lg font-semibold smooth-transition">{% trans "Envoyer ma demande" %}</button>
+          <p class="text-xs text-gray-400 text-center">{% trans "Vos données restent confidentielles et sont utilisées uniquement pour vous recontacter." %}</p>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% endblock %}

@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load i18n %}
+
+{% block title %}{% trans "Conditions d'utilisation" %} – Win Win Capital{% endblock %}
+
+{% block content %}
+<section class="bg-win-dark py-24">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <span class="text-xs font-semibold tracking-widest uppercase text-win-orange">{% trans "Informations légales" %}</span>
+    <h1 class="text-5xl font-extrabold text-white mt-3">{% trans "Conditions d'utilisation" %}</h1>
+    <div class="w-12 h-1 bg-win-green mt-6"></div>
+  </div>
+</section>
+
+<section class="py-20 bg-white">
+  <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="space-y-8 text-gray-600 leading-relaxed">
+      <div>
+        <h2 class="text-2xl font-bold text-win-dark mb-3">{% trans "1. Présentation du site" %}</h2>
+        <p>{% trans "Le site www.winwincapital.africa est édité par Win Win Capital, institution de microfinance de première catégorie enregistrée au Gabon. Ce site a une vocation exclusivement institutionnelle et informative." %}</p>
+      </div>
+      <div>
+        <h2 class="text-2xl font-bold text-win-dark mb-3">{% trans "2. Absence de fonctionnalités transactionnelles" %}</h2>
+        <p>{% trans "Le présent site ne permet aucune transaction financière en ligne. Aucune connexion client, consultation de compte, paiement ou dépôt de dossier de crédit ne peut être effectué via ce site. Toutes les opérations se font exclusivement en agence." %}</p>
+      </div>
+      <div>
+        <h2 class="text-2xl font-bold text-win-dark mb-3">{% trans "3. Propriété intellectuelle" %}</h2>
+        <p>{% trans "L'ensemble des contenus présents sur ce site (textes, images, logos, visuels) sont la propriété exclusive de Win Win Capital et sont protégés par les lois sur la propriété intellectuelle. Toute reproduction est interdite sans autorisation écrite préalable." %}</p>
+      </div>
+      <div>
+        <h2 class="text-2xl font-bold text-win-dark mb-3">{% trans "4. Limitation de responsabilité" %}</h2>
+        <p>{% trans "Win Win Capital s'efforce d'assurer l'exactitude des informations diffusées sur ce site. Toutefois, les informations présentées sont données à titre indicatif et peuvent être modifiées sans préavis. Win Win Capital ne saurait être tenu responsable de l'utilisation faite de ces informations." %}</p>
+      </div>
+      <div>
+        <h2 class="text-2xl font-bold text-win-dark mb-3">{% trans "5. Droit applicable" %}</h2>
+        <p>{% trans "Les présentes conditions sont soumises au droit gabonais. Tout litige relatif à l'utilisation de ce site sera soumis à la compétence exclusive des tribunaux gabonais." %}</p>
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock %}

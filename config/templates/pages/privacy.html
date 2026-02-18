@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load i18n %}
+
+{% block title %}{% trans "Politique de confidentialité" %} – Win Win Capital{% endblock %}
+
+{% block content %}
+<section class="bg-win-dark py-24">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <span class="text-xs font-semibold tracking-widest uppercase text-win-orange">{% trans "Données personnelles" %}</span>
+    <h1 class="text-5xl font-extrabold text-white mt-3">{% trans "Politique de confidentialité" %}</h1>
+    <div class="w-12 h-1 bg-win-green mt-6"></div>
+  </div>
+</section>
+
+<section class="py-20 bg-white">
+  <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 prose prose-lg">
+    <h2 class="text-2xl font-bold text-win-dark mb-4">{% trans "1. Collecte des données" %}</h2>
+    <p class="text-gray-600 leading-relaxed mb-6">{% trans "Win Win Capital collecte uniquement les données personnelles nécessaires à la fourniture de ses services financiers. Ces données incluent : nom, prénom, numéro de téléphone, adresse email et informations financières nécessaires à l'ouverture de compte ou à l'octroi de crédit." %}</p>
+
+    <h2 class="text-2xl font-bold text-win-dark mb-4">{% trans "2. Utilisation des données" %}</h2>
+    <p class="text-gray-600 leading-relaxed mb-6">{% trans "Vos données personnelles sont utilisées exclusivement pour : la gestion de votre relation client, le traitement de vos demandes de services, la prévention de la fraude et la conformité réglementaire. Elles ne sont jamais vendues ou cédées à des tiers à des fins commerciales." %}</p>
+
+    <h2 class="text-2xl font-bold text-win-dark mb-4">{% trans "3. Protection des données" %}</h2>
+    <p class="text-gray-600 leading-relaxed mb-6">{% trans "Nous mettons en œuvre des mesures techniques et organisationnelles appropriées pour protéger vos données contre tout accès non autorisé, perte, destruction ou altération." %}</p>
+
+    <h2 class="text-2xl font-bold text-win-dark mb-4">{% trans "4. Vos droits" %}</h2>
+    <p class="text-gray-600 leading-relaxed mb-6">{% trans "Vous disposez d'un droit d'accès, de rectification et de suppression de vos données personnelles. Pour exercer ces droits, contactez-nous à : contact@winwincapital.africa" %}</p>
+
+    <h2 class="text-2xl font-bold text-win-dark mb-4">{% trans "5. Contact" %}</h2>
+    <p class="text-gray-600 leading-relaxed">{% trans "Pour toute question relative à cette politique, contactez notre délégué à la protection des données : contact@winwincapital.africa" %}</p>
+  </div>
+</section>
+{% endblock %}

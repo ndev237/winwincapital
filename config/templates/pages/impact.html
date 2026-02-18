@@ -1,0 +1,72 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load i18n %}
+
+{% block title %}{% trans "Notre impact" %} – Win Win Capital{% endblock %}
+{% block meta_description %}{% trans "Découvrez l'impact de Win Win Capital sur l'économie réelle : financement d'activités productives, accompagnement éducatif et soutien entrepreneurial." %}{% endblock %}
+
+{% block content %}
+
+<section class="bg-win-dark py-24">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <span class="text-xs font-semibold tracking-widest uppercase text-win-orange">{% trans "Résultats concrets" %}</span>
+    <h1 class="text-5xl font-extrabold text-white mt-3 max-w-3xl leading-tight">{% trans "Notre impact sur l'économie réelle" %}</h1>
+    <div class="w-12 h-1 bg-win-green mt-6"></div>
+  </div>
+</section>
+
+<section class="py-20 bg-white">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-16">
+      <p class="text-gray-500 text-xl max-w-3xl mx-auto italic font-medium">
+        "{% trans "Le succès de l'institution dépend de la réussite durable de ses clients." %}"
+      </p>
+    </div>
+
+    <!-- STATS -->
+    <div class="grid md:grid-cols-3 gap-6 mb-16">
+      <div class="text-center p-10 rounded-xl border border-gray-100 hover-lift">
+        <div class="text-6xl font-extrabold text-win-green">5 000+</div>
+        <div class="text-xs font-semibold tracking-widest text-win-green mt-3 mb-2">{% trans "CLIENTS ACCOMPAGNÉS" %}</div>
+        <p class="text-gray-500 text-sm">{% trans "Particuliers, entrepreneurs et organisations ayant bénéficié de nos services" %}</p>
+      </div>
+      <div class="text-center p-10 rounded-xl border border-gray-100 hover-lift">
+        <div class="text-6xl font-extrabold text-win-orange">85%</div>
+        <div class="text-xs font-semibold tracking-widest text-win-orange mt-3 mb-2">{% trans "PROJETS ABOUTIS" %}</div>
+        <p class="text-gray-500 text-sm">{% trans "Des projets financés qui ont atteint leurs objectifs économiques" %}</p>
+      </div>
+      <div class="text-center p-10 rounded-xl border border-gray-100 hover-lift">
+        <div class="text-6xl font-extrabold text-win-green">3</div>
+        <div class="text-xs font-semibold tracking-widest text-win-green mt-3 mb-2">{% trans "AGENCES ACTIVES" %}</div>
+        <p class="text-gray-500 text-sm">{% trans "Présence physique pour un accompagnement de proximité au Gabon" %}</p>
+      </div>
+    </div>
+
+    <!-- DOMAINES D'IMPACT -->
+    <div class="grid md:grid-cols-3 gap-8">
+      <div class="p-8 rounded-xl bg-gray-50 hover-lift">
+        <div class="w-14 h-14 rounded-full bg-green-100 flex items-center justify-center mb-5">
+          <svg class="w-7 h-7 text-win-green" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/></svg>
+        </div>
+        <h3 class="text-xl font-bold text-win-dark">{% trans "Activités productives" %}</h3>
+        <p class="text-gray-500 mt-3 text-sm leading-relaxed">{% trans "Financement de commerces, artisans et petites entreprises contribuant à l'économie locale gabonaise." %}</p>
+      </div>
+      <div class="p-8 rounded-xl bg-gray-50 hover-lift">
+        <div class="w-14 h-14 rounded-full bg-yellow-100 flex items-center justify-center mb-5">
+          <svg class="w-7 h-7 text-win-orange" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 14l9-5-9-5-9 5 9 5zm0 0l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0112 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z"/></svg>
+        </div>
+        <h3 class="text-xl font-bold text-win-dark">{% trans "Accompagnement éducatif" %}</h3>
+        <p class="text-gray-500 mt-3 text-sm leading-relaxed">{% trans "Soutien à la scolarisation et à la formation professionnelle pour investir dans le capital humain." %}</p>
+      </div>
+      <div class="p-8 rounded-xl bg-gray-50 hover-lift">
+        <div class="w-14 h-14 rounded-full bg-green-100 flex items-center justify-center mb-5">
+          <svg class="w-7 h-7 text-win-green" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+        </div>
+        <h3 class="text-xl font-bold text-win-dark">{% trans "Soutien entrepreneurial" %}</h3>
+        <p class="text-gray-500 mt-3 text-sm leading-relaxed">{% trans "Accompagnement des porteurs de projets depuis l'idée jusqu'à la concrétisation commerciale." %}</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% endblock %}
