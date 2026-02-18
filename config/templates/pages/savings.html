@@ -1,0 +1,149 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load i18n %}
+
+{% block title %}{% trans "Comptes & Épargne" %} – Win Win Capital{% endblock %}
+{% block meta_description %}{% trans "Découvrez nos produits d'épargne : compte courant, compte épargne, compte scolaire et compte PME." %}{% endblock %}
+
+{% block content %}
+
+<!-- HERO -->
+<section class="bg-win-dark py-24">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <span class="text-xs font-semibold tracking-widest uppercase text-win-orange">{% trans "Produits financiers" %}</span>
+    <h1 class="text-5xl font-extrabold text-white mt-3 max-w-3xl leading-tight">{% trans "Comptes & Épargne" %}</h1>
+    <div class="w-12 h-1 bg-win-green mt-6"></div>
+    <p class="text-gray-400 mt-4 max-w-xl text-lg">{% trans "L'épargne constitue la base de la stabilité financière." %}</p>
+  </div>
+</section>
+
+<!-- MESSAGE PÉDAGOGIQUE -->
+<section class="bg-win-green py-4">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex items-center gap-3">
+      <svg class="w-5 h-5 text-white flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+      <p class="text-white text-sm font-medium">{% trans "Principe fondamental : l'épargne précède toujours l'endettement responsable." %}</p>
+    </div>
+  </div>
+</section>
+
+<!-- PRODUITS -->
+<section class="py-20 bg-white">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    {% if products %}
+    <div class="grid sm:grid-cols-2 xl:grid-cols-4 gap-6">
+      {% for product in products %}
+      <div class="rounded-xl overflow-hidden border border-gray-100 hover-lift">
+        <div class="h-1.5 bg-win-green"></div>
+        <div class="p-6">
+          <h3 class="font-bold text-xl text-win-dark">{{ product.name }}</h3>
+          <p class="text-gray-500 text-sm mt-2 leading-relaxed">{{ product.description }}</p>
+          <a href="{% url 'contact:become_client' %}" class="mt-6 block bg-win-green hover:bg-opacity-90 text-white text-center py-2.5 rounded-lg text-sm font-semibold smooth-transition">{% trans "Ouvrir un compte" %}</a>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+    {% else %}
+    <!-- PRODUITS PAR DÉFAUT -->
+    <div class="grid sm:grid-cols-2 xl:grid-cols-4 gap-6">
+      {% for product in default_products %}
+      <div class="rounded-xl overflow-hidden border border-gray-100 hover-lift">
+        <div class="h-1.5 {% cycle 'bg-win-green' 'bg-win-orange' 'bg-win-green' 'bg-win-orange' %}"></div>
+        <div class="p-6">
+          <div class="w-12 h-12 rounded-lg {% cycle 'bg-green-50' 'bg-yellow-50' 'bg-green-50' 'bg-yellow-50' %} flex items-center justify-center mb-4">
+            <svg class="w-6 h-6 {% cycle 'text-win-green' 'text-win-orange' 'text-win-green' 'text-win-orange' %}" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="{{ product.icon }}"/></svg>
+          </div>
+          <h3 class="font-bold text-xl text-win-dark">{{ product.name }}</h3>
+          <p class="text-gray-500 text-sm mt-2 leading-relaxed">{{ product.description }}</p>
+          <ul class="mt-4 space-y-1.5">
+            {% for feature in product.features %}
+            <li class="flex items-center gap-2 text-sm text-gray-600">
+              <svg class="w-4 h-4 text-win-green flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+              {{ feature }}
+            </li>
+            {% endfor %}
+          </ul>
+          <a href="{% url 'contact:become_client' %}" class="mt-6 block bg-win-green hover:bg-opacity-90 text-white text-center py-2.5 rounded-lg text-sm font-semibold smooth-transition">{% trans "Ouvrir un compte" %}</a>
+        </div>
+      </div>
+      {% empty %}
+      <!-- STATIQUE FALLBACK -->
+      <div class="rounded-xl overflow-hidden border border-gray-100 hover-lift">
+        <div class="h-1.5 bg-win-green"></div>
+        <div class="p-6">
+          <div class="w-12 h-12 rounded-lg bg-green-50 flex items-center justify-center mb-4">
+            <svg class="w-6 h-6 text-win-green" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z"/></svg>
+          </div>
+          <h3 class="font-bold text-xl text-win-dark">{% trans "Compte Courant" %}</h3>
+          <p class="text-gray-500 text-sm mt-2">{% trans "Gestion quotidienne de vos transactions financières." %}</p>
+          <ul class="mt-4 space-y-1.5">
+            <li class="flex items-center gap-2 text-sm text-gray-600"><svg class="w-4 h-4 text-win-green" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>{% trans "Accès facile à vos fonds" %}</li>
+            <li class="flex items-center gap-2 text-sm text-gray-600"><svg class="w-4 h-4 text-win-green" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>{% trans "Opérations courantes" %}</li>
+            <li class="flex items-center gap-2 text-sm text-gray-600"><svg class="w-4 h-4 text-win-green" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>{% trans "Relevés réguliers" %}</li>
+          </ul>
+          <a href="{% url 'contact:become_client' %}" class="mt-6 block bg-win-green hover:bg-opacity-90 text-white text-center py-2.5 rounded-lg text-sm font-semibold smooth-transition">{% trans "Ouvrir un compte" %}</a>
+        </div>
+      </div>
+      <div class="rounded-xl overflow-hidden border border-gray-100 hover-lift">
+        <div class="h-1.5 bg-win-orange"></div>
+        <div class="p-6">
+          <div class="w-12 h-12 rounded-lg bg-yellow-50 flex items-center justify-center mb-4">
+            <svg class="w-6 h-6 text-win-orange" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+          </div>
+          <h3 class="font-bold text-xl text-win-dark">{% trans "Compte Épargne" %}</h3>
+          <p class="text-gray-500 text-sm mt-2">{% trans "Constituez progressivement votre capital avec une rémunération attractive." %}</p>
+          <ul class="mt-4 space-y-1.5">
+            <li class="flex items-center gap-2 text-sm text-gray-600"><svg class="w-4 h-4 text-win-green" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>{% trans "Rémunération de votre épargne" %}</li>
+            <li class="flex items-center gap-2 text-sm text-gray-600"><svg class="w-4 h-4 text-win-green" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>{% trans "Constitution de capital" %}</li>
+            <li class="flex items-center gap-2 text-sm text-gray-600"><svg class="w-4 h-4 text-win-green" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>{% trans "Sécurité garantie" %}</li>
+          </ul>
+          <a href="{% url 'contact:become_client' %}" class="mt-6 block bg-win-green hover:bg-opacity-90 text-white text-center py-2.5 rounded-lg text-sm font-semibold smooth-transition">{% trans "Ouvrir un compte" %}</a>
+        </div>
+      </div>
+      <div class="rounded-xl overflow-hidden border border-gray-100 hover-lift">
+        <div class="h-1.5 bg-win-green"></div>
+        <div class="p-6">
+          <div class="w-12 h-12 rounded-lg bg-green-50 flex items-center justify-center mb-4">
+            <svg class="w-6 h-6 text-win-green" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 14l9-5-9-5-9 5 9 5z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0112 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z"/></svg>
+          </div>
+          <h3 class="font-bold text-xl text-win-dark">{% trans "Compte Scolaire" %}</h3>
+          <p class="text-gray-500 text-sm mt-2">{% trans "Anticipez les frais académiques de vos enfants avec sérénité." %}</p>
+          <ul class="mt-4 space-y-1.5">
+            <li class="flex items-center gap-2 text-sm text-gray-600"><svg class="w-4 h-4 text-win-green" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>{% trans "Frais académiques anticipés" %}</li>
+            <li class="flex items-center gap-2 text-sm text-gray-600"><svg class="w-4 h-4 text-win-green" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>{% trans "Épargne dédiée éducation" %}</li>
+            <li class="flex items-center gap-2 text-sm text-gray-600"><svg class="w-4 h-4 text-win-green" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>{% trans "Suivi personnalisé" %}</li>
+          </ul>
+          <a href="{% url 'contact:become_client' %}" class="mt-6 block bg-win-green hover:bg-opacity-90 text-white text-center py-2.5 rounded-lg text-sm font-semibold smooth-transition">{% trans "Ouvrir un compte" %}</a>
+        </div>
+      </div>
+      <div class="rounded-xl overflow-hidden border border-gray-100 hover-lift">
+        <div class="h-1.5 bg-win-orange"></div>
+        <div class="p-6">
+          <div class="w-12 h-12 rounded-lg bg-yellow-50 flex items-center justify-center mb-4">
+            <svg class="w-6 h-6 text-win-orange" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+          </div>
+          <h3 class="font-bold text-xl text-win-dark">{% trans "Compte PME" %}</h3>
+          <p class="text-gray-500 text-sm mt-2">{% trans "Gestion structurée de votre activité professionnelle." %}</p>
+          <ul class="mt-4 space-y-1.5">
+            <li class="flex items-center gap-2 text-sm text-gray-600"><svg class="w-4 h-4 text-win-green" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>{% trans "Gestion des flux PME" %}</li>
+            <li class="flex items-center gap-2 text-sm text-gray-600"><svg class="w-4 h-4 text-win-green" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>{% trans "Conseil professionnel dédié" %}</li>
+            <li class="flex items-center gap-2 text-sm text-gray-600"><svg class="w-4 h-4 text-win-green" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>{% trans "Accès au financement PME" %}</li>
+          </ul>
+          <a href="{% url 'contact:become_client' %}" class="mt-6 block bg-win-green hover:bg-opacity-90 text-white text-center py-2.5 rounded-lg text-sm font-semibold smooth-transition">{% trans "Ouvrir un compte" %}</a>
+        </div>
+      </div>
+      {% endfor %}
+    {% endif %}
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="py-16 bg-win-dark">
+  <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+    <h2 class="text-3xl font-extrabold text-white">{% trans "Prêt à ouvrir votre compte ?" %}</h2>
+    <p class="text-gray-400 mt-3">{% trans "L'ouverture se fait uniquement en agence pour garantir la sécurité juridique." %}</p>
+    <a href="{% url 'contact:become_client' %}" class="mt-8 inline-block bg-win-green hover:bg-opacity-90 text-white px-8 py-3.5 rounded-lg font-semibold smooth-transition">{% trans "Prendre rendez-vous" %}</a>
+  </div>
+</section>
+
+{% endblock %}

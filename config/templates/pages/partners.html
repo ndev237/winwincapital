@@ -1,0 +1,151 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load i18n %}
+
+{% block title %}{% trans "Nos partenaires" %} – Win Win Capital{% endblock %}
+{% block meta_description %}{% trans "Découvrez les partenaires financiers, académiques et économiques de Win Win Capital." %}{% endblock %}
+
+{% block content %}
+
+<section class="bg-win-dark py-24">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <span class="text-xs font-semibold tracking-widest uppercase text-win-orange">{% trans "Écosystème structuré" %}</span>
+    <h1 class="text-5xl font-extrabold text-white mt-3 max-w-3xl leading-tight">{% trans "Nos partenaires stratégiques" %}</h1>
+    <div class="w-12 h-1 bg-win-green mt-6"></div>
+    <p class="text-gray-400 mt-4 max-w-xl text-lg">{% trans "Win Win Capital s'inscrit dans un écosystème économique structuré et diversifié." %}</p>
+  </div>
+</section>
+
+<section class="py-20 bg-white">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
+
+    <!-- FINANCIERS -->
+    <div>
+      <div class="flex items-center gap-4 mb-8">
+        <div class="w-1 h-10 bg-win-green rounded-full"></div>
+        <div>
+          <span class="text-xs font-semibold tracking-widest uppercase text-win-green">{% trans "SECTEUR FINANCIER" %}</span>
+          <h2 class="text-2xl font-extrabold text-win-dark">{% trans "Partenaires financiers" %}</h2>
+        </div>
+      </div>
+      {% if financial_partners %}
+      <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+        {% for partner in financial_partners %}
+        <div class="bg-gray-50 rounded-lg p-5 text-center border border-transparent hover:border-win-green hover:bg-white smooth-transition">
+          {% if partner.logo %}<img src="{{ partner.logo.url }}" alt="{{ partner.name }}" class="h-10 object-contain mx-auto mb-2">{% endif %}
+          <div class="font-semibold text-sm text-win-dark">{{ partner.name }}</div>
+        </div>
+        {% endfor %}
+      </div>
+      {% else %}
+      <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+        <div class="bg-gray-50 rounded-lg p-6 text-center border border-transparent hover:border-win-green hover:bg-white smooth-transition font-semibold text-sm text-win-dark">CCA – Crédit Communautaire d'Afrique</div>
+        <div class="bg-gray-50 rounded-lg p-6 text-center border border-transparent hover:border-win-green hover:bg-white smooth-transition font-semibold text-sm text-win-dark">Afriland First Bank</div>
+        <div class="bg-gray-50 rounded-lg p-6 text-center border border-transparent hover:border-win-green hover:bg-white smooth-transition font-semibold text-sm text-win-dark">Caisse Centrale</div>
+      </div>
+      {% endif %}
+    </div>
+
+    <!-- ACADÉMIQUES -->
+    <div>
+      <div class="flex items-center gap-4 mb-8">
+        <div class="w-1 h-10 bg-win-orange rounded-full"></div>
+        <div>
+          <span class="text-xs font-semibold tracking-widest uppercase text-win-orange">{% trans "ÉDUCATION & INSTITUTIONS" %}</span>
+          <h2 class="text-2xl font-extrabold text-win-dark">{% trans "Partenaires académiques et institutionnels" %}</h2>
+        </div>
+      </div>
+      {% if academic_partners %}
+      <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
+        {% for partner in academic_partners %}
+        <div class="bg-gray-50 rounded-lg p-5 text-center border border-transparent hover:border-win-orange hover:bg-white smooth-transition">
+          {% if partner.logo %}<img src="{{ partner.logo.url }}" alt="{{ partner.name }}" class="h-10 object-contain mx-auto mb-2">{% endif %}
+          <div class="font-semibold text-xs text-win-dark">{{ partner.name }}</div>
+        </div>
+        {% endfor %}
+      </div>
+      {% else %}
+      <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
+        <div class="bg-gray-50 rounded-lg p-5 text-center border border-transparent hover:border-win-orange hover:bg-white smooth-transition">
+          <div class="font-bold text-win-dark text-sm">IUEs/Insam</div>
+          <div class="text-gray-400 text-xs mt-1">Institut Universitaire Stratégique</div>
+        </div>
+        <div class="bg-gray-50 rounded-lg p-5 text-center border border-transparent hover:border-win-orange hover:bg-white smooth-transition">
+          <div class="font-bold text-win-dark text-sm">UPE</div>
+          <div class="text-gray-400 text-xs mt-1">Université Privée de l'Estuaire</div>
+        </div>
+        <div class="bg-gray-50 rounded-lg p-5 text-center border border-transparent hover:border-win-orange hover:bg-white smooth-transition">
+          <div class="font-bold text-win-dark text-sm">ESSA</div>
+          <div class="text-gray-400 text-xs mt-1">École Sup. Sciences Appliquées</div>
+        </div>
+        <div class="bg-gray-50 rounded-lg p-5 text-center border border-transparent hover:border-win-orange hover:bg-white smooth-transition">
+          <div class="font-bold text-win-dark text-sm">ENIET</div>
+          <div class="text-gray-400 text-xs mt-1">de l'Excellence</div>
+        </div>
+        <div class="bg-gray-50 rounded-lg p-5 text-center border border-transparent hover:border-win-orange hover:bg-white smooth-transition">
+          <div class="font-bold text-win-dark text-sm">ENIEG</div>
+          <div class="text-gray-400 text-xs mt-1">de l'Excellence</div>
+        </div>
+      </div>
+      {% endif %}
+    </div>
+
+    <!-- FORMATION -->
+    <div>
+      <div class="flex items-center gap-4 mb-8">
+        <div class="w-1 h-10 bg-win-green rounded-full"></div>
+        <div>
+          <span class="text-xs font-semibold tracking-widest uppercase text-win-green">{% trans "FORMATION & EMPLOI" %}</span>
+          <h2 class="text-2xl font-extrabold text-win-dark">{% trans "Partenaires formation & employabilité" %}</h2>
+        </div>
+      </div>
+      {% if training_partners %}
+      <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+        {% for partner in training_partners %}
+        <div class="bg-gray-50 rounded-lg p-5 text-center border border-transparent hover:border-win-green hover:bg-white smooth-transition">
+          <div class="font-semibold text-sm text-win-dark">{{ partner.name }}</div>
+        </div>
+        {% endfor %}
+      </div>
+      {% else %}
+      <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+        <div class="bg-gray-50 rounded-lg p-5 text-center border border-transparent hover:border-win-green hover:bg-white smooth-transition">
+          <div class="font-bold text-win-dark text-sm">CPE</div>
+          <div class="text-gray-400 text-xs mt-1">Club Prépa Emploi</div>
+        </div>
+        <div class="bg-gray-50 rounded-lg p-5 text-center border border-transparent hover:border-win-green hover:bg-white smooth-transition">
+          <div class="font-bold text-win-dark text-sm">CFPMP</div>
+          <div class="text-gray-400 text-xs mt-1">Centre de Formation Prof. des Métiers Pratiques</div>
+        </div>
+      </div>
+      {% endif %}
+    </div>
+
+    <!-- ÉCONOMIQUE -->
+    <div>
+      <div class="flex items-center gap-4 mb-8">
+        <div class="w-1 h-10 bg-win-orange rounded-full"></div>
+        <div>
+          <span class="text-xs font-semibold tracking-widest uppercase text-win-orange">{% trans "ÉCONOMIE RÉELLE" %}</span>
+          <h2 class="text-2xl font-extrabold text-win-dark">{% trans "Partenaire économique" %}</h2>
+        </div>
+      </div>
+      {% if economic_partners %}
+      <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+        {% for partner in economic_partners %}
+        <div class="bg-gray-50 rounded-lg p-5 text-center border border-transparent hover:border-win-orange hover:bg-white smooth-transition">
+          <div class="font-semibold text-sm text-win-dark">{{ partner.name }}</div>
+        </div>
+        {% endfor %}
+      </div>
+      {% else %}
+      <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+        <div class="bg-gray-50 rounded-lg p-6 text-center border border-transparent hover:border-win-orange hover:bg-white smooth-transition font-semibold text-sm text-win-dark">Win Win Logistique</div>
+      </div>
+      {% endif %}
+    </div>
+
+  </div>
+</section>
+
+{% endblock %}

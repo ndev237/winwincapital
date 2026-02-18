@@ -1,0 +1,365 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load i18n %}
+
+{% block title %}Win Win Capital - La finance qui crée de la valeur partagée{% endblock %}
+
+{% block content %}
+<!-- Hero Section -->
+<section class="relative bg-gradient-to-br from-win-green to-teal-600 text-white py-20 lg:py-32 overflow-hidden">
+    <div class="absolute inset-0 opacity-10">
+        <div class="absolute inset-0" style="background-image: url('data:image/svg+xml,%3Csvg width=\'60\' height=\'60\' viewBox=\'0 0 60 60\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cg fill=\'none\' fill-rule=\'evenodd\'%3E%3Cg fill=\'%23ffffff\' fill-opacity=\'1\'%3E%3Cpath d=\'M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z\'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E');"></div>
+    </div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div>
+                <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6">
+                    WIN WIN CAPITAL
+                </h1>
+                <p class="text-2xl md:text-3xl font-semibold text-win-orange mb-6">
+                    {% trans "La finance qui crée de la valeur partagée" %}
+                </p>
+                <p class="text-lg md:text-xl mb-8 text-white/90 leading-relaxed">
+                    {% trans "Institution de microfinance de première catégorie, Win Win Capital accompagne particuliers, entrepreneurs et organisations dans la sécurisation de leur épargne et le financement responsable de leurs projets." %}
+                </p>
+                <p class="text-lg font-medium mb-10 text-win-orange">
+                    {% trans "Une finance utile doit être stable, compréhensible et durable." %}
+                </p>
+
+                <div class="flex flex-col sm:flex-row gap-4">
+                    <a href="{% url 'contact:become_client' %}" class="bg-win-orange hover:bg-opacity-90 text-white px-8 py-4 rounded-lg font-semibold text-lg smooth-transition text-center shadow-lg">
+                        {% trans "Devenir client" %}
+                    </a>
+                    <a href="{% url 'pages:about' %}" class="bg-white hover:bg-gray-100 text-win-dark px-8 py-4 rounded-lg font-semibold text-lg smooth-transition text-center shadow-lg">
+                        {% trans "Découvrir Win Win" %}
+                    </a>
+                </div>
+            </div>
+
+            <div class="hidden lg:flex justify-center">
+                <img src="{% static 'image/logo_winwin-02.png' %}" alt="Win Win Capital" class="w-96 h-auto opacity-90">
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Trust Indicators -->
+<section class="py-16 bg-white border-b">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+            <div class="text-center">
+                <div class="flex justify-center mb-4">
+                    <svg class="h-12 w-12 text-win-green" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
+                    </svg>
+                </div>
+                <h3 class="font-semibold text-win-dark mb-2">{% trans "Institution structurée" %}</h3>
+                <p class="text-sm text-gray-600">{% trans "Organisation rigoureuse et transparente" %}</p>
+            </div>
+
+            <div class="text-center">
+                <div class="flex justify-center mb-4">
+                    <svg class="h-12 w-12 text-win-green" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/>
+                    </svg>
+                </div>
+                <h3 class="font-semibold text-win-dark mb-2">{% trans "Gestion prudente" %}</h3>
+                <p class="text-sm text-gray-600">{% trans "Protection des déposants garantie" %}</p>
+            </div>
+
+            <div class="text-center">
+                <div class="flex justify-center mb-4">
+                    <svg class="h-12 w-12 text-win-green" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/>
+                    </svg>
+                </div>
+                <h3 class="font-semibold text-win-dark mb-2">{% trans "Approche responsable" %}</h3>
+                <p class="text-sm text-gray-600">{% trans "Finance éthique et durable" %}</p>
+            </div>
+
+            <div class="text-center">
+                <div class="flex justify-center mb-4">
+                    <svg class="h-12 w-12 text-win-green" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
+                    </svg>
+                </div>
+                <h3 class="font-semibold text-win-dark mb-2">{% trans "Proximité locale" %}</h3>
+                <p class="text-sm text-gray-600">{% trans "Accompagnement personnalisé" %}</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Missions Section -->
+<section class="py-20 bg-gray-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+            <h2 class="text-3xl md:text-4xl font-bold text-win-dark mb-4">{% trans "Nos missions" %}</h2>
+            <p class="text-lg text-gray-600 max-w-3xl mx-auto">
+                {% trans "Au service du développement économique et de l'inclusion financière" %}
+            </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div class="bg-white rounded-xl p-8 hover-lift">
+                <div class="bg-win-green/10 rounded-full w-16 h-16 flex items-center justify-center mb-6">
+                    <svg class="h-8 w-8 text-win-green" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                    </svg>
+                </div>
+                <h3 class="text-xl font-semibold text-win-dark mb-3">{% trans "Sécuriser l'épargne" %}</h3>
+                <p class="text-gray-600">{% trans "Protection et valorisation de votre capital avec des produits d'épargne adaptés." %}</p>
+            </div>
+
+            <div class="bg-white rounded-xl p-8 hover-lift">
+                <div class="bg-win-orange/10 rounded-full w-16 h-16 flex items-center justify-center mb-6">
+                    <svg class="h-8 w-8 text-win-orange" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"/>
+                    </svg>
+                </div>
+                <h3 class="text-xl font-semibold text-win-dark mb-3">{% trans "Faciliter le financement" %}</h3>
+                <p class="text-gray-600">{% trans "Crédits responsables pour vos projets personnels et professionnels." %}</p>
+            </div>
+
+            <div class="bg-white rounded-xl p-8 hover-lift">
+                <div class="bg-win-green/10 rounded-full w-16 h-16 flex items-center justify-center mb-6">
+                    <svg class="h-8 w-8 text-win-green" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/>
+                    </svg>
+                </div>
+                <h3 class="text-xl font-semibold text-win-dark mb-3">{% trans "Structurer les flux" %}</h3>
+                <p class="text-gray-600">{% trans "Gestion professionnelle des transactions et opérations financières." %}</p>
+            </div>
+
+            <div class="bg-white rounded-xl p-8 hover-lift">
+                <div class="bg-win-orange/10 rounded-full w-16 h-16 flex items-center justify-center mb-6">
+                    <svg class="h-8 w-8 text-win-orange" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                    </svg>
+                </div>
+                <h3 class="text-xl font-semibold text-win-dark mb-3">{% trans "Soutenir l'économie" %}</h3>
+                <p class="text-gray-600">{% trans "Contribution active au développement de l'économie réelle." %}</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Governance Section -->
+<section class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div>
+                <h2 class="text-3xl md:text-4xl font-bold text-win-dark mb-6">{% trans "Une gouvernance structurée" %}</h2>
+                <p class="text-lg text-gray-600 mb-8 leading-relaxed">
+                    {% trans "Notre organisation interne repose sur plusieurs organes indépendants assurant la protection des déposants et la transparence de notre gestion." %}
+                </p>
+
+                <div class="space-y-4">
+                    <div class="flex items-start">
+                        <div class="flex-shrink-0 bg-win-green/10 rounded-full p-2 mt-1">
+                            <svg class="h-5 w-5 text-win-green" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                            </svg>
+                        </div>
+                        <div class="ml-4">
+                            <h4 class="font-semibold text-win-dark">{% trans "Conseil d'Administration" %}</h4>
+                            <p class="text-gray-600 text-sm">{% trans "Définition de la stratégie et supervision" %}</p>
+                        </div>
+                    </div>
+
+                    <div class="flex items-start">
+                        <div class="flex-shrink-0 bg-win-green/10 rounded-full p-2 mt-1">
+                            <svg class="h-5 w-5 text-win-green" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                            </svg>
+                        </div>
+                        <div class="ml-4">
+                            <h4 class="font-semibold text-win-dark">{% trans "Comité de Crédit" %}</h4>
+                            <p class="text-gray-600 text-sm">{% trans "Analyse et validation des engagements" %}</p>
+                        </div>
+                    </div>
+
+                    <div class="flex items-start">
+                        <div class="flex-shrink-0 bg-win-green/10 rounded-full p-2 mt-1">
+                            <svg class="h-5 w-5 text-win-green" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                            </svg>
+                        </div>
+                        <div class="ml-4">
+                            <h4 class="font-semibold text-win-dark">{% trans "Comité de Surveillance" %}</h4>
+                            <p class="text-gray-600 text-sm">{% trans "Contrôle permanent et conformité" %}</p>
+                        </div>
+                    </div>
+
+                    <div class="flex items-start">
+                        <div class="flex-shrink-0 bg-win-green/10 rounded-full p-2 mt-1">
+                            <svg class="h-5 w-5 text-win-green" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                            </svg>
+                        </div>
+                        <div class="ml-4">
+                            <h4 class="font-semibold text-win-dark">{% trans "Comité d'Audit" %}</h4>
+                            <p class="text-gray-600 text-sm">{% trans "Vérification indépendante" %}</p>
+                        </div>
+                    </div>
+                </div>
+
+                <a href="{% url 'pages:governance' %}" class="inline-flex items-center mt-8 text-win-green hover:text-win-dark smooth-transition font-semibold">
+                    {% trans "En savoir plus sur notre gouvernance" %}
+                    <svg class="ml-2 h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                    </svg>
+                </a>
+            </div>
+
+            <div class="bg-gradient-to-br from-win-green to-teal-600 rounded-2xl p-12 text-white">
+                <h3 class="text-2xl font-bold mb-6">{% trans "Principe organisationnel" %}</h3>
+                <p class="text-lg leading-relaxed opacity-90">
+                    {% trans "Séparation stricte entre décision, exécution et contrôle afin de limiter les risques et garantir la protection des intérêts de nos clients." %}
+                </p>
+                <div class="mt-8 pt-8 border-t border-white/20">
+                    <p class="font-semibold text-win-orange">{% trans "Sécurité • Croissance • Durabilité" %}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Services Overview -->
+<section class="py-20 bg-gray-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+            <h2 class="text-3xl md:text-4xl font-bold text-win-dark mb-4">{% trans "Nos solutions financières" %}</h2>
+            <p class="text-lg text-gray-600 max-w-3xl mx-auto">
+                {% trans "Des produits adaptés à vos besoins, conçus pour votre sécurité et votre développement" %}
+            </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <!-- Épargne -->
+            <div class="bg-white rounded-xl overflow-hidden shadow-lg hover-lift">
+                <div class="bg-gradient-to-r from-win-green to-teal-600 h-2"></div>
+                <div class="p-8">
+                    <div class="flex items-center mb-6">
+                        <div class="bg-win-green/10 rounded-full p-3 mr-4">
+                            <svg class="h-8 w-8 text-win-green" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                            </svg>
+                        </div>
+                        <h3 class="text-2xl font-bold text-win-dark">{% trans "Comptes & Épargne" %}</h3>
+                    </div>
+                    <p class="text-gray-600 mb-6">
+                        {% trans "L'épargne constitue la base de la stabilité financière. Découvrez nos différents comptes adaptés à vos objectifs." %}
+                    </p>
+                    <ul class="space-y-3 mb-6">
+                        <li class="flex items-center text-gray-700">
+                            <svg class="h-5 w-5 text-win-green mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                            </svg>
+                            {% trans "Compte courant" %}
+                        </li>
+                        <li class="flex items-center text-gray-700">
+                            <svg class="h-5 w-5 text-win-green mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                            </svg>
+                            {% trans "Compte épargne" %}
+                        </li>
+                        <li class="flex items-center text-gray-700">
+                            <svg class="h-5 w-5 text-win-green mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                            </svg>
+                            {% trans "Compte scolaire" %}
+                        </li>
+                        <li class="flex items-center text-gray-700">
+                            <svg class="h-5 w-5 text-win-green mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                            </svg>
+                            {% trans "Compte PME" %}
+                        </li>
+                    </ul>
+                    <a href="{% url 'pages:savings' %}" class="inline-flex items-center text-win-green hover:text-win-dark smooth-transition font-semibold">
+                        {% trans "Découvrir nos comptes" %}
+                        <svg class="ml-2 h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Financement -->
+            <div class="bg-white rounded-xl overflow-hidden shadow-lg hover-lift">
+                <div class="bg-gradient-to-r from-win-orange to-yellow-600 h-2"></div>
+                <div class="p-8">
+                    <div class="flex items-center mb-6">
+                        <div class="bg-win-orange/10 rounded-full p-3 mr-4">
+                            <svg class="h-8 w-8 text-win-orange" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"/>
+                            </svg>
+                        </div>
+                        <h3 class="text-2xl font-bold text-win-dark">{% trans "Solutions de financement" %}</h3>
+                    </div>
+                    <p class="text-gray-600 mb-6">
+                        {% trans "Le crédit est un outil de développement lorsqu'il reste compatible avec votre capacité de remboursement." %}
+                    </p>
+                    <ul class="space-y-3 mb-6">
+                        <li class="flex items-center text-gray-700">
+                            <svg class="h-5 w-5 text-win-orange mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                            </svg>
+                            {% trans "Crédit personnel" %}
+                        </li>
+                        <li class="flex items-center text-gray-700">
+                            <svg class="h-5 w-5 text-win-orange mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                            </svg>
+                            {% trans "Crédit scolaire" %}
+                        </li>
+                        <li class="flex items-center text-gray-700">
+                            <svg class="h-5 w-5 text-win-orange mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                            </svg>
+                            {% trans "Crédit activité / PME" %}
+                        </li>
+                        <li class="flex items-center text-gray-700">
+                            <svg class="h-5 w-5 text-win-orange mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                            </svg>
+                            {% trans "Analyse de capacité" %}
+                        </li>
+                    </ul>
+                    <a href="{% url 'pages:financing' %}" class="inline-flex items-center text-win-orange hover:text-win-dark smooth-transition font-semibold">
+                        {% trans "Explorer nos crédits" %}
+                        <svg class="ml-2 h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CTA Section -->
+<section class="py-20 bg-gradient-to-r from-win-green to-teal-600 text-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <h2 class="text-3xl md:text-4xl font-bold mb-6">{% trans "Prêt à commencer ?" %}</h2>
+        <p class="text-xl mb-10 max-w-2xl mx-auto opacity-90">
+            {% trans "Rejoignez Win Win Capital et construisez votre avenir financier avec un partenaire de confiance." %}
+        </p>
+
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+            <a href="{% url 'contact:become_client' %}" class="bg-win-orange hover:bg-opacity-90 text-white px-8 py-4 rounded-lg font-semibold text-lg smooth-transition shadow-lg">
+                {% trans "Prendre rendez-vous" %}
+            </a>
+            <a href="{% url 'pages:agencies' %}" class="bg-white hover:bg-gray-100 text-win-dark px-8 py-4 rounded-lg font-semibold text-lg smooth-transition shadow-lg">
+                {% trans "Trouver une agence" %}
+            </a>
+            <a href="#" class="bg-white/10 hover:bg-white/20 text-white px-8 py-4 rounded-lg font-semibold text-lg smooth-transition border-2 border-white">
+                {% trans "Télécharger la présentation" %}
+            </a>
+        </div>
+    </div>
+</section>
+{% endblock %}
