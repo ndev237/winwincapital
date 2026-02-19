@@ -336,7 +336,7 @@ msgstr "Pages"
 
 #: .\pages\models.py:28
 msgid "Partenaire financier"
-msgstr "Financial partner"
+msgstr "Financial partners"
 
 #: .\pages\models.py:29
 msgid "Partenaire académique"
