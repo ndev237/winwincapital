@@ -12,13 +12,10 @@
      {% tailwind_css %}
     <meta name="description" content="{% block meta_description %}Institution de microfinance de première catégorie. Épargne sécurisée, financement responsable.{% endblock %}">
 
-    <!-- Favicon -->
     <link rel="icon" type="image/png" href="{% static 'images/favicon.png' %}">
 
-    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
 
-    <!-- Custom Tailwind Configuration -->
     <script>
         tailwind.config = {
             theme: {
@@ -35,44 +32,26 @@
                 }
             }
         }
-
     </script>
 
-    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
-    <!-- Custom CSS -->
     <style>
         :root {
-    --vert: #69c19b;
-    --jaune: #f3ac16;
-    --noir-trans: rgba(0,0,0,0.49);
-    --dark: #0a0e0c;
-    --dark2: #111714;
-    --gris: #f5f6f4;
-  }
-        body {
-            font-family: 'Inter', sans-serif;
+            --vert: #69c19b;
+            --jaune: #f3ac16;
+            --noir-trans: rgba(0,0,0,0.49);
+            --dark: #0a0e0c;
+            --dark2: #111714;
+            --gris: #f5f6f4;
         }
-
-        .smooth-transition {
-            transition: all 0.3s ease-in-out;
-        }
-
-        .gradient-bg {
-            background: linear-gradient(135deg, #7FD8BE 0%, #5BBFA3 100%);
-        }
-
-        .hover-lift {
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        .hover-lift:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-        }
+        body { font-family: 'Inter', sans-serif; }
+        .smooth-transition { transition: all 0.3s ease-in-out; }
+        .gradient-bg { background: linear-gradient(135deg, #7FD8BE 0%, #5BBFA3 100%); }
+        .hover-lift { transition: transform 0.3s ease, box-shadow 0.3s ease; }
+        .hover-lift:hover { transform: translateY(-5px); box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1); }
         .topbar { background: var(--dark); border-bottom: 1px solid rgba(105,193,155,0.1); }
     </style>
 
@@ -80,7 +59,12 @@
 </head>
 <body class="bg-gray-50 text-win-dark antialiased">
 
-<!-- TOP BAR -->
+<form action="{% url 'set_language' %}" method="post" id="lang-form" class="hidden">
+    {% csrf_token %}
+    <input name="next" type="hidden" value="{{ request.get_full_path }}">
+    <input name="language" id="lang-input" type="hidden" value="">
+</form>
+
 <div class="topbar py-0.5 hidden md:block" style="position:fixed;top:0;left:0;right:0;z-index:1000;">
   <div class="max-w-7xl mx-auto px-6 flex justify-between items-center">
     <div class="flex items-center gap-6 text-xs text-gray-400">
@@ -94,21 +78,18 @@
       </span>
     </div>
     <div class="flex items-center gap-4 text-xs text-gray-400">
-      <span>Lun–Ven : 8h–16h30 Sam : 12h30
-      </span>
+      <span>Lun–Ven : 8h–16h30 Sam : 12h30</span>
       <div class="flex gap-2">
-        <button onclick="setLang('fr')" id="btn-fr" class="px-2 py-0.5 rounded text-xs font-mono font-bold" style="background:var(--vert);color:white">FR</button>
-        <button onclick="setLang('en')" id="btn-en" class="px-2 py-0.5 rounded text-xs font-mono font-bold text-gray-400 hover:text-white transition-colors">EN</button>
+         <button onclick="setLang('fr')" class="px-2 py-0.5 rounded text-xs font-bold {% if request.LANGUAGE_CODE == 'fr' %}bg-win-green text-white{% else %}text-gray-400 hover:text-white{% endif %}">FR</button>
+         <button onclick="setLang('en')" class="px-2 py-0.5 rounded text-xs font-bold {% if request.LANGUAGE_CODE == 'en' %}bg-win-green text-white{% else %}text-gray-400 hover:text-white{% endif %}">EN</button>
       </div>
     </div>
   </div>
 </div>
 
-    <!-- Navigation -->
     <nav class="bg-white shadow-md sticky top-3.5 z-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-20">
-                <!-- Logo -->
                 <div class="flex-shrink-0">
                     <a href="{% url 'pages:home' %}" class="flex items-center space-x-3">
                         <img src="{% static 'image/Logo_WinWin-01.png' %}" alt="Win Win Capital" class="h-12 w-auto">
@@ -119,7 +100,6 @@
                     </a>
                 </div>
 
-                <!-- Desktop Navigation -->
                 <div class="hidden lg:flex space-x-8">
                     <a href="{% url 'pages:home' %}" class="text-win-dark hover:text-win-green smooth-transition font-medium">{% trans "Accueil" %}</a>
                     <div class="relative group">
@@ -152,13 +132,11 @@
                     <a href="{% url 'pages:agencies' %}" class="text-win-dark hover:text-win-green smooth-transition font-medium">{% trans "Agences" %}</a>
                 </div>
 
-                <!-- CTA Button -->
                 <div class="hidden lg:flex items-center space-x-4">
                     <a href="{% url 'contact:become_client' %}" class="bg-win-orange hover:bg-opacity-90 text-white px-6 py-2.5 rounded-lg font-semibold smooth-transition">
                         {% trans "Devenir client" %}
                     </a>
 
-                    <!-- Language Switcher -->
                     <div class="relative group">
                         <button class="text-win-gray hover:text-win-green smooth-transition">
                             <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -166,13 +144,12 @@
                             </svg>
                         </button>
                         <div class="absolute right-0 mt-2 w-32 bg-white rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible smooth-transition">
-                            <a href="#" class="block px-4 py-2 hover:bg-gray-50">Français</a>
-                            <a href="#" class="block px-4 py-2 hover:bg-gray-50">English</a>
+                            <button onclick="setLang('fr')" class="w-full text-left block px-4 py-2 hover:bg-gray-50 {% if request.LANGUAGE_CODE == 'fr' %}font-bold text-win-green{% endif %}">Français</button>
+                            <button onclick="setLang('en')" class="w-full text-left block px-4 py-2 hover:bg-gray-50 {% if request.LANGUAGE_CODE == 'en' %}font-bold text-win-green{% endif %}">English</button>
                         </div>
                     </div>
                 </div>
 
-                <!-- Mobile menu button -->
                 <div class="lg:hidden">
                     <button id="mobile-menu-button" class="text-win-dark hover:text-win-green smooth-transition">
                         <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -183,114 +160,40 @@
             </div>
         </div>
 
-        <!-- Mobile menu -->
         <div id="mobile-menu" class="hidden lg:hidden bg-white border-t">
             <div class="px-4 pt-2 pb-4 space-y-1">
                 <a href="{% url 'pages:home' %}" class="block py-2 text-win-dark hover:text-win-green smooth-transition">{% trans "Accueil" %}</a>
-                <a href="{% url 'pages:about' %}" class="block py-2 text-win-dark hover:text-win-green smooth-transition">{% trans "Qui sommes-nous" %}</a>
-                <a href="{% url 'pages:governance' %}" class="block py-2 text-win-dark hover:text-win-green smooth-transition">{% trans "Gouvernance" %}</a>
-                <a href="{% url 'pages:savings' %}" class="block py-2 text-win-dark hover:text-win-green smooth-transition">{% trans "Comptes & Épargne" %}</a>
-                <a href="{% url 'pages:financing' %}" class="block py-2 text-win-dark hover:text-win-green smooth-transition">{% trans "Solutions de financement" %}</a>
-                <a href="{% url 'pages:impact' %}" class="block py-2 text-win-dark hover:text-win-green smooth-transition">{% trans "Notre impact" %}</a>
-                <a href="{% url 'pages:partners' %}" class="block py-2 text-win-dark hover:text-win-green smooth-transition">{% trans "Partenaires" %}</a>
-                <a href="{% url 'blog:list' %}" class="block py-2 text-win-dark hover:text-win-green smooth-transition">{% trans "Actualités" %}</a>
-                <a href="{% url 'pages:agencies' %}" class="block py-2 text-win-dark hover:text-win-green smooth-transition">{% trans "Agences" %}</a>
+                <div class="flex gap-4 border-t pt-4">
+                    <button onclick="setLang('fr')" class="text-sm {% if request.LANGUAGE_CODE == 'fr' %}font-bold text-win-green{% endif %}">FR</button>
+                    <button onclick="setLang('en')" class="text-sm {% if request.LANGUAGE_CODE == 'en' %}font-bold text-win-green{% endif %}">EN</button>
+                </div>
                 <a href="{% url 'contact:become_client' %}" class="block py-2 mt-4 bg-win-orange text-white text-center rounded-lg font-semibold">{% trans "Devenir client" %}</a>
             </div>
         </div>
     </nav>
 
-    <!-- Main Content -->
     <main>
         {% block content %}{% endblock %}
     </main>
 
-    <!-- Footer -->
     <footer class="bg-win-dark text-white mt-20">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-                <!-- About -->
-                <div>
-                    <img src="{% static 'image/logo_winwin_foot.png' %}" alt="Win Win Capital" class="h-16 w-auto mb-4">
-                    <p class="text-gray-400 text-sm">
-                        {% trans "Institution de microfinance de première catégorie." %}
-                    </p>
-                    <p class="text-win-orange font-semibold mt-4 text-sm">
-                        {% trans "La finance qui crée de la valeur partagée" %}
-                    </p>
-                </div>
-
-                <!-- Quick Links -->
-                <div>
-                    <h3 class="text-lg font-semibold mb-4">{% trans "Liens rapides" %}</h3>
-                    <ul class="space-y-2 text-sm">
-                        <li><a href="{% url 'pages:about' %}" class="text-gray-400 hover:text-win-green smooth-transition">{% trans "Qui sommes-nous" %}</a></li>
-                        <li><a href="{% url 'pages:governance' %}" class="text-gray-400 hover:text-win-green smooth-transition">{% trans "Gouvernance" %}</a></li>
-                        <li><a href="{% url 'pages:savings' %}" class="text-gray-400 hover:text-win-green smooth-transition">{% trans "Comptes & Épargne" %}</a></li>
-                        <li><a href="{% url 'pages:financing' %}" class="text-gray-400 hover:text-win-green smooth-transition">{% trans "Solutions de financement" %}</a></li>
-                        <li><a href="{% url 'pages:compliance' %}" class="text-gray-400 hover:text-win-green smooth-transition">{% trans "Protection client" %}</a></li>
-                    </ul>
-                </div>
-
-                <!-- Services -->
-                <div>
-                    <h3 class="text-lg font-semibold mb-4">{% trans "Services" %}</h3>
-                    <ul class="space-y-2 text-sm">
-                        <li><a href="{% url 'pages:impact' %}" class="text-gray-400 hover:text-win-green smooth-transition">{% trans "Notre impact" %}</a></li>
-                        <li><a href="{% url 'pages:partners' %}" class="text-gray-400 hover:text-win-green smooth-transition">{% trans "Nos partenaires" %}</a></li>
-                        <li><a href="{% url 'blog:list' %}" class="text-gray-400 hover:text-win-green smooth-transition">{% trans "Actualités" %}</a></li>
-                        <li><a href="{% url 'pages:agencies' %}" class="text-gray-400 hover:text-win-green smooth-transition">{% trans "Nos agences" %}</a></li>
-                        <li><a href="{% url 'contact:become_client' %}" class="text-gray-400 hover:text-win-green smooth-transition">{% trans "Devenir client" %}</a></li>
-                    </ul>
-                </div>
-
-                <!-- Contact -->
-                <div>
-                    <h3 class="text-lg font-semibold mb-4">{% trans "Contact" %}</h3>
-                    <ul class="space-y-3 text-sm">
-                        <li class="flex items-start">
-                            <svg class="h-5 w-5 text-win-orange mr-2 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
-                            </svg>
-                            <span class="text-gray-400">contact@winwincapital.africa</span>
-                        </li>
-                        <li class="flex items-start">
-                            <svg class="h-5 w-5 text-win-orange mr-2 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/>
-                            </svg>
-                            <span class="text-gray-400">+237 XXX XXX XXX</span>
-                        </li>
-                        <li class="flex items-start">
-                            <svg class="h-5 w-5 text-win-orange mr-2 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
-                            </svg>
-                            <span class="text-gray-400">Douala, Cameroun</span>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-
-            <!-- Bottom Footer -->
-            <div class="border-t border-gray-700 mt-12 pt-8 text-center text-sm text-gray-400">
-                <p>&copy; {% now "Y" %} Win Win Capital. {% trans "Tous droits réservés." %}</p>
-                <p class="mt-2">
-                    <a href="{% url 'pages:privacy' %}" class="hover:text-win-green smooth-transition">{% trans "Politique de confidentialité" %}</a>
-                    <span class="mx-2">|</span>
-                    <a href="{% url 'pages:terms' %}" class="hover:text-win-green smooth-transition">{% trans "Conditions d'utilisation" %}</a>
-                    <span class="mx-2">|</span>
-                    <a href="{% url 'pages:compliance' %}" class="hover:text-win-green smooth-transition">{% trans "Conformité" %}</a>
-                </p>
-            </div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 text-center border-t border-gray-700 mt-12 pt-8 text-sm text-gray-400">
+            <p>&copy; {% now "Y" %} Win Win Capital. {% trans "Tous droits réservés." %}</p>
         </div>
     </footer>
 
-    <!-- Mobile Menu Toggle Script -->
     <script>
+        // Toggle Menu Mobile
         document.getElementById('mobile-menu-button').addEventListener('click', function() {
             const menu = document.getElementById('mobile-menu');
             menu.classList.toggle('hidden');
         });
+
+        // Fonction pour changer la langue via le formulaire caché
+        function setLang(langCode) {
+            document.getElementById('lang-input').value = langCode;
+            document.getElementById('lang-form').submit();
+        }
     </script>
 
     {% block extra_js %}{% endblock %}
