@@ -26,7 +26,7 @@ urlpatterns = urlpatterns + i18n_patterns(
     path('blog/', include('blog.urls')),
     path('contact/', include('contact.urls')),
     path('admin/', admin.site.urls),
-    path('i18n/', include('django.conf.urls.i18n') ),
+    path('i18n/', include('django.conf.urls.i18n')),
 
 )
 # Static and media files in development
