@@ -94,12 +94,24 @@
       </span>
     </div>
     <div class="flex items-center gap-4 text-xs text-gray-400">
-      <span>Lun–Ven : 8h–16h30 Sam : 12h30
-      </span>
-      <div class="flex gap-2">
-        <button onclick="setLang('fr')" id="btn-fr" class="px-2 py-0.5 rounded text-xs font-mono font-bold" style="background:var(--vert);color:white">FR</button>
-        <button onclick="setLang('en')" id="btn-en" class="px-2 py-0.5 rounded text-xs font-mono font-bold text-gray-400 hover:text-white transition-colors">EN</button>
-      </div>
+      <span>Lun–Ven : 8h–16h30 Sam : 12h30</span>
+
+      <!-- LOGIN BUTTON IN TOPBAR (Desktop only) -->
+      {% if user.is_authenticated %}
+        <a href="/winwin-secure-2026/" class="flex items-center gap-1.5 px-3 py-1 rounded bg-win-green bg-opacity-20 text-win-green hover:bg-opacity-30 smooth-transition">
+          <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/>
+          </svg>
+          <span class="font-medium">Admin</span>
+        </a>
+      {% else %}
+        <a href="{% url 'custom_login' %}" class="flex items-center gap-1.5 px-3 py-1 rounded bg-win-green bg-opacity-20 text-win-green hover:bg-opacity-30 smooth-transition">
+          <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 16l-4-4m0 0l4-4m-4 4h14m-5 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h7a3 3 0 013 3v1"/>
+          </svg>
+          <span class="font-medium">Login</span>
+        </a>
+      {% endif %}
     </div>
   </div>
 </div>
@@ -196,6 +208,23 @@
                 <a href="{% url 'blog:list' %}" class="block py-2 text-win-dark hover:text-win-green smooth-transition">{% trans "Actualités" %}</a>
                 <a href="{% url 'pages:agencies' %}" class="block py-2 text-win-dark hover:text-win-green smooth-transition">{% trans "Agences" %}</a>
                 <a href="{% url 'contact:become_client' %}" class="block py-2 mt-4 bg-win-orange text-white text-center rounded-lg font-semibold">{% trans "Devenir client" %}</a>
+
+                <!-- LOGIN BUTTON IN MOBILE MENU -->
+                {% if user.is_authenticated %}
+                  <a href="/winwin-secure-2026/" class="flex items-center justify-center gap-2 py-2 mt-2 border-2 border-win-green text-win-green rounded-lg font-semibold hover:bg-win-green hover:text-white smooth-transition">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/>
+                    </svg>
+                    {% trans "Admin" %}
+                  </a>
+                {% else %}
+                  <a href="{% url 'custom_login' %}" class="flex items-center justify-center gap-2 py-2 mt-2 border-2 border-win-green text-win-green rounded-lg font-semibold hover:bg-win-green hover:text-white smooth-transition">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 16l-4-4m0 0l4-4m-4 4h14m-5 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h7a3 3 0 013 3v1"/>
+                    </svg>
+                    {% trans "Login" %}
+                  </a>
+                {% endif %}
             </div>
         </div>
     </nav>
@@ -211,7 +240,7 @@
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
                 <!-- About -->
                 <div>
-                    <img src="{% static 'image/logo_winwin_foot.png' %}" alt="Win Win Capital" class="h-16 w-auto mb-4">
+                    <img src="{% static 'image/Logo_WinWin_foot.png' %}" alt="Win Win Capital" class="h-16 w-auto mb-4">
                     <p class="text-gray-400 text-sm">
                         {% trans "Institution de microfinance de première catégorie." %}
                     </p>
@@ -281,6 +310,17 @@
                     <span class="mx-2">|</span>
                     <a href="{% url 'pages:compliance' %}" class="hover:text-win-green smooth-transition">{% trans "Conformité" %}</a>
                 </p>
+
+                <!-- LOGOUT INFO (if authenticated) -->
+                {% if user.is_authenticated %}
+                <div class="mt-4 pt-4 border-t border-gray-700">
+                    <p class="text-xs">
+                        Connecté en tant que <strong class="text-win-green">{{ user.username }}</strong>
+                        •
+                        <a href="{% url 'logout' %}" class="text-win-orange hover:underline">Se déconnecter</a>
+                    </p>
+                </div>
+                {% endif %}
             </div>
         </div>
     </footer>

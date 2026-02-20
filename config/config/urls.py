@@ -20,12 +20,27 @@ from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
 from django.conf.urls.i18n import i18n_patterns
+from django.contrib.auth import views as auth_views
+from core.views import custom_login
 
 urlpatterns = urlpatterns + i18n_patterns(
     path('', include('pages.urls')),
     path('blog/', include('blog.urls')),
     path('contact/', include('contact.urls')),
-    path('admin/', admin.site.urls),
+    path('winwin-secure-2026/', admin.site.urls),
+    # Login visible et facile
+    path('login/', custom_login, name='custom_login'),
+
+    # Logout
+    path('logout/', auth_views.LogoutView.as_view(next_page='/'), name='logout'),
+
+    path('i18n/', include('django.conf.urls.i18n')),
+)
+# URLs avec i18n
+urlpatterns += i18n_patterns(
+    path('', include('pages.urls')),
+    path('blog/', include('blog.urls')),
+    path('contact/', include('contact.urls')),
 )
 # Static and media files in development
 if settings.DEBUG:
