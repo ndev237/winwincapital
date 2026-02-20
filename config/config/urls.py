@@ -27,6 +27,7 @@ urlpatterns = urlpatterns + i18n_patterns(
     path('', include('pages.urls')),
     path('blog/', include('blog.urls')),
     path('contact/', include('contact.urls')),
+<<<<<<< HEAD
     path('winwin-secure-2026/', admin.site.urls),
     # Login visible et facile
     path('login/', custom_login, name='custom_login'),
@@ -41,6 +42,11 @@ urlpatterns += i18n_patterns(
     path('', include('pages.urls')),
     path('blog/', include('blog.urls')),
     path('contact/', include('contact.urls')),
+=======
+    path('admin/', admin.site.urls),
+    path('i18n/', include('django.conf.urls.i18n')),
+
+>>>>>>> 8544a70345ffef3cb0b10b058d3353df29546809
 )
 # Static and media files in development
 if settings.DEBUG:
