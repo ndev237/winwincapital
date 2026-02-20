@@ -1,14 +1,14 @@
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# Translation file for Win Win Capital
+# Copyright (C) 2026 Win Win Capital
+# This file is distributed under the same license as the PROJECT package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
+"Project-Id-Version: 1.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-02-19 11:19+0100\n"
-"PO-Revision-Date: 2026-02-19 12:00+0100\n"
+"POT-Creation-Date: 2026-02-20 10:29+0100\n"
+"PO-Revision-Date: 2026-02-20 10:30+0100\n"
 "Last-Translator: Gemini AI\n"
 "Language-Team: English\n"
 "Language: en\n"
@@ -318,13 +318,17 @@ msgstr "Newsletter subscribers"
 msgid ""
 "Votre message a été envoyé avec succès. Nous vous contacterons dans les plus "
 "brefs délais."
-msgstr "Your message has been sent successfully. We will contact you as soon as possible."
+msgstr ""
+"Your message has been sent successfully. We will contact you as soon as "
+"possible."
 
 #: .\contact\views.py:34
 msgid ""
 "Votre demande a été enregistrée. Un conseiller vous contactera prochainement "
 "pour fixer un rendez-vous."
-msgstr "Your request has been recorded. An advisor will contact you shortly to schedule an appointment."
+msgstr ""
+"Your request has been recorded. An advisor will contact you shortly to "
+"schedule an appointment."
 
 #: .\pages\models.py:17 .\templates\blog\list.html:100
 msgid "Page"
@@ -367,7 +371,7 @@ msgstr "Display order"
 msgid "Partenaire"
 msgstr "Partner"
 
-#: .\pages\models.py:44 .\templates\base.html:150 .\templates\base.html:195
+#: .\pages\models.py:44 .\templates\base.html:130
 msgid "Partenaires"
 msgstr "Partners"
 
@@ -435,7 +439,7 @@ msgstr "Active"
 msgid "Agence"
 msgstr "Branch"
 
-#: .\pages\models.py:79 .\templates\base.html:152 .\templates\base.html:197
+#: .\pages\models.py:79 .\templates\base.html:132
 msgid "Agences"
 msgstr "Branches"
 
@@ -511,102 +515,54 @@ msgstr "Photo"
 msgid "Témoignages"
 msgstr "Testimonials"
 
-#: .\templates\base.html:124 .\templates\base.html:189
+#: .\templates\base.html:104 .\templates\base.html:165
 msgid "Accueil"
 msgstr "Home"
 
-#: .\templates\base.html:127
+#: .\templates\base.html:107
 msgid "À propos"
 msgstr "About"
 
-#: .\templates\base.html:133 .\templates\base.html:190
-#: .\templates\base.html:227 .\templates\pages\about.html:5
+#: .\templates\base.html:113 .\templates\pages\about.html:5
 #: .\templates\pages\about.html:14
 msgid "Qui sommes-nous"
 msgstr "Who we are"
 
-#: .\templates\base.html:134 .\templates\base.html:191
-#: .\templates\base.html:228
+#: .\templates\base.html:114
 msgid "Gouvernance"
 msgstr "Governance"
 
-#: .\templates\base.html:139 .\templates\base.html:237
+#: .\templates\base.html:119
 msgid "Services"
 msgstr "Services"
 
-#: .\templates\base.html:145 .\templates\base.html:192
-#: .\templates\base.html:229 .\templates\home.html:251
+#: .\templates\base.html:125 .\templates\home.html:251
 #: .\templates\pages\savings.html:5 .\templates\pages\savings.html:14
 msgid "Comptes & Épargne"
 msgstr "Accounts & Savings"
 
-#: .\templates\base.html:146 .\templates\base.html:193
-#: .\templates\base.html:230 .\templates\home.html:301
+#: .\templates\base.html:126 .\templates\home.html:301
 #: .\templates\pages\financing.html:5 .\templates\pages\financing.html:14
 msgid "Solutions de financement"
 msgstr "Financing solutions"
 
-#: .\templates\base.html:149 .\templates\base.html:194
-#: .\templates\base.html:239 .\templates\pages\impact.html:5
+#: .\templates\base.html:129 .\templates\pages\impact.html:5
 msgid "Notre impact"
 msgstr "Our impact"
 
-#: .\templates\base.html:151 .\templates\base.html:196
-#: .\templates\base.html:241 .\templates\blog\detail.html:14
+#: .\templates\base.html:131 .\templates\blog\detail.html:14
 msgid "Actualités"
 msgstr "News"
 
-#: .\templates\base.html:158 .\templates\base.html:198
-#: .\templates\base.html:243 .\templates\contact\become_client.html:5
+#: .\templates\base.html:137 .\templates\base.html:170
+#: .\templates\contact\become_client.html:5
 #: .\templates\contact\become_client.html:13 .\templates\home.html:32
 msgid "Devenir client"
 msgstr "Become a client"
 
-#: .\templates\base.html:216
-msgid "Institution de microfinance de première catégorie."
-msgstr "First category microfinance institution."
-
-#: .\templates\base.html:219 .\templates\home.html:21
-msgid "La finance qui crée de la valeur partagée"
-msgstr "Finance that creates shared value"
-
-#: .\templates\base.html:225
-msgid "Liens rapides"
-msgstr "Quick links"
-
-#: .\templates\base.html:231
-msgid "Protection client"
-msgstr "Client protection"
-
-#: .\templates\base.html:240 .\templates\pages\partners.html:5
-msgid "Nos partenaires"
-msgstr "Our partners"
-
-#: .\templates\base.html:242
-msgid "Nos agences"
-msgstr "Our branches"
-
-#: .\templates\base.html:249
-msgid "Contact"
-msgstr "Contact"
-
-#: .\templates\base.html:276
+#: .\templates\base.html:181
 msgid "Tous droits réservés."
 msgstr "All rights reserved."
-
-#: .\templates\base.html:278 .\templates\pages\privacy.html:5
-#: .\templates\pages\privacy.html:11
-msgid "Politique de confidentialité"
-msgstr "Privacy policy"
-
-#: .\templates\base.html:280 .\templates\pages\terms.html:5
-#: .\templates\pages\terms.html:11
-msgid "Conditions d'utilisation"
-msgstr "Terms of use"
-
-#: .\templates\base.html:282
-msgid "Conformité"
-msgstr "Compliance"
 
 #: .\templates\blog\detail.html:28
 msgid "min de lecture"
@@ -647,7 +603,9 @@ msgstr "News & Financial advice"
 msgid ""
 "Conseils en gestion budgétaire, compréhension du crédit, préparation de "
 "projet et épargne par Win Win Capital."
-msgstr "Advice on budget management, understanding credit, project preparation and savings by Win Win Capital."
+msgstr ""
+"Advice on budget management, understanding credit, project preparation and "
+"savings by Win Win Capital."
 
 #: .\templates\blog\list.html:12
 msgid "Blog pédagogique"
@@ -685,7 +643,9 @@ msgstr "No articles available at the moment."
 msgid ""
 "Rejoignez Win Win Capital. Ouvrez votre compte et bénéficiez de nos services "
 "financiers responsables."
-msgstr "Join Win Win Capital. Open your account and benefit from our responsible financial services."
+msgstr ""
+"Join Win Win Capital. Open your account and benefit from our responsible "
+"financial services."
 
 #: .\templates\contact\become_client.html:12
 msgid "Rejoindre Win Win Capital"
@@ -695,7 +655,9 @@ msgstr "Join Win Win Capital"
 msgid ""
 "L'ouverture de compte se fait uniquement en agence afin de garantir la "
 "sécurité juridique de chaque client."
-msgstr "Account opening is only done in branches to guarantee the legal security of each client."
+msgstr ""
+"Account opening is only done in branches to guarantee the legal security of "
+"each client."
 
 #: .\templates\contact\become_client.html:30
 msgid "Comment ça marche"
@@ -721,7 +683,8 @@ msgstr "An advisor will contact you"
 msgid ""
 "Notre équipe vous rappelle pour prendre rendez-vous dans l'agence la plus "
 "proche."
-msgstr "Our team will call you back to make an appointment at the nearest branch."
+msgstr ""
+"Our team will call you back to schedule an appointment at the nearest branch."
 
 #: .\templates\contact\become_client.html:51
 msgid "Rendez-vous en agence"
@@ -730,7 +693,8 @@ msgstr "In-branch appointment"
 #: .\templates\contact\become_client.html:52
 msgid ""
 "Finalisation du dossier avec les pièces requises et ouverture officielle."
-msgstr "Finalization of the file with required documents and official opening."
+msgstr ""
+"Finalization of the file with the required documents and official opening."
 
 #: .\templates\contact\become_client.html:57
 msgid "Pièces généralement requises :"
@@ -738,7 +702,7 @@ msgstr "Generally required documents:"
 
 #: .\templates\contact\become_client.html:57
 msgid "Pièce d'identité valide, justificatif de domicile, photo d'identité."
-msgstr "Valid ID, proof of address, ID photo."
+msgstr "Valid identity card, proof of address, identity photo."
 
 #: .\templates\contact\become_client.html:102
 #: .\templates\contact\contact.html:107
@@ -763,7 +727,8 @@ msgstr "Contact us"
 msgid ""
 "Contactez Win Win Capital. Nous répondons à toutes vos questions dans les "
 "plus brefs délais."
-msgstr "Contact Win Win Capital. We answer all your questions as soon as possible."
+msgstr ""
+"Contact Win Win Capital. We answer all your questions as soon as possible."
 
 #: .\templates\contact\contact.html:12
 msgid "Nous contacter"
@@ -771,7 +736,7 @@ msgstr "Contact us"
 
 #: .\templates\contact\contact.html:31
 msgid "Informations de contact"
-msgstr "Contact information"
+msgstr "Contact Information"
 
 #: .\templates\contact\contact.html:32
 msgid "Nous sommes là pour vous"
@@ -781,17 +746,17 @@ msgstr "We are here for you"
 #: .\templates\pages\agencies.html:75 .\templates\pages\agencies.html:96
 #: .\templates\pages\agencies.html:117
 msgid "Horaires"
-msgstr "Hours"
+msgstr "Opening Hours"
 
 #: .\templates\contact\contact.html:59 .\templates\pages\agencies.html:75
 #: .\templates\pages\agencies.html:96 .\templates\pages\agencies.html:117
 msgid "Lun–Ven : 8h00 – 17h00"
-msgstr "Mon–Fri: 8:00 AM – 5:00 PM"
+msgstr "Mon-Fri: 8:00 AM - 5:00 PM"
 
 #: .\templates\contact\contact.html:59 .\templates\pages\agencies.html:75
 #: .\templates\pages\agencies.html:96 .\templates\pages\agencies.html:117
 msgid "Sam : 8h30 – 12h30"
-msgstr "Sat: 8:30 AM – 12:30 PM"
+msgstr "Sat: 8:30 AM - 12:30 PM"
 
 #: .\templates\contact\contact.html:64
 msgid "Temps de réponse :"
@@ -801,7 +766,8 @@ msgstr "Response time:"
 msgid ""
 "Nous nous engageons à répondre à toutes vos demandes dans un délai de 48h "
 "ouvrables."
-msgstr "We are committed to answering all your requests within 48 business hours."
+msgstr ""
+"We are committed to answering all your requests within 48 business hours."
 
 #: .\templates\contact\contact.html:70
 msgid "Envoyer un message"
@@ -827,7 +793,9 @@ msgstr "Your request has been sent!"
 msgid ""
 "Merci de nous avoir contactés. Un conseiller de Win Win Capital vous "
 "recontactera dans les plus brefs délais pour donner suite à votre demande."
-msgstr "Thank you for contacting us. A Win Win Capital advisor will contact you as soon as possible to follow up on your request."
+msgstr ""
+"Thank you for contacting us. A Win Win Capital advisor will contact you as "
+"soon as possible to follow up on your request."
 
 #: .\templates\contact\success.html:32
 msgid "Délai de réponse : 24 à 48h ouvrables"
@@ -835,7 +803,7 @@ msgstr "Response time: 24 to 48 business hours"
 
 #: .\templates\contact\success.html:38
 msgid "Retour à l'accueil"
-msgstr "Back to home"
+msgstr "Return to home"
 
 #: .\templates\contact\success.html:39
 msgid "Voir nos agences"
@@ -849,16 +817,23 @@ msgstr "Need an urgent answer?"
 msgid "Appelez-nous directement"
 msgstr "Call us directly"
 
+#: .\templates\home.html:21
+msgid "La finance qui crée de la valeur partagée"
+msgstr "Finance that creates shared value"
+
 #: .\templates\home.html:24
 msgid ""
 "Institution de microfinance de première catégorie, Win Win Capital "
 "accompagne particuliers, entrepreneurs et organisations dans la sécurisation "
 "de leur épargne et le financement responsable de leurs projets."
-msgstr "A first category microfinance institution, Win Win Capital supports individuals, entrepreneurs, and organizations in securing their savings and the responsible financing of their projects."
+msgstr ""
+"A first-class microfinance institution, Win Win Capital supports "
+"individuals, entrepreneurs and organizations in securing their savings and "
+"responsible financing of their projects."
 
 #: .\templates\home.html:27
 msgid "Une finance utile doit être stable, compréhensible et durable."
-msgstr "Useful finance must be stable, understandable, and sustainable."
+msgstr "Useful finance must be stable, understandable and sustainable."
 
 #: .\templates\home.html:35
 msgid "Découvrir Win Win"
@@ -878,7 +853,7 @@ msgstr "Prudent management"
 
 #: .\templates\home.html:68
 msgid "Protection des déposants garantie"
-msgstr "Guaranteed depositor protection"
+msgstr "Guaranteed protection of depositors"
 
 #: .\templates\home.html:77
 msgid "Approche responsable"
@@ -906,21 +881,21 @@ msgstr "Serving economic development and financial inclusion"
 
 #: .\templates\home.html:112
 msgid "Sécuriser l'épargne"
-msgstr "Securing savings"
+msgstr "Secure savings"
 
 #: .\templates\home.html:113
 msgid ""
 "Protection et valorisation de votre capital avec des produits d'épargne "
 "adaptés."
-msgstr "Protection and enhancement of your capital with adapted savings products."
+msgstr "Protection and growth of your capital with adapted savings products."
 
 #: .\templates\home.html:122
 msgid "Faciliter le financement"
-msgstr "Facilitating financing"
+msgstr "Facilitate financing"
 
 #: .\templates\home.html:123
 msgid "Crédits responsables pour vos projets personnels et professionnels."
-msgstr "Responsible loans for your personal and professional projects."
+msgstr "Responsible credits for your personal and professional projects."
 
 #: .\templates\home.html:132
 msgid "Structurer les flux"
@@ -932,7 +907,7 @@ msgstr "Professional management of transactions and financial operations."
 
 #: .\templates\home.html:142
 msgid "Soutenir l'économie"
-msgstr "Supporting the economy"
+msgstr "Support the economy"
 
 #: .\templates\home.html:143
 msgid "Contribution active au développement de l'économie réelle."
@@ -946,7 +921,9 @@ msgstr "Structured governance"
 msgid ""
 "Notre organisation interne repose sur plusieurs organes indépendants "
 "assurant la protection des déposants et la transparence de notre gestion."
-msgstr "Our internal organization is based on several independent bodies ensuring depositor protection and transparency of our management."
+msgstr ""
+"Our internal organization is based on several independent bodies ensuring "
+"depositor protection and transparency of our management."
 
 #: .\templates\home.html:167 .\templates\pages\governance.html:46
 msgid "Conseil d'Administration"
@@ -992,7 +969,9 @@ msgstr "Organizational principle"
 msgid ""
 "Séparation stricte entre décision, exécution et contrôle afin de limiter les "
 "risques et garantir la protection des intérêts de nos clients."
-msgstr "Strict separation between decision, execution, and control to limit risks and guarantee the protection of our clients' interests."
+msgstr ""
+"Strict separation between decision, execution and control in order to limit "
+"risks and guarantee the protection of our clients' interests."
 
 #: .\templates\home.html:223
 msgid "Sécurité • Croissance • Durabilité"
@@ -1006,13 +985,16 @@ msgstr "Our financial solutions"
 msgid ""
 "Des produits adaptés à vos besoins, conçus pour votre sécurité et votre "
 "développement"
-msgstr "Products adapted to your needs, designed for your security and development"
+msgstr ""
+"Products adapted to your needs, designed for your security and development"
 
 #: .\templates\home.html:254
 msgid ""
 "L'épargne constitue la base de la stabilité financière. Découvrez nos "
 "différents comptes adaptés à vos objectifs."
-msgstr "Savings form the basis of financial stability. Discover our various accounts adapted to your goals."
+msgstr ""
+"Savings form the basis of financial stability. Discover our different "
+"accounts adapted to your goals."
 
 #: .\templates\home.html:261
 msgid "Compte courant"
@@ -1032,13 +1014,15 @@ msgstr "SME account"
 
 #: .\templates\home.html:283
 msgid "Découvrir nos comptes"
-msgstr "Discover our accounts"
+msgstr "Explore our accounts"
 
 #: .\templates\home.html:304
 msgid ""
 "Le crédit est un outil de développement lorsqu'il reste compatible avec "
 "votre capacité de remboursement."
-msgstr "Credit is a development tool when it remains compatible with your repayment capacity."
+msgstr ""
+"Credit is a development tool when it remains compatible with your repayment "
+"capacity."
 
 #: .\templates\home.html:311
 msgid "Crédit personnel"
@@ -1066,8 +1050,10 @@ msgstr "Ready to start?"
 
 #: .\templates\home.html:349
 msgid ""
-"Rejoignez Win Win Capital and build your financial future with a trusted partner."
-msgstr "Join Win Win Capital and build your financial future with a trusted partner."
+"Rejoignez Win Win Capital et construisez votre avenir financier avec un "
+"partenaire de confiance."
+msgstr ""
+"Join Win Win Capital and build your financial future with a trusted partner."
 
 #: .\templates\home.html:357
 msgid "Trouver une agence"
@@ -1081,7 +1067,9 @@ msgstr "Download presentation"
 msgid ""
 "Découvrez l'histoire, les valeurs et la vision de Win Win Capital, "
 "institution de microfinance de première catégorie."
-msgstr "Discover the history, values, and vision of Win Win Capital, a first category microfinance institution."
+msgstr ""
+"Discover the history, values and vision of Win Win Capital, a first-class "
+"microfinance institution."
 
 #: .\templates\pages\about.html:13
 msgid "Notre identité"
@@ -1096,13 +1084,17 @@ msgid ""
 "Win Win Capital est une institution de microfinance de première catégorie "
 "destinée aux particuliers, entrepreneurs et organisations recherchant un "
 "partenaire financier durable."
-msgstr "Win Win Capital is a first category microfinance institution intended for individuals, entrepreneurs, and organizations looking for a sustainable financial partner."
+msgstr ""
+"Win Win Capital is a first-class microfinance institution for individuals, "
+"entrepreneurs and organizations seeking a sustainable financial partner."
 
 #: .\templates\pages\about.html:31
 msgid ""
 "Fondée sur une conviction simple et exigeante : une finance performante doit "
 "être rentable, responsable et utile à l'économie."
-msgstr "Founded on a simple and demanding conviction: performing finance must be profitable, responsible, and useful to the economy."
+msgstr ""
+"Founded on a simple and demanding conviction: performing finance must be "
+"profitable, responsible and useful to the economy."
 
 #: .\templates\pages\about.html:34
 msgid "Notre vision"
@@ -1112,7 +1104,9 @@ msgstr "Our vision"
 msgid ""
 "Devenir une institution financière de référence en Afrique centrale reconnue "
 "pour sa solidité et son impact."
-msgstr "Become a reference financial institution in Central Africa recognized for its solidity and impact."
+msgstr ""
+"To become a reference financial institution in Central Africa recognized for "
+"its solidity and impact."
 
 #: .\templates\pages\about.html:40
 msgid "Notre positionnement"
@@ -1120,7 +1114,7 @@ msgstr "Our positioning"
 
 #: .\templates\pages\about.html:41
 msgid "Partenaire financier durable — pas acteur opportuniste du crédit."
-msgstr "Sustainable financial partner — not an opportunistic credit actor."
+msgstr "Sustainable financial partner — not an opportunistic credit player."
 
 #: .\templates\pages\about.html:47
 msgid "Nos valeurs"
@@ -1134,7 +1128,8 @@ msgstr "Trust"
 msgid ""
 "Transparence totale et respect rigoureux de nos engagements envers chaque "
 "client."
-msgstr "Total transparency and rigorous respect for our commitments to each client."
+msgstr ""
+"Total transparency and rigorous respect for our commitments to each client."
 
 #: .\templates\pages\about.html:54
 msgid "Équité"
@@ -1150,7 +1145,7 @@ msgstr "Responsibility"
 
 #: .\templates\pages\about.html:59
 msgid "Gestion prudente, conformité réglementaire et protection des déposants."
-msgstr "Prudent management, regulatory compliance, and depositor protection."
+msgstr "Prudent management, regulatory compliance and depositor protection."
 
 #: .\templates\pages\about.html:62
 msgid "Proximité"
@@ -1176,7 +1171,7 @@ msgstr "What we do"
 
 #: .\templates\pages\about.html:80
 msgid "Nos missions fondamentales"
-msgstr "Our fundamental missions"
+msgstr "Our core missions"
 
 #: .\templates\pages\about.html:88
 msgid "Inclusion financière"
@@ -1184,7 +1179,7 @@ msgstr "Financial inclusion"
 
 #: .\templates\pages\about.html:89
 msgid "Rendre les services financiers accessibles au plus grand nombre"
-msgstr "Making financial services accessible to as many people as possible"
+msgstr "Make financial services accessible to as many people as possible"
 
 #: .\templates\pages\about.html:95
 msgid "Sécurisation de l'épargne"
@@ -1192,7 +1187,7 @@ msgstr "Securing savings"
 
 #: .\templates\pages\about.html:96
 msgid "Protection et valorisation des dépôts de nos clients"
-msgstr "Protection and enhancement of our clients' deposits"
+msgstr "Protection and growth of our clients' deposits"
 
 #: .\templates\pages\about.html:102
 msgid "Financement productif"
@@ -1200,7 +1195,7 @@ msgstr "Productive financing"
 
 #: .\templates\pages\about.html:103
 msgid "Soutien aux activités économiques créatrices de valeur"
-msgstr "Support for economic activities that create value"
+msgstr "Support for value-creating economic activities"
 
 #: .\templates\pages\about.html:109
 msgid "Accompagnement durable"
@@ -1212,13 +1207,15 @@ msgstr "Long-term monitoring and advice for each client"
 
 #: .\templates\pages\agencies.html:5 .\templates\pages\agencies.html:13
 msgid "Agences & Contacts"
-msgstr "Branches & Contacts"
+msgstr "Agencies & Contacts"
 
 #: .\templates\pages\agencies.html:6
 msgid ""
 "Trouvez l'agence Win Win Capital la plus proche. Adresses, horaires, "
 "téléphone, email et WhatsApp."
-msgstr "Find the nearest Win Win Capital branch. Addresses, hours, phone, email, and WhatsApp."
+msgstr ""
+"Find the nearest Win Win Capital agency. Addresses, schedules, phone, email "
+"and WhatsApp."
 
 #: .\templates\pages\agencies.html:12
 msgid "Présence locale"
@@ -1235,7 +1232,7 @@ msgstr "BRANCH"
 
 #: .\templates\pages\agencies.html:134
 msgid "Contact général"
-msgstr "General contact"
+msgstr "General Contact"
 
 #: .\templates\pages\agencies.html:136
 msgid "EMAIL"
@@ -1251,21 +1248,23 @@ msgstr "WEBSITE"
 
 #: .\templates\pages\compliance.html:5 .\templates\pages\compliance.html:13
 msgid "Protection client & Conformité"
-msgstr "Client protection & Compliance"
+msgstr "Customer Protection & Compliance"
 
 #: .\templates\pages\compliance.html:6
 msgid ""
 "Politique de protection des clients, conformité réglementaire, crédit "
 "responsable et procédure de réclamation."
-msgstr "Client protection policy, regulatory compliance, responsible credit, and complaint procedure."
+msgstr ""
+"Customer protection policy, regulatory compliance, responsible credit and "
+"complaint procedure."
 
 #: .\templates\pages\compliance.html:12
 msgid "Engagement client"
-msgstr "Client engagement"
+msgstr "Customer engagement"
 
 #: .\templates\pages\compliance.html:26
 msgid "Confidentialité des données"
-msgstr "Data confidentiality"
+msgstr "Data privacy"
 
 #: .\templates\pages\compliance.html:27
 msgid ""
@@ -1273,18 +1272,24 @@ msgid ""
 "confidentielles et ne sont jamais transmises à des tiers sans consentement "
 "explicite. Nous respectons les réglementations en vigueur sur la protection "
 "des données personnelles."
-msgstr "All personal information of our clients is strictly confidential and is never transmitted to third parties without explicit consent. We respect the current regulations on personal data protection."
+msgstr ""
+"All personal information of our clients is strictly confidential and is "
+"never transmitted to third parties without explicit consent. We respect "
+"current regulations on the protection of personal data."
 
 #: .\templates\pages\compliance.html:36
 msgid "Protection des déposants"
-msgstr "Depositor protection"
+msgstr "Protection of depositors"
 
 #: .\templates\pages\compliance.html:37
 msgid ""
 "La sécurité de votre épargne est notre priorité absolue. Nos organes de "
 "surveillance et d'audit veillent en permanence à la solidité financière de "
 "l'institution et à la protection des fonds déposés."
-msgstr "The security of your savings is our absolute priority. Our supervisory and audit bodies constantly monitor the financial stability of the institution and the protection of deposited funds."
+msgstr ""
+"The security of your savings is our top priority. Our supervisory and audit "
+"bodies constantly monitor the financial strength of the institution and the "
+"protection of deposited funds."
 
 #: .\templates\pages\compliance.html:46
 msgid "Crédit responsable"
@@ -1295,7 +1300,10 @@ msgid ""
 "Nous n'octroyons jamais un crédit qui dépasse la capacité de remboursement "
 "réelle du client. Notre politique de prévention du surendettement est au "
 "cœur de nos pratiques de financement."
-msgstr "We never grant a loan that exceeds the client's actual repayment capacity. Our policy for preventing over-indebtedness is at the heart of our financing practices."
+msgstr ""
+"We never grant credit that exceeds the client's actual repayment capacity. "
+"Our over-indebtedness prevention policy is at the heart of our financing "
+"practices."
 
 #: .\templates\pages\compliance.html:56
 msgid "Procédure de réclamation"
@@ -1306,7 +1314,10 @@ msgid ""
 "Tout client insatisfait peut déposer une réclamation formelle auprès de "
 "notre service client ou directement auprès du Comité de Surveillance. Chaque "
 "réclamation est traitée dans un délai de 5 jours ouvrables."
-msgstr "Any dissatisfied client can file a formal complaint with our customer service or directly with the Supervisory Committee. Each complaint is processed within 5 business days."
+msgstr ""
+"Any dissatisfied client can file a formal complaint with our customer "
+"service or directly with the Supervisory Committee. Each complaint is "
+"processed within 5 working days."
 
 #: .\templates\pages\compliance.html:58
 msgid "Déposer une réclamation"
@@ -1321,76 +1332,106 @@ msgid ""
 "Win Win Capital opère en conformité totale avec la réglementation des "
 "institutions de microfinance en vigueur au Gabon et dans la zone CEMAC. Nous "
 "faisons l'objet de contrôles réguliers par les autorités compétentes."
-msgstr "Win Win Capital operates in full compliance with the microfinance institution regulations in force in Gabon and the CEMAC zone. We are subject to regular controls by the competent authorities."
+msgstr ""
+"Win Win Capital operates in full compliance with the microfinance "
+"institutions regulations in force in Gabon and the CEMAC zone. We are "
+"subject to regular inspections by the competent authorities."
 
 #: .\templates\pages\financing.html:6
 msgid ""
 "Crédit personnel, scolaire et PME. Découvrez nos solutions de financement "
 "responsable adaptées à votre capacité de remboursement."
-msgstr "Personal, school, and SME credit. Discover our responsible financing solutions adapted to your repayment capacity."
+msgstr ""
+"Personal, school and SME credit. Discover our responsible financing "
+"solutions adapted to your repayment capacity."
 
 #: .\templates\pages\financing.html:13
 msgid "Crédits responsables"
-msgstr "Responsible loans"
+msgstr "Responsible credits"
 
 #: .\templates\pages\financing.html:16
+#, fuzzy
+#| msgid ""
+#| "Le crédit est un outil de développement lorsqu'il reste compatible avec "
+#| "votre capacité de remboursement."
 msgid ""
 "Le crédit est un outil de développement lorsqu'il reste compatible avec la "
 "capacité de remboursement."
-msgstr "Credit is a development tool when it remains compatible with repayment capacity."
+msgstr ""
+"Credit is a development tool when it remains compatible with your repayment "
+"capacity."
 
 #: .\templates\pages\financing.html:32 .\templates\pages\financing.html:49
 #: .\templates\pages\financing.html:60 .\templates\pages\financing.html:71
 msgid "Faire une demande"
-msgstr "Make a request"
+msgstr "Submit a request"
 
 #: .\templates\pages\financing.html:47
+#, fuzzy
+#| msgid "Crédit personnel"
 msgid "Crédit Personnel"
-msgstr "Personal Loan"
+msgstr "Personal loan"
 
 #: .\templates\pages\financing.html:48
 msgid ""
 "Financement de vos projets personnels avec des conditions adaptées à vos "
 "revenus et à votre situation."
-msgstr "Financing for your personal projects with conditions adapted to your income and situation."
+msgstr ""
+"Financing for your personal projects with terms tailored to your income "
+"and personal circumstances."
 
 #: .\templates\pages\financing.html:58
+#, fuzzy
+#| msgid "Crédit scolaire"
 msgid "Crédit Scolaire"
-msgstr "School Loan"
+msgstr "School loan"
 
 #: .\templates\pages\financing.html:59
 msgid ""
 "Accès facilité à l'éducation grâce à un financement dédié pour les frais de "
 "scolarité de vos enfants."
-msgstr "Facilitated access to education thanks to dedicated financing for your children's school fees."
+msgstr ""
+"Easier access to education through dedicated financing for your children's "
+"school fees."
 
 #: .\templates\pages\financing.html:69
+#, fuzzy
+#| msgid "Crédit activité / PME"
 msgid "Crédit PME"
-msgstr "SME Loan"
+msgstr "Business / SME loan"
 
 #: .\templates\pages\financing.html:70
 msgid ""
 "Soutien au développement de votre activité entrepreneuriale avec un "
 "accompagnement personnalisé."
-msgstr "Support for the development of your entrepreneurial activity with personalized accompaniment."
-
+msgstr ""
+"Supporting the development of your entrepreneurial activity with "
+"personalized guidance."
 #: .\templates\pages\financing.html:81
+#, fuzzy
+#| msgid "Notre positionnement"
 msgid "Notre politique"
-msgstr "Our policy"
+msgstr "Our positioning"
 
 #: .\templates\pages\financing.html:82
 msgid "Une politique d'octroi responsable"
-msgstr "A responsible granting policy"
+msgstr "A responsible lending policy"
 
 #: .\templates\pages\financing.html:84
+#, fuzzy
+#| msgid ""
+#| "Crédit personnel, scolaire et PME. Découvrez nos solutions de financement "
+#| "responsable adaptées à votre capacité de remboursement."
 msgid ""
 "Nous analysons chaque demande avec rigueur pour vous proposer un financement "
 "réellement adapté à votre capacité de remboursement."
-msgstr "We analyze each request rigorously to offer you financing truly adapted to your repayment capacity."
+msgstr ""
+"Personal, school and SME credit. Discover our responsible financing "
+"solutions adapted to your repayment capacity."
 
 #: .\templates\pages\financing.html:90
 msgid "Étude rigoureuse de votre situation financière réelle"
-msgstr "Rigorous study of your actual financial situation"
+msgstr "A thorough assessment of your actual financial situation"
 
 #: .\templates\pages\financing.html:94
 msgid "Stabilité des revenus"
@@ -1401,16 +1442,18 @@ msgid "Vérification de la régularité des revenus"
 msgstr "Verification of income regularity"
 
 #: .\templates\pages\financing.html:99
+#, fuzzy
+#| msgid "Partenaire économique"
 msgid "Utilité économique"
-msgstr "Economic utility"
+msgstr "Economic partner"
 
 #: .\templates\pages\financing.html:100
 msgid "Évaluation de la valeur réelle du projet"
-msgstr "Evaluation of the actual project value"
+msgstr "Assessment of the project's actual value"
 
 #: .\templates\pages\financing.html:104
 msgid "Anti-surendettement"
-msgstr "Anti-overindebtedness"
+msgstr "Debt Prevention"
 
 #: .\templates\pages\financing.html:105
 msgid "Protection systématique contre l'accumulation des dettes"
@@ -1418,29 +1461,616 @@ msgstr "Systematic protection against debt accumulation"
 
 #: .\templates\pages\governance.html:5 .\templates\pages\governance.html:14
 msgid "Gouvernance & Organes de gestion"
-msgstr "Governance & Management bodies"
+msgstr "Governance & Management Bodies"
 
 #: .\templates\pages\governance.html:6
 msgid ""
 "Découvrez les organes de gouvernance de Win Win Capital : Conseil "
 "d'Administration, Comité de Crédit, Comité de Surveillance et Comité d'Audit."
-msgstr "Discover the governance bodies of Win Win Capital: Board of Directors, Credit Committee, Supervisory Committee, and Audit Committee."
+msgstr ""
+"Discover Win Win Capital's governance bodies: Board of Directors, "
+"Credit Committee, Supervisory Committee, and Audit Committee."
 
 #: .\templates\pages\governance.html:13
 msgid "Organisation institutionnelle"
-msgstr "Institutional organization"
+msgstr "Institutional Organization"
 
 #: .\templates\pages\governance.html:16
 msgid ""
 "La solidité d'une institution financière repose sur une séparation claire "
 "entre décision, gestion et contrôle."
-msgstr "The solidity of a financial institution rests on a clear separation between decision, management, and control."
+msgstr ""
+"The stability of a financial institution relies on a clear separation "
+"between decision-making, management, and oversight."
 
 #: .\templates\pages\governance.html:27
 msgid "Séparation stricte entre décision, exécution et contrôle"
-msgstr "Strict separation between decision, execution, and control"
+msgstr "Strict separation of decision-making, execution, and oversight"
 
 #: .\templates\pages\governance.html:28
+#, fuzzy
+#| msgid ""
+#| "Notre organisation interne repose sur plusieurs organes indépendants "
+#| "assurant la protection des déposants et la transparence de notre gestion."
 msgid ""
-"Notre organisation interne repose sur plusieurs organes indépendant"
-msgstr "Our internal organization is based on several independent bodies"
+"Notre organisation interne repose sur plusieurs organes indépendants "
+"assurant la protection des déposants et la transparence de la gestion."
+msgstr ""
+"Our internal organization is based on several independent bodies ensuring "
+"depositor protection and transparency of our management."
+
+#: .\templates\pages\governance.html:45
+msgid "ORGANE 01"
+msgstr "BODY 01"
+
+#: .\templates\pages\governance.html:48
+msgid ""
+"Définit la stratégie globale de l'institution et supervise les orientations "
+"de la direction générale. Garant de la vision à long terme."
+msgstr ""
+"Defines the institution's global strategy and oversees the general "
+"management's orientations. Ensuring a long-term vision."
+
+#: .\templates\pages\governance.html:50
+#, fuzzy
+#| msgid "Définition de la stratégie et supervision"
+msgid "Définition de la stratégie institutionnelle"
+msgstr "Strategy definition and supervision"
+
+#: .\templates\pages\governance.html:51
+msgid "Supervision de la direction générale"
+msgstr "Oversight of Executive Management"
+
+#: .\templates\pages\governance.html:52
+msgid "Approbation des grandes orientations"
+msgstr "Approval of strategic orientations"
+
+#: .\templates\pages\governance.html:65
+msgid "ORGANE 02"
+msgstr "BODY 02"
+
+#: .\templates\pages\governance.html:68
+msgid ""
+"Analyse et autorise les engagements financiers. Peut refuser un financement "
+"dans l'intérêt du client."
+msgstr ""
+"Analyzes and authorizes financial commitments. May refuse financing "
+"in the client's best interest."
+
+#: .\templates\pages\governance.html:70
+#, fuzzy
+#| msgid "Analyse et validation des engagements"
+msgid "Analyse des demandes de financement"
+msgstr "Analysis and validation of commitments"
+
+#: .\templates\pages\governance.html:71
+msgid "Évaluation de la capacité de remboursement"
+msgstr "Repayment capacity assessment"
+
+#: .\templates\pages\governance.html:72
+msgid "Protection contre le surendettement"
+msgstr "Prevention of over-indebtedness"
+
+#: .\templates\pages\governance.html:85
+msgid "ORGANE 03"
+msgstr "BODY 03"
+
+#: .\templates\pages\governance.html:88
+msgid ""
+"Contrôle permanent du respect des procédures internes et protection des "
+"déposants en toutes circonstances."
+msgstr ""
+"Continuous monitoring of internal procedures compliance and depositor "
+"protection under all circumstances."
+
+#: .\templates\pages\governance.html:90
+msgid "Contrôle continu des procédures"
+msgstr "Continuous control of procedures"
+
+#: .\templates\pages\governance.html:91
+#, fuzzy
+#| msgid "Protection des déposants"
+msgid "Protection des intérêts des déposants"
+msgstr "Protection of depositors"
+
+#: .\templates\pages\governance.html:92
+msgid "Conformité opérationnelle permanente"
+msgstr "Ongoing operational compliance"
+
+#: .\templates\pages\governance.html:105
+msgid "ORGANE 04"
+msgstr "BODY 04"
+
+#: .\templates\pages\governance.html:108
+msgid ""
+"Vérification indépendante de la gestion financière et validation de la "
+"fiabilité des informations comptables."
+msgstr ""
+"Independent verification of financial management and validation of the "
+"reliability of accounting information."
+
+#: .\templates\pages\governance.html:110
+#, fuzzy
+#| msgid "Vérification indépendante"
+msgid "Vérification indépendante de la gestion"
+msgstr "Independent verification"
+
+#: .\templates\pages\governance.html:111
+#, fuzzy
+#| msgid "Nos solutions financières"
+msgid "Validation des informations financières"
+msgstr "Our financial solutions"
+
+#: .\templates\pages\governance.html:112
+msgid "Contrôle des états comptables"
+msgstr "Audit of financial statements"
+
+#: .\templates\pages\impact.html:6
+msgid ""
+"Découvrez l'impact de Win Win Capital sur l'économie réelle : financement "
+"d'activités productives, accompagnement éducatif et soutien entrepreneurial."
+msgstr ""
+"Discover Win Win Capital's impact on the real economy: financing productive "
+"activities, educational guidance, and entrepreneurial support."
+
+#: .\templates\pages\impact.html:12
+msgid "Résultats concrets"
+msgstr "Tangible Results"
+
+#: .\templates\pages\impact.html:13
+#, fuzzy
+#| msgid "Soutenir l'économie"
+msgid "Notre impact sur l'économie réelle"
+msgstr "Support the economy"
+
+#: .\templates\pages\impact.html:22
+msgid ""
+"Le succès de l'institution dépend de la réussite durable de ses clients."
+msgstr "The institution's success depends on the sustainable success of its clients."
+
+#: .\templates\pages\impact.html:30
+msgid "CLIENTS ACCOMPAGNÉS"
+msgstr "SUPPORTED CLIENTS"
+
+#: .\templates\pages\impact.html:31
+msgid ""
+"Particuliers, entrepreneurs et organisations ayant bénéficié de nos services"
+msgstr "Individuals, entrepreneurs, and organizations who have benefited from our services"
+
+#: .\templates\pages\impact.html:35
+msgid "PROJETS ABOUTIS"
+msgstr "COMPLETED PROJECTS"
+
+#: .\templates\pages\impact.html:36
+msgid "Des projets financés qui ont atteint leurs objectifs économiques"
+msgstr "Financed projects that have achieved their economic objectives"
+
+#: .\templates\pages\impact.html:40
+#, fuzzy
+#| msgid "AGENCE PRINCIPALE"
+msgid "AGENCES ACTIVES"
+msgstr "MAIN BRANCH"
+
+#: .\templates\pages\impact.html:41
+msgid "Présence physique pour un accompagnement de proximité au Gabon"
+msgstr "A physical presence for local support in Gabon"
+
+#: .\templates\pages\impact.html:51
+msgid "Activités productives"
+msgstr "Productive activities"
+
+#: .\templates\pages\impact.html:52
+msgid ""
+"Financement de commerces, artisans et petites entreprises contribuant à "
+"l'économie locale gabonaise."
+msgstr ""
+"Financing for shops, artisans, and small businesses contributing to "
+"Gabon's local economy."
+
+#: .\templates\pages\impact.html:58
+#, fuzzy
+#| msgid "Accompagnement durable"
+msgid "Accompagnement éducatif"
+msgstr "Sustainable support"
+
+#: .\templates\pages\impact.html:59
+msgid ""
+"Soutien à la scolarisation et à la formation professionnelle pour investir "
+"dans le capital humain."
+msgstr ""
+"Supporting schooling and vocational training to invest in human capital."
+
+#: .\templates\pages\impact.html:65
+msgid "Soutien entrepreneurial"
+msgstr "Entrepreneurial Support"
+
+#: .\templates\pages\impact.html:66
+msgid ""
+"Accompagnement des porteurs de projets depuis l'idée jusqu'à la "
+"concrétisation commerciale."
+msgstr "Supporting project leads from the initial idea to commercial realization."
+
+#: .\templates\pages\partners.html:5
+#, fuzzy
+#| msgid "Partenaires"
+msgid "Nos partenaires"
+msgstr "Partners"
+
+#: .\templates\pages\partners.html:6
+msgid ""
+"Découvrez les partenaires financiers, académiques et économiques de Win Win "
+"Capital."
+msgstr ""
+"Discover Win Win Capital's financial, academic, and economic partners."
+
+#: .\templates\pages\partners.html:12
+msgid "Écosystème structuré"
+msgstr "Structured Ecosystem"
+
+#: .\templates\pages\partners.html:13
+#, fuzzy
+#| msgid "Partenaire académique"
+msgid "Nos partenaires stratégiques"
+msgstr "Academic partner"
+
+#: .\templates\pages\partners.html:15
+msgid ""
+"Win Win Capital s'inscrit dans un écosystème économique structuré et "
+"diversifié."
+msgstr ""
+"Win Win Capital operates within a structured and diversified economic "
+"ecosystem."
+
+#: .\templates\pages\partners.html:27
+msgid "SECTEUR FINANCIER"
+msgstr "FINANCIAL SECTOR"
+
+#: .\templates\pages\partners.html:28
+#, fuzzy
+#| msgid "Partenaire financier"
+msgid "Partenaires financiers"
+msgstr "Financial partners"
+
+#: .\templates\pages\partners.html:54
+msgid "ÉDUCATION & INSTITUTIONS"
+msgstr "EDUCATION & INSTITUTIONS"
+
+#: .\templates\pages\partners.html:55
+#, fuzzy
+#| msgid "Partenaire académique"
+msgid "Partenaires académiques et institutionnels"
+msgstr "Academic partner"
+
+#: .\templates\pages\partners.html:98
+msgid "FORMATION & EMPLOI"
+msgstr "TRAINING & EMPLOYMENT"
+
+#: .\templates\pages\partners.html:99
+#, fuzzy
+#| msgid "Formation & Employabilité"
+msgid "Partenaires formation & employabilité"
+msgstr "Training & Employability"
+
+#: .\templates\pages\partners.html:129
+msgid "ÉCONOMIE RÉELLE"
+msgstr "REAL ECONOMY"
+
+#: .\templates\pages\privacy.html:5 .\templates\pages\privacy.html:11
+#, fuzzy
+#| msgid "politique de confidentialité"
+msgid "Politique de confidentialité"
+msgstr "privacy policy"
+
+#: .\templates\pages\privacy.html:10
+#, fuzzy
+#| msgid "Crédit personnel"
+msgid "Données personnelles"
+msgstr "Personal loan"
+
+#: .\templates\pages\privacy.html:18
+#, fuzzy
+#| msgid "Confidentialité des données"
+msgid "1. Collecte des données"
+msgstr "Data privacy"
+
+#: .\templates\pages\privacy.html:19
+msgid ""
+"Win Win Capital collecte uniquement les données personnelles nécessaires à "
+"la fourniture de ses services financiers. Ces données incluent : nom, "
+"prénom, numéro de téléphone, adresse email et informations financières "
+"nécessaires à l'ouverture de compte ou à l'octroi de crédit."
+msgstr ""
+"Win Win Capital only collects the personal data necessary to provide its "
+"financial services. This data includes: last name, first name, phone "
+"number, email address, and financial information required for account "
+"opening or credit granting."
+
+#: .\templates\pages\privacy.html:21
+#, fuzzy
+#| msgid "Confidentialité des données"
+msgid "2. Utilisation des données"
+msgstr "Data privacy"
+
+#: .\templates\pages\privacy.html:22
+msgid ""
+"Vos données personnelles sont utilisées exclusivement pour : la gestion de "
+"votre relation client, le traitement de vos demandes de services, la "
+"prévention de la fraude et la conformité réglementaire. Elles ne sont jamais "
+"vendues ou cédées à des tiers à des fins commerciales."
+msgstr ""
+"Your personal data is used exclusively for: customer relationship "
+"management, processing your service requests, fraud prevention, and "
+"regulatory compliance. It is never sold or transferred to third parties "
+"for marketing purposes."
+
+#: .\templates\pages\privacy.html:24
+#, fuzzy
+#| msgid "Protection des déposants"
+msgid "3. Protection des données"
+msgstr "Protection of depositors"
+
+#: .\templates\pages\privacy.html:25
+msgid ""
+"Nous mettons en œuvre des mesures techniques et organisationnelles "
+"appropriées pour protéger vos données contre tout accès non autorisé, perte, "
+"destruction ou altération."
+msgstr "We implement appropriate technical and organizational measures to protect "
+"your data against unauthorized access, loss, destruction, or alteration."
+
+#: .\templates\pages\privacy.html:27
+msgid "4. Vos droits"
+msgstr "4. Your Rights"
+
+#: .\templates\pages\privacy.html:28
+msgid ""
+"Vous disposez d'un droit d'accès, de rectification et de suppression de vos "
+"données personnelles. Pour exercer ces droits, contactez-nous à : "
+"contact@winwincapital.africa"
+msgstr "You have the right to access, rectify, and delete your personal data. To "
+"exercise these rights, please contact us at: contact@winwincapital.africa"
+
+#: .\templates\pages\privacy.html:30
+#, fuzzy
+#| msgid "Contacté"
+msgid "5. Contact"
+msgstr "Contacted"
+
+#: .\templates\pages\privacy.html:31
+msgid ""
+"Pour toute question relative à cette politique, contactez notre délégué à la "
+"protection des données : contact@winwincapital.africa"
+msgstr "For any questions regarding this policy, please contact our Data Protection "
+"Officer: contact@winwincapital.africa"
+
+#: .\templates\pages\savings.html:6
+msgid ""
+"Découvrez nos produits d'épargne : compte courant, compte épargne, compte "
+"scolaire et compte PME."
+msgstr "Explore our savings products: current account, savings account, "
+"school account, and SME account."
+
+#: .\templates\pages\savings.html:13
+#, fuzzy
+#| msgid "Produits de financement"
+msgid "Produits financiers"
+msgstr "Financing products"
+
+#: .\templates\pages\savings.html:16
+#, fuzzy
+#| msgid ""
+#| "L'épargne constitue la base de la stabilité financière. Découvrez nos "
+#| "différents comptes adaptés à vos objectifs."
+msgid "L'épargne constitue la base de la stabilité financière."
+msgstr ""
+"Savings form the basis of financial stability. Discover our different "
+"accounts adapted to your goals."
+
+#: .\templates\pages\savings.html:25
+msgid ""
+"Principe fondamental : l'épargne précède toujours l'endettement responsable."
+msgstr "Core principle: savings always precede responsible borrowing."
+
+#: .\templates\pages\savings.html:41 .\templates\pages\savings.html:66
+#: .\templates\pages\savings.html:84 .\templates\pages\savings.html:100
+#: .\templates\pages\savings.html:116 .\templates\pages\savings.html:132
+#, fuzzy
+#| msgid "Ouvrir un compte courant"
+msgid "Ouvrir un compte"
+msgstr "Open a current account"
+
+#: .\templates\pages\savings.html:77
+#, fuzzy
+#| msgid "Compte courant"
+msgid "Compte Courant"
+msgstr "Current account"
+
+#: .\templates\pages\savings.html:78
+#, fuzzy
+#| msgid "Gestion professionnelle des transactions et opérations financières."
+msgid "Gestion quotidienne de vos transactions financières."
+msgstr "Professional management of transactions and financial operations."
+
+#: .\templates\pages\savings.html:80
+msgid "Accès facile à vos fonds"
+msgstr "Easy access to your funds"
+
+#: .\templates\pages\savings.html:81
+msgid "Opérations courantes"
+msgstr "Daily transactions"
+
+#: .\templates\pages\savings.html:82
+msgid "Relevés réguliers"
+msgstr "Regular statements"
+
+#: .\templates\pages\savings.html:93
+#, fuzzy
+#| msgid "Compte épargne"
+msgid "Compte Épargne"
+msgstr "Savings account"
+
+#: .\templates\pages\savings.html:94
+msgid ""
+"Constituez progressivement votre capital avec une rémunération attractive."
+msgstr "Gradually build your capital with attractive returns."
+
+#: .\templates\pages\savings.html:96
+#, fuzzy
+#| msgid "Sécurisation de l'épargne"
+msgid "Rémunération de votre épargne"
+msgstr "Securing savings"
+
+#: .\templates\pages\savings.html:97
+msgid "Constitution de capital"
+msgstr "Capital building"
+
+#: .\templates\pages\savings.html:98
+#, fuzzy
+#| msgid "Sécuriser l'épargne"
+msgid "Sécurité garantie"
+msgstr "Secure savings"
+
+#: .\templates\pages\savings.html:109
+#, fuzzy
+#| msgid "Compte scolaire"
+msgid "Compte Scolaire"
+msgstr "School account"
+
+#: .\templates\pages\savings.html:110
+msgid "Anticipez les frais académiques de vos enfants avec sérénité."
+msgstr "Anticipate your children's academic fees with peace of mind."
+
+#: .\templates\pages\savings.html:112
+msgid "Frais académiques anticipés"
+msgstr "Anticipated academic fees"
+
+#: .\templates\pages\savings.html:113
+msgid "Épargne dédiée éducation"
+msgstr "Dedicated education savings"
+
+#: .\templates\pages\savings.html:114
+msgid "Suivi personnalisé"
+msgstr "Personalized support"
+
+#: .\templates\pages\savings.html:126
+msgid "Gestion structurée de votre activité professionnelle."
+msgstr "Structured management of your business activity."
+
+#: .\templates\pages\savings.html:128
+msgid "Gestion des flux PME"
+msgstr "SME cash flow management"
+
+#: .\templates\pages\savings.html:129
+msgid "Conseil professionnel dédié"
+msgstr "Dedicated professional advisory"
+
+#: .\templates\pages\savings.html:130
+msgid "Accès au financement PME"
+msgstr "Access to SME financing"
+
+#: .\templates\pages\savings.html:143
+#, fuzzy
+#| msgid "Découvrir nos comptes"
+msgid "Prêt à ouvrir votre compte ?"
+msgstr "Explore our accounts"
+
+#: .\templates\pages\savings.html:144
+#, fuzzy
+#| msgid ""
+#| "L'ouverture de compte se fait uniquement en agence afin de garantir la "
+#| "sécurité juridique de chaque client."
+msgid ""
+"L'ouverture se fait uniquement en agence pour garantir la sécurité juridique."
+msgstr ""
+"Account opening is only done in branches to guarantee the legal security of "
+"each client."
+
+#: .\templates\pages\terms.html:5 .\templates\pages\terms.html:11
+#, fuzzy
+#| msgid "Conditions d'éligibilité"
+msgid "Conditions d'utilisation"
+msgstr "Eligibility conditions"
+
+#: .\templates\pages\terms.html:10
+#, fuzzy
+#| msgid "Informations complémentaires"
+msgid "Informations légales"
+msgstr "Additional information"
+
+#: .\templates\pages\terms.html:20
+msgid "1. Présentation du site"
+msgstr "1. Site Presentation"
+
+#: .\templates\pages\terms.html:21
+msgid ""
+"Le site www.winwincapital.africa est édité par Win Win Capital, institution "
+"de microfinance de première catégorie enregistrée au Gabon. Ce site a une "
+"vocation exclusivement institutionnelle et informative."
+msgstr ""
+"The website www.winwincapital.africa is published by Win Win Capital, a "
+"first-class microfinance institution registered in Gabon. This site is "
+"exclusively for institutional and informational purposes."
+
+#: .\templates\pages\terms.html:24
+msgid "2. Absence de fonctionnalités transactionnelles"
+msgstr "2. Absence of Transactional Features"
+
+#: .\templates\pages\terms.html:25
+msgid ""
+"Le présent site ne permet aucune transaction financière en ligne. Aucune "
+"connexion client, consultation de compte, paiement ou dépôt de dossier de "
+"crédit ne peut être effectué via ce site. Toutes les opérations se font "
+"exclusivement en agence."
+msgstr ""
+"This website does not allow any online financial transactions. No customer "
+"login, account consultation, payment, or loan application can be performed "
+"via this site. All operations are conducted exclusively at our branches."
+
+#: .\templates\pages\terms.html:28
+msgid "3. Propriété intellectuelle"
+msgstr "3. Intellectual Property"
+
+#: .\templates\pages\terms.html:29
+msgid ""
+"L'ensemble des contenus présents sur ce site (textes, images, logos, "
+"visuels) sont la propriété exclusive de Win Win Capital et sont protégés par "
+"les lois sur la propriété intellectuelle. Toute reproduction est interdite "
+"sans autorisation écrite préalable."
+msgstr ""
+"All content on this website (text, images, logos, visuals) is the exclusive "
+"property of Win Win Capital and is protected by intellectual property laws. "
+"Any reproduction is prohibited without prior written authorization."
+
+#: .\templates\pages\terms.html:32
+#, fuzzy
+#| msgid "Formation & Employabilité"
+msgid "4. Limitation de responsabilité"
+msgstr "Training & Employability"
+
+#: .\templates\pages\terms.html:33
+msgid ""
+"Win Win Capital s'efforce d'assurer l'exactitude des informations diffusées "
+"sur ce site. Toutefois, les informations présentées sont données à titre "
+"indicatif et peuvent être modifiées sans préavis. Win Win Capital ne saurait "
+"être tenu responsable de l'utilisation faite de ces informations."
+msgstr ""
+"Win Win Capital strives to ensure the accuracy of the information published "
+"on this website. However, the information presented is provided for "
+"indicative purposes and may be modified without notice. Win Win Capital "
+"shall not be held liable for any use made of this information."
+
+#: .\templates\pages\terms.html:36
+msgid "5. Droit applicable"
+msgstr "5. Applicable Law"
+
+#: .\templates\pages\terms.html:37
+msgid ""
+"Les présentes conditions sont soumises au droit gabonais. Tout litige "
+"relatif à l'utilisation de ce site sera soumis à la compétence exclusive des "
+"tribunaux gabonais."
+msgstr ""
+"These terms and conditions are governed by Gabonese law. Any dispute "
+"relating to the use of this website shall be subject to the exclusive "
+"jurisdiction of the Gabonese courts."
+
+#~ msgid "Le crédit est un outil de développement"
+#~ msgstr "Credit is a development tool"
