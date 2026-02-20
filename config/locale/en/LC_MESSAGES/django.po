@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 1.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-02-20 10:29+0100\n"
+"POT-Creation-Date: 2026-02-20 16:07+0100\n"
 "PO-Revision-Date: 2026-02-20 10:30+0100\n"
 "Last-Translator: Gemini AI\n"
 "Language-Team: English\n"
@@ -514,6 +514,10 @@ msgstr "Photo"
 #: .\pages\models.py:150
 msgid "Témoignages"
 msgstr "Testimonials"
+
+#: .\templates\base.html:98
+msgid "Votre potentiel, notre priorité"
+msgstr "Your potential, our priority"
 
 #: .\templates\base.html:104 .\templates\base.html:165
 msgid "Accueil"
@@ -1371,8 +1375,8 @@ msgid ""
 "Financement de vos projets personnels avec des conditions adaptées à vos "
 "revenus et à votre situation."
 msgstr ""
-"Financing for your personal projects with terms tailored to your income "
-"and personal circumstances."
+"Financing for your personal projects with terms tailored to your income and "
+"personal circumstances."
 
 #: .\templates\pages\financing.html:58
 msgid "Crédit Scolaire"
@@ -1397,6 +1401,7 @@ msgid ""
 msgstr ""
 "Supporting the development of your entrepreneurial activity with "
 "personalized guidance."
+
 #: .\templates\pages\financing.html:81
 msgid "Notre politique"
 msgstr "Our positioning"
@@ -1450,8 +1455,8 @@ msgid ""
 "Découvrez les organes de gouvernance de Win Win Capital : Conseil "
 "d'Administration, Comité de Crédit, Comité de Surveillance et Comité d'Audit."
 msgstr ""
-"Discover Win Win Capital's governance bodies: Board of Directors, "
-"Credit Committee, Supervisory Committee, and Audit Committee."
+"Discover Win Win Capital's governance bodies: Board of Directors, Credit "
+"Committee, Supervisory Committee, and Audit Committee."
 
 #: .\templates\pages\governance.html:13
 msgid "Organisation institutionnelle"
@@ -1510,8 +1515,8 @@ msgid ""
 "Analyse et autorise les engagements financiers. Peut refuser un financement "
 "dans l'intérêt du client."
 msgstr ""
-"Analyzes and authorizes financial commitments. May refuse financing "
-"in the client's best interest."
+"Analyzes and authorizes financial commitments. May refuse financing in the "
+"client's best interest."
 
 #: .\templates\pages\governance.html:70
 msgid "Analyse des demandes de financement"
@@ -1592,7 +1597,8 @@ msgstr "Support the economy"
 #: .\templates\pages\impact.html:22
 msgid ""
 "Le succès de l'institution dépend de la réussite durable de ses clients."
-msgstr "The institution's success depends on the sustainable success of its clients."
+msgstr ""
+"The institution's success depends on the sustainable success of its clients."
 
 #: .\templates\pages\impact.html:30
 msgid "CLIENTS ACCOMPAGNÉS"
@@ -1601,7 +1607,9 @@ msgstr "SUPPORTED CLIENTS"
 #: .\templates\pages\impact.html:31
 msgid ""
 "Particuliers, entrepreneurs et organisations ayant bénéficié de nos services"
-msgstr "Individuals, entrepreneurs, and organizations who have benefited from our services"
+msgstr ""
+"Individuals, entrepreneurs, and organizations who have benefited from our "
+"services"
 
 #: .\templates\pages\impact.html:35
 msgid "PROJETS ABOUTIS"
@@ -1628,8 +1636,8 @@ msgid ""
 "Financement de commerces, artisans et petites entreprises contribuant à "
 "l'économie locale gabonaise."
 msgstr ""
-"Financing for shops, artisans, and small businesses contributing to "
-"Gabon's local economy."
+"Financing for shops, artisans, and small businesses contributing to Gabon's "
+"local economy."
 
 #: .\templates\pages\impact.html:58
 msgid "Accompagnement éducatif"
@@ -1650,7 +1658,8 @@ msgstr "Entrepreneurial Support"
 msgid ""
 "Accompagnement des porteurs de projets depuis l'idée jusqu'à la "
 "concrétisation commerciale."
-msgstr "Supporting project leads from the initial idea to commercial realization."
+msgstr ""
+"Supporting project leads from the initial idea to commercial realization."
 
 #: .\templates\pages\partners.html:5
 msgid "Nos partenaires"
@@ -1660,8 +1669,7 @@ msgstr "Partners"
 msgid ""
 "Découvrez les partenaires financiers, académiques et économiques de Win Win "
 "Capital."
-msgstr ""
-"Discover Win Win Capital's financial, academic, and economic partners."
+msgstr "Discover Win Win Capital's financial, academic, and economic partners."
 
 #: .\templates\pages\partners.html:12
 msgid "Écosystème structuré"
@@ -1727,9 +1735,9 @@ msgid ""
 "nécessaires à l'ouverture de compte ou à l'octroi de crédit."
 msgstr ""
 "Win Win Capital only collects the personal data necessary to provide its "
-"financial services. This data includes: last name, first name, phone "
-"number, email address, and financial information required for account "
-"opening or credit granting."
+"financial services. This data includes: last name, first name, phone number, "
+"email address, and financial information required for account opening or "
+"credit granting."
 
 #: .\templates\pages\privacy.html:21
 msgid "2. Utilisation des données"
@@ -1744,8 +1752,8 @@ msgid ""
 msgstr ""
 "Your personal data is used exclusively for: customer relationship "
 "management, processing your service requests, fraud prevention, and "
-"regulatory compliance. It is never sold or transferred to third parties "
-"for marketing purposes."
+"regulatory compliance. It is never sold or transferred to third parties for "
+"marketing purposes."
 
 #: .\templates\pages\privacy.html:24
 msgid "3. Protection des données"
@@ -1756,7 +1764,8 @@ msgid ""
 "Nous mettons en œuvre des mesures techniques et organisationnelles "
 "appropriées pour protéger vos données contre tout accès non autorisé, perte, "
 "destruction ou altération."
-msgstr "We implement appropriate technical and organizational measures to protect "
+msgstr ""
+"We implement appropriate technical and organizational measures to protect "
 "your data against unauthorized access, loss, destruction, or alteration."
 
 #: .\templates\pages\privacy.html:27
@@ -1768,7 +1777,8 @@ msgid ""
 "Vous disposez d'un droit d'accès, de rectification et de suppression de vos "
 "données personnelles. Pour exercer ces droits, contactez-nous à : "
 "contact@winwincapital.africa"
-msgstr "You have the right to access, rectify, and delete your personal data. To "
+msgstr ""
+"You have the right to access, rectify, and delete your personal data. To "
 "exercise these rights, please contact us at: contact@winwincapital.africa"
 
 #: .\templates\pages\privacy.html:30
@@ -1779,15 +1789,17 @@ msgstr "Contacted"
 msgid ""
 "Pour toute question relative à cette politique, contactez notre délégué à la "
 "protection des données : contact@winwincapital.africa"
-msgstr "For any questions regarding this policy, please contact our Data Protection "
+msgstr ""
+"For any questions regarding this policy, please contact our Data Protection "
 "Officer: contact@winwincapital.africa"
 
 #: .\templates\pages\savings.html:6
 msgid ""
 "Découvrez nos produits d'épargne : compte courant, compte épargne, compte "
 "scolaire et compte PME."
-msgstr "Explore our savings products: current account, savings account, "
-"school account, and SME account."
+msgstr ""
+"Explore our savings products: current account, savings account, school "
+"account, and SME account."
 
 #: .\templates\pages\savings.html:13
 msgid "Produits financiers"
