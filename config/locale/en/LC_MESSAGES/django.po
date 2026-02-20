@@ -1350,10 +1350,6 @@ msgid "Crédits responsables"
 msgstr "Responsible credits"
 
 #: .\templates\pages\financing.html:16
-#, fuzzy
-#| msgid ""
-#| "Le crédit est un outil de développement lorsqu'il reste compatible avec "
-#| "votre capacité de remboursement."
 msgid ""
 "Le crédit est un outil de développement lorsqu'il reste compatible avec la "
 "capacité de remboursement."
@@ -1367,8 +1363,6 @@ msgid "Faire une demande"
 msgstr "Submit a request"
 
 #: .\templates\pages\financing.html:47
-#, fuzzy
-#| msgid "Crédit personnel"
 msgid "Crédit Personnel"
 msgstr "Personal loan"
 
@@ -1381,8 +1375,6 @@ msgstr ""
 "and personal circumstances."
 
 #: .\templates\pages\financing.html:58
-#, fuzzy
-#| msgid "Crédit scolaire"
 msgid "Crédit Scolaire"
 msgstr "School loan"
 
@@ -1395,8 +1387,6 @@ msgstr ""
 "school fees."
 
 #: .\templates\pages\financing.html:69
-#, fuzzy
-#| msgid "Crédit activité / PME"
 msgid "Crédit PME"
 msgstr "Business / SME loan"
 
@@ -1408,8 +1398,6 @@ msgstr ""
 "Supporting the development of your entrepreneurial activity with "
 "personalized guidance."
 #: .\templates\pages\financing.html:81
-#, fuzzy
-#| msgid "Notre positionnement"
 msgid "Notre politique"
 msgstr "Our positioning"
 
@@ -1418,10 +1406,6 @@ msgid "Une politique d'octroi responsable"
 msgstr "A responsible lending policy"
 
 #: .\templates\pages\financing.html:84
-#, fuzzy
-#| msgid ""
-#| "Crédit personnel, scolaire et PME. Découvrez nos solutions de financement "
-#| "responsable adaptées à votre capacité de remboursement."
 msgid ""
 "Nous analysons chaque demande avec rigueur pour vous proposer un financement "
 "réellement adapté à votre capacité de remboursement."
@@ -1442,8 +1426,6 @@ msgid "Vérification de la régularité des revenus"
 msgstr "Verification of income regularity"
 
 #: .\templates\pages\financing.html:99
-#, fuzzy
-#| msgid "Partenaire économique"
 msgid "Utilité économique"
 msgstr "Economic partner"
 
@@ -1488,10 +1470,6 @@ msgid "Séparation stricte entre décision, exécution et contrôle"
 msgstr "Strict separation of decision-making, execution, and oversight"
 
 #: .\templates\pages\governance.html:28
-#, fuzzy
-#| msgid ""
-#| "Notre organisation interne repose sur plusieurs organes indépendants "
-#| "assurant la protection des déposants et la transparence de notre gestion."
 msgid ""
 "Notre organisation interne repose sur plusieurs organes indépendants "
 "assurant la protection des déposants et la transparence de la gestion."
@@ -1512,8 +1490,6 @@ msgstr ""
 "management's orientations. Ensuring a long-term vision."
 
 #: .\templates\pages\governance.html:50
-#, fuzzy
-#| msgid "Définition de la stratégie et supervision"
 msgid "Définition de la stratégie institutionnelle"
 msgstr "Strategy definition and supervision"
 
@@ -1538,8 +1514,6 @@ msgstr ""
 "in the client's best interest."
 
 #: .\templates\pages\governance.html:70
-#, fuzzy
-#| msgid "Analyse et validation des engagements"
 msgid "Analyse des demandes de financement"
 msgstr "Analysis and validation of commitments"
 
@@ -1568,8 +1542,6 @@ msgid "Contrôle continu des procédures"
 msgstr "Continuous control of procedures"
 
 #: .\templates\pages\governance.html:91
-#, fuzzy
-#| msgid "Protection des déposants"
 msgid "Protection des intérêts des déposants"
 msgstr "Protection of depositors"
 
@@ -1590,14 +1562,10 @@ msgstr ""
 "reliability of accounting information."
 
 #: .\templates\pages\governance.html:110
-#, fuzzy
-#| msgid "Vérification indépendante"
 msgid "Vérification indépendante de la gestion"
 msgstr "Independent verification"
 
 #: .\templates\pages\governance.html:111
-#, fuzzy
-#| msgid "Nos solutions financières"
 msgid "Validation des informations financières"
 msgstr "Our financial solutions"
 
@@ -1618,8 +1586,6 @@ msgid "Résultats concrets"
 msgstr "Tangible Results"
 
 #: .\templates\pages\impact.html:13
-#, fuzzy
-#| msgid "Soutenir l'économie"
 msgid "Notre impact sur l'économie réelle"
 msgstr "Support the economy"
 
@@ -1646,8 +1612,6 @@ msgid "Des projets financés qui ont atteint leurs objectifs économiques"
 msgstr "Financed projects that have achieved their economic objectives"
 
 #: .\templates\pages\impact.html:40
-#, fuzzy
-#| msgid "AGENCE PRINCIPALE"
 msgid "AGENCES ACTIVES"
 msgstr "MAIN BRANCH"
 
@@ -1668,8 +1632,6 @@ msgstr ""
 "Gabon's local economy."
 
 #: .\templates\pages\impact.html:58
-#, fuzzy
-#| msgid "Accompagnement durable"
 msgid "Accompagnement éducatif"
 msgstr "Sustainable support"
 
@@ -1691,8 +1653,6 @@ msgid ""
 msgstr "Supporting project leads from the initial idea to commercial realization."
 
 #: .\templates\pages\partners.html:5
-#, fuzzy
-#| msgid "Partenaires"
 msgid "Nos partenaires"
 msgstr "Partners"
 
@@ -1708,8 +1668,6 @@ msgid "Écosystème structuré"
 msgstr "Structured Ecosystem"
 
 #: .\templates\pages\partners.html:13
-#, fuzzy
-#| msgid "Partenaire académique"
 msgid "Nos partenaires stratégiques"
 msgstr "Academic partner"
 
@@ -1726,8 +1684,6 @@ msgid "SECTEUR FINANCIER"
 msgstr "FINANCIAL SECTOR"
 
 #: .\templates\pages\partners.html:28
-#, fuzzy
-#| msgid "Partenaire financier"
 msgid "Partenaires financiers"
 msgstr "Financial partners"
 
@@ -1736,8 +1692,6 @@ msgid "ÉDUCATION & INSTITUTIONS"
 msgstr "EDUCATION & INSTITUTIONS"
 
 #: .\templates\pages\partners.html:55
-#, fuzzy
-#| msgid "Partenaire académique"
 msgid "Partenaires académiques et institutionnels"
 msgstr "Academic partner"
 
@@ -1746,8 +1700,6 @@ msgid "FORMATION & EMPLOI"
 msgstr "TRAINING & EMPLOYMENT"
 
 #: .\templates\pages\partners.html:99
-#, fuzzy
-#| msgid "Formation & Employabilité"
 msgid "Partenaires formation & employabilité"
 msgstr "Training & Employability"
 
@@ -1756,20 +1708,14 @@ msgid "ÉCONOMIE RÉELLE"
 msgstr "REAL ECONOMY"
 
 #: .\templates\pages\privacy.html:5 .\templates\pages\privacy.html:11
-#, fuzzy
-#| msgid "politique de confidentialité"
 msgid "Politique de confidentialité"
 msgstr "privacy policy"
 
 #: .\templates\pages\privacy.html:10
-#, fuzzy
-#| msgid "Crédit personnel"
 msgid "Données personnelles"
 msgstr "Personal loan"
 
 #: .\templates\pages\privacy.html:18
-#, fuzzy
-#| msgid "Confidentialité des données"
 msgid "1. Collecte des données"
 msgstr "Data privacy"
 
@@ -1786,8 +1732,6 @@ msgstr ""
 "opening or credit granting."
 
 #: .\templates\pages\privacy.html:21
-#, fuzzy
-#| msgid "Confidentialité des données"
 msgid "2. Utilisation des données"
 msgstr "Data privacy"
 
@@ -1804,8 +1748,6 @@ msgstr ""
 "for marketing purposes."
 
 #: .\templates\pages\privacy.html:24
-#, fuzzy
-#| msgid "Protection des déposants"
 msgid "3. Protection des données"
 msgstr "Protection of depositors"
 
@@ -1830,8 +1772,6 @@ msgstr "You have the right to access, rectify, and delete your personal data. To
 "exercise these rights, please contact us at: contact@winwincapital.africa"
 
 #: .\templates\pages\privacy.html:30
-#, fuzzy
-#| msgid "Contacté"
 msgid "5. Contact"
 msgstr "Contacted"
 
@@ -1850,16 +1790,10 @@ msgstr "Explore our savings products: current account, savings account, "
 "school account, and SME account."
 
 #: .\templates\pages\savings.html:13
-#, fuzzy
-#| msgid "Produits de financement"
 msgid "Produits financiers"
 msgstr "Financing products"
 
 #: .\templates\pages\savings.html:16
-#, fuzzy
-#| msgid ""
-#| "L'épargne constitue la base de la stabilité financière. Découvrez nos "
-#| "différents comptes adaptés à vos objectifs."
 msgid "L'épargne constitue la base de la stabilité financière."
 msgstr ""
 "Savings form the basis of financial stability. Discover our different "
@@ -1873,20 +1807,14 @@ msgstr "Core principle: savings always precede responsible borrowing."
 #: .\templates\pages\savings.html:41 .\templates\pages\savings.html:66
 #: .\templates\pages\savings.html:84 .\templates\pages\savings.html:100
 #: .\templates\pages\savings.html:116 .\templates\pages\savings.html:132
-#, fuzzy
-#| msgid "Ouvrir un compte courant"
 msgid "Ouvrir un compte"
 msgstr "Open a current account"
 
 #: .\templates\pages\savings.html:77
-#, fuzzy
-#| msgid "Compte courant"
 msgid "Compte Courant"
 msgstr "Current account"
 
 #: .\templates\pages\savings.html:78
-#, fuzzy
-#| msgid "Gestion professionnelle des transactions et opérations financières."
 msgid "Gestion quotidienne de vos transactions financières."
 msgstr "Professional management of transactions and financial operations."
 
@@ -1903,8 +1831,6 @@ msgid "Relevés réguliers"
 msgstr "Regular statements"
 
 #: .\templates\pages\savings.html:93
-#, fuzzy
-#| msgid "Compte épargne"
 msgid "Compte Épargne"
 msgstr "Savings account"
 
@@ -1914,8 +1840,6 @@ msgid ""
 msgstr "Gradually build your capital with attractive returns."
 
 #: .\templates\pages\savings.html:96
-#, fuzzy
-#| msgid "Sécurisation de l'épargne"
 msgid "Rémunération de votre épargne"
 msgstr "Securing savings"
 
@@ -1924,14 +1848,10 @@ msgid "Constitution de capital"
 msgstr "Capital building"
 
 #: .\templates\pages\savings.html:98
-#, fuzzy
-#| msgid "Sécuriser l'épargne"
 msgid "Sécurité garantie"
 msgstr "Secure savings"
 
 #: .\templates\pages\savings.html:109
-#, fuzzy
-#| msgid "Compte scolaire"
 msgid "Compte Scolaire"
 msgstr "School account"
 
@@ -1968,16 +1888,10 @@ msgid "Accès au financement PME"
 msgstr "Access to SME financing"
 
 #: .\templates\pages\savings.html:143
-#, fuzzy
-#| msgid "Découvrir nos comptes"
 msgid "Prêt à ouvrir votre compte ?"
 msgstr "Explore our accounts"
 
 #: .\templates\pages\savings.html:144
-#, fuzzy
-#| msgid ""
-#| "L'ouverture de compte se fait uniquement en agence afin de garantir la "
-#| "sécurité juridique de chaque client."
 msgid ""
 "L'ouverture se fait uniquement en agence pour garantir la sécurité juridique."
 msgstr ""
@@ -1985,14 +1899,10 @@ msgstr ""
 "each client."
 
 #: .\templates\pages\terms.html:5 .\templates\pages\terms.html:11
-#, fuzzy
-#| msgid "Conditions d'éligibilité"
 msgid "Conditions d'utilisation"
 msgstr "Eligibility conditions"
 
 #: .\templates\pages\terms.html:10
-#, fuzzy
-#| msgid "Informations complémentaires"
 msgid "Informations légales"
 msgstr "Additional information"
 
@@ -2041,8 +1951,6 @@ msgstr ""
 "Any reproduction is prohibited without prior written authorization."
 
 #: .\templates\pages\terms.html:32
-#, fuzzy
-#| msgid "Formation & Employabilité"
 msgid "4. Limitation de responsabilité"
 msgstr "Training & Employability"
 
