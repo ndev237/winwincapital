@@ -1,0 +1,302 @@
+/* ============================================
+   WIN WIN CAPITAL - ADMIN CUSTOMIZATION
+   ============================================ */
+
+:root {
+    --win-green: #7FD8BE;
+    --win-orange: #F5A623;
+    --win-dark: #1F2937;
+}
+
+/* ========== LOGIN PAGE ========== */
+
+/* Background */
+.login {
+    background: linear-gradient(135deg, #1F2937 0%, #0a0e0c 100%);
+}
+
+/* Login box */
+.login #content {
+    padding: 0;
+}
+
+.login #container {
+    background: transparent;
+    padding-top: 100px;
+}
+
+.login form {
+    background: white;
+    border-radius: 16px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    padding: 40px;
+    max-width: 450px;
+    margin: 0 auto;
+}
+
+/* Logo Win Win Capital */
+.login::before {
+    content: '';
+    display: block;
+    width: 180px;
+    height: 60px;
+    background: url('/static/image/Logo_WinWin-01.png') no-repeat center;
+    background-size: contain;
+    margin: 0 auto 30px;
+}
+
+/* Titre */
+.login h1 {
+    display: none; /* Cacher le titre Django par défaut */
+}
+
+/* After logo, add title */
+.login form::before {
+    content: 'Espace Administration';
+    display: block;
+    text-align: center;
+    font-size: 24px;
+    font-weight: 800;
+    color: var(--win-dark);
+    margin-bottom: 10px;
+}
+
+.login form::after {
+    content: 'Win Win Capital';
+    display: block;
+    text-align: center;
+    font-size: 14px;
+    color: var(--win-green);
+    font-weight: 600;
+    margin-bottom: 30px;
+}
+
+/* Inputs */
+.login input[type="text"],
+.login input[type="password"] {
+    border: 2px solid #e5e7eb;
+    border-radius: 8px;
+    padding: 12px 16px;
+    font-size: 15px;
+    transition: all 0.3s;
+}
+
+.login input[type="text"]:focus,
+.login input[type="password"]:focus {
+    border-color: var(--win-green);
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(127, 216, 190, 0.1);
+}
+
+/* Labels */
+.login label {
+    color: var(--win-orange);
+    font-weight: 600;
+    font-size: 14px;
+}
+
+/* Submit button */
+.login input[type="submit"] {
+    background: var(--win-green) !important;
+    border: none;
+    border-radius: 8px;
+    padding: 14px 24px;
+    font-size: 16px;
+    font-weight: 700;
+    color: white;
+    cursor: pointer;
+    transition: all 0.3s;
+    width: 100%;
+    margin-top: 10px;
+}
+
+.login input[type="submit"]:hover {
+    background: var(--win-orange) !important;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(127, 216, 190, 0.4);
+}
+
+/* Error messages */
+.login .errornote {
+    background: #fee;
+    border: 2px solid #fcc;
+    border-radius: 8px;
+    padding: 12px;
+    margin-bottom: 20px;
+    color: #c33;
+}
+
+/* ========== DASHBOARD ========== */
+
+/* Header */
+#header {
+    background: var(--win-dark);
+    color: white;
+}
+
+#branding h1 {
+    color: var(--win-green);
+    font-weight: 800;
+}
+
+#branding h1::before {
+    content: '';
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    background: url('/static/image/Logo_WinWin-01.png') no-repeat center;
+    background-size: contain;
+    vertical-align: middle;
+    margin-right: 10px;
+}
+
+/* Links in header */
+#header a:link,
+#header a:visited {
+    color: var(--win-green);
+}
+
+#header a:hover {
+    color: var(--win-orange);
+}
+
+/* User tools */
+#user-tools {
+    background: rgba(127, 216, 190, 0.1);
+    border-radius: 8px;
+    padding: 8px 16px;
+}
+
+#user-tools a {
+    color: var(--win-green) !important;
+    font-weight: 600;
+}
+
+/* ========== SIDEBAR ========== */
+
+/* Module headers */
+.module h2 {
+    background: var(--win-green);
+    color: white;
+}
+
+.module caption {
+    background: var(--win-orange);
+    color: white;
+}
+
+/* ========== BUTTONS ========== */
+
+/* Primary buttons */
+.button,
+input[type="submit"],
+input[type="button"],
+.submit-row input,
+button {
+    background: var(--win-orange) !important;
+    border: none;
+    border-radius: 6px;
+    padding: 10px 20px;
+    color: white !important;
+    font-weight: 600;
+    transition: all 0.3s;
+}
+
+.button:hover,
+input[type="submit"]:hover,
+input[type="button"]:hover,
+.submit-row input:hover,
+button:hover {
+    background: var(--win-green) !important;
+    transform: translateY(-1px);
+}
+
+/* Delete button */
+.deletelink,
+.deletelink-box a {
+    background: #ef4444 !important;
+}
+
+.deletelink:hover,
+.deletelink-box a:hover {
+    background: #dc2626 !important;
+}
+
+/* ========== LINKS ========== */
+
+a:link,
+a:visited {
+    color: var(--win-green);
+}
+
+a:hover {
+    color: var(--win-orange);
+}
+
+/* ========== TABLES ========== */
+
+/* Table headers */
+thead th {
+    background: var(--win-dark);
+    color: white;
+}
+
+/* Alternating rows */
+.results tr.alt {
+    background: rgba(127, 216, 190, 0.05);
+}
+
+/* Selected rows */
+tr.selected {
+    background: rgba(127, 216, 190, 0.15) !important;
+}
+
+/* ========== BREADCRUMBS ========== */
+
+.breadcrumbs {
+    background: #f3f4f6;
+    border-radius: 8px;
+    padding: 12px 20px;
+}
+
+.breadcrumbs a {
+    color: var(--win-green);
+    font-weight: 600;
+}
+
+/* ========== MESSAGES ========== */
+
+.success {
+    background: #d1fae5;
+    border: 2px solid var(--win-green);
+    color: #065f46;
+}
+
+.warning {
+    background: #fef3c7;
+    border: 2px solid var(--win-orange);
+    color: #92400e;
+}
+
+/* ========== DASHBOARD MODULES ========== */
+
+.module h2,
+.module caption {
+    border-radius: 8px 8px 0 0;
+}
+
+.module {
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* ========== FOOTER ========== */
+
+#footer {
+    background: var(--win-dark);
+    color: white;
+    padding: 20px;
+    text-align: center;
+    border-radius: 8px 8px 0 0;
+}
