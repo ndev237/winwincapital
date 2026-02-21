@@ -79,7 +79,6 @@
     </div>
     <div class="flex items-center gap-4 text-xs text-gray-400">
       <span>Lun–Ven : 8h–16h30 Sam : 12h30</span>
-<<<<<<< HEAD
 
       <!-- LOGIN BUTTON IN TOPBAR (Desktop only) -->
       {% if user.is_authenticated %}
@@ -97,12 +96,6 @@
           <span class="font-medium">Login</span>
         </a>
       {% endif %}
-=======
-      <div class="flex gap-2">
-         <button onclick="setLang('fr')" class="px-2 py-0.5 rounded text-xs font-bold {% if request.LANGUAGE_CODE == 'fr' %}bg-win-green text-white{% else %}text-gray-400 hover:text-white{% endif %}">FR</button>
-         <button onclick="setLang('en')" class="px-2 py-0.5 rounded text-xs font-bold {% if request.LANGUAGE_CODE == 'en' %}bg-win-green text-white{% else %}text-gray-400 hover:text-white{% endif %}">EN</button>
-      </div>
->>>>>>> 8544a70345ffef3cb0b10b058d3353df29546809
     </div>
   </div>
 </div>
@@ -214,7 +207,6 @@
     </main>
 
     <footer class="bg-win-dark text-white mt-20">
-<<<<<<< HEAD
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
                 <!-- About -->
@@ -301,10 +293,6 @@
                 </div>
                 {% endif %}
             </div>
-=======
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 text-center border-t border-gray-700 mt-12 pt-8 text-sm text-gray-400">
-            <p>&copy; {% now "Y" %} Win Win Capital. {% trans "Tous droits réservés." %}</p>
->>>>>>> 8544a70345ffef3cb0b10b058d3353df29546809
         </div>
     </footer>
 
