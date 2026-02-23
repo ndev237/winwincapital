@@ -20,7 +20,7 @@ def custom_login(request):
             # Redirection vers l'admin sécurisé
             return redirect('/winwin-secure-2026/')  # Votre URL admin secrète
         else:
-            return render(request, 'login.html', {
+            return render(request, 'pages/login.html', {
                 'error': 'Nom d\'utilisateur ou mot de passe incorrect.'
             })
 
@@ -28,5 +28,5 @@ def custom_login(request):
     if request.user.is_authenticated:
         return redirect('/winwin-secure-2026/')
 
-    return render(request, 'login.html')
+    return render(request, 'pages/login.html')
 

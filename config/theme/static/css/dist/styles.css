@@ -1587,6 +1587,10 @@ input:where([type='file']):focus {
   z-index: 50;
 }
 
+.z-0 {
+  z-index: 0;
+}
+
 .mx-2 {
   margin-left: 0.5rem;
   margin-right: 0.5rem;
@@ -2324,6 +2328,10 @@ input:where([type='file']):focus {
   --tw-gradient-to: #ca8a04 var(--tw-gradient-to-position);
 }
 
+.to-teal-600\/80 {
+  --tw-gradient-to: rgb(13 148 136 / 0.8) var(--tw-gradient-to-position);
+}
+
 .object-contain {
   -o-object-fit: contain;
      object-fit: contain;
@@ -2671,6 +2679,10 @@ input:where([type='file']):focus {
 
 .opacity-90 {
   opacity: 0.9;
+}
+
+.opacity-50 {
+  opacity: 0.5;
 }
 
 .shadow-lg {
