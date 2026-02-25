@@ -7,6 +7,67 @@
 
 {% block content %}
 
+<style>
+
+/* Le conteneur doit être en position relative pour que le faisceau s'aligne dessus */
+.border-beam-container {
+    position: relative;
+    z-index: 0;
+    overflow: hidden; /* Important pour que le faisceau ne dépasse pas */
+    background: white; /* Fond interne de la carte */
+}
+
+/* Le faisceau lumineux */
+.border-beam-container::before {
+    content: '';
+    position: absolute;
+    z-index: -2;
+    left: -50%;
+    top: -50%;
+    width: 200%;
+    height: 200%;
+    /* On crée un dégradé conique (le faisceau) */
+    background: conic-gradient(
+        transparent,
+        rgba(34, 197, 94, 0.3), /* Couleur win-green avec opacité */
+        #22c55e,               /* win-green pur au centre du faisceau */
+        rgba(34, 197, 94, 0.3),
+        transparent 20%
+    );
+    animation: rotate-beam 4s linear infinite;
+}
+
+/* Le fond interne pour masquer le centre du faisceau et ne laisser que la bordure */
+.border-beam-container::after {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    left: 2px;  /* Épaisseur de la bordure */
+    top: 2px;
+    right: 2px;
+    bottom: 2px;
+    background: #F9FAFB; /* Correspond à bg-gray-50 */
+    border-radius: 0.75rem; /* Correspond à rounded-xl */
+}
+
+/* Animation de rotation */
+@keyframes rotate-beam {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+/* Variante orange pour la carte du milieu */
+.border-beam-orange::before {
+    background: conic-gradient(
+        transparent,
+        rgba(249, 115, 22, 0.3),
+        #f97316,
+        rgba(249, 115, 22, 0.3),
+        transparent 20%
+    );
+}
+</style>
+
 <section class="bg-win-dark py-24">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <span class="text-xs font-semibold tracking-widest uppercase text-win-orange">{% trans "Résultats concrets" %}</span>
@@ -24,41 +85,55 @@
     </div>
 
     <!-- STATS -->
-    <div class="grid md:grid-cols-3 gap-6 mb-16">
-      <div class="text-center p-10 rounded-xl border border-gray-100 hover-lift">
-        <div class="text-6xl font-extrabold text-win-green">5 000+</div>
-        <div class="text-xs font-semibold tracking-widest text-win-green mt-3 mb-2">{% trans "CLIENTS ACCOMPAGNÉS" %}</div>
-        <p class="text-gray-500 text-sm">{% trans "Particuliers, entrepreneurs et organisations ayant bénéficié de nos services" %}</p>
+    <div class="grid md:grid-cols-3 gap-6 mb-16" id="stats-section">
+    <div class="text-center p-10 rounded-xl border border-gray-100 hover-lift bg-white">
+      <div class="text-6xl font-extrabold text-win-green">
+        <span class="stat-number" data-target="5000">0</span>+
       </div>
-      <div class="text-center p-10 rounded-xl border border-gray-100 hover-lift">
-        <div class="text-6xl font-extrabold text-win-orange">85%</div>
-        <div class="text-xs font-semibold tracking-widest text-win-orange mt-3 mb-2">{% trans "PROJETS ABOUTIS" %}</div>
-        <p class="text-gray-500 text-sm">{% trans "Des projets financés qui ont atteint leurs objectifs économiques" %}</p>
-      </div>
-      <div class="text-center p-10 rounded-xl border border-gray-100 hover-lift">
-        <div class="text-6xl font-extrabold text-win-green">3</div>
-        <div class="text-xs font-semibold tracking-widest text-win-green mt-3 mb-2">{% trans "AGENCES ACTIVES" %}</div>
-        <p class="text-gray-500 text-sm">{% trans "Présence physique pour un accompagnement de proximité au Gabon" %}</p>
-      </div>
+      <div class="text-xs font-semibold tracking-widest text-win-green mt-3 mb-2">{% trans "CLIENTS ACCOMPAGNÉS" %}</div>
+      <p class="text-gray-500 text-sm">{% trans "Particuliers, entrepreneurs et organisations ayant bénéficié de nos services" %}</p>
     </div>
 
+    <div class="text-center p-10 rounded-xl border border-gray-100 hover-lift bg-white">
+      <div class="text-6xl font-extrabold text-win-orange">
+        <span class="stat-number" data-target="85">0</span>%
+      </div>
+      <div class="text-xs font-semibold tracking-widest text-win-orange mt-3 mb-2">{% trans "PROJETS ABOUTIS" %}</div>
+      <p class="text-gray-500 text-sm">{% trans "Des projets financés qui ont atteint leurs objectifs économiques" %}</p>
+    </div>
+
+    <div class="text-center p-10 rounded-xl border border-gray-100 hover-lift bg-white">
+      <div class="text-6xl font-extrabold text-win-green">
+        <span class="stat-number" data-target="3">0</span>
+      </div>
+      <div class="text-xs font-semibold tracking-widest text-win-green mt-3 mb-2">{% trans "AGENCES ACTIVES" %}</div>
+      <p class="text-gray-500 text-sm">{% trans "Présence physique pour un accompagnement de proximité au Gabon" %}</p>
+    </div>
+</div>
+
     <!-- DOMAINES D'IMPACT -->
-    <div class="grid md:grid-cols-3 gap-8">
-      <div class="p-8 rounded-xl bg-gray-50 hover-lift">
-        <div class="w-14 h-14 rounded-full bg-green-100 flex items-center justify-center mb-5">
+     <div class="grid md:grid-cols-3 gap-8">
+    <div class="border-beam-container p-8 rounded-xl hover-lift">
+      <div class="relative z-10"> <div class="w-14 h-14 rounded-full bg-green-100 flex items-center justify-center mb-5">
           <svg class="w-7 h-7 text-win-green" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/></svg>
         </div>
         <h3 class="text-xl font-bold text-win-dark">{% trans "Activités productives" %}</h3>
         <p class="text-gray-500 mt-3 text-sm leading-relaxed">{% trans "Financement de commerces, artisans et petites entreprises contribuant à l'économie locale gabonaise." %}</p>
       </div>
-      <div class="p-8 rounded-xl bg-gray-50 hover-lift">
+    </div>
+
+    <div class="border-beam-container border-beam-orange p-8 rounded-xl hover-lift">
+      <div class="relative z-10">
         <div class="w-14 h-14 rounded-full bg-yellow-100 flex items-center justify-center mb-5">
           <svg class="w-7 h-7 text-win-orange" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 14l9-5-9-5-9 5 9 5zm0 0l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0112 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z"/></svg>
         </div>
         <h3 class="text-xl font-bold text-win-dark">{% trans "Accompagnement éducatif" %}</h3>
         <p class="text-gray-500 mt-3 text-sm leading-relaxed">{% trans "Soutien à la scolarisation et à la formation professionnelle pour investir dans le capital humain." %}</p>
       </div>
-      <div class="p-8 rounded-xl bg-gray-50 hover-lift">
+    </div>
+
+    <div class="border-beam-container p-8 rounded-xl hover-lift">
+      <div class="relative z-10">
         <div class="w-14 h-14 rounded-full bg-green-100 flex items-center justify-center mb-5">
           <svg class="w-7 h-7 text-win-green" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
         </div>
@@ -68,5 +143,45 @@
     </div>
   </div>
 </section>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const statsSection = document.getElementById('stats-section');
+    const stats = document.querySelectorAll('.stat-number');
+    let started = false;
 
+    function startCounting() {
+        stats.forEach(stat => {
+            const target = +stat.getAttribute('data-target');
+            const duration = 2000; // Durée de l'animation en millisecondes
+            const increment = target / (duration / 16); // 16ms est env. 1 frame (60fps)
+
+            const updateCount = () => {
+                const current = +stat.innerText.replace(/\s/g, ''); // Enlève les espaces pour le calcul
+                if (current < target) {
+                    const nextValue = Math.ceil(current + increment);
+                    // Formattage avec espace pour les milliers (ex: 5 000)
+                    stat.innerText = nextValue > target ? target.toLocaleString() : nextValue.toLocaleString();
+                    setTimeout(updateCount, 16);
+                } else {
+                    stat.innerText = target.toLocaleString();
+                }
+            };
+            updateCount();
+        });
+    }
+
+    // Observer pour déclencher quand on arrive à la section
+    const statsObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting && !started) {
+                startCounting();
+                started = true;
+                statsObserver.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.6 }); // Se déclenche quand 60% de la section est visible
+
+    if (statsSection) statsObserver.observe(statsSection);
+});
+</script>
 {% endblock %}

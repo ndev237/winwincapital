@@ -7,7 +7,73 @@
 
 {% block content %}
 
-<!-- HERO -->
+<style>
+  @keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+  }
+  .animate-pulse {
+    animation: pulse 0.8s infinite;
+  }
+
+  /* Container de la carte pour l'effet de bordure */
+  .glow-card {
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+  }
+
+  /* Le spectre lumineux qui tourne derrière */
+  .glow-card::before {
+    content: "";
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: conic-gradient(
+        transparent,
+        #22c55e, /* win-green */
+        #f97316, /* win-orange */
+        transparent 30%
+    );
+    animation: rotate-glow 4s linear infinite;
+    z-index: -2;
+  }
+
+  /* Le fond de la carte qui masque le centre du spectre */
+  .glow-card::after {
+    content: "";
+    position: absolute;
+    inset: 2px;
+    background: white;
+    border-radius: 0.75rem;
+    z-index: -1;
+  }
+
+  @keyframes rotate-glow {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+  }
+
+  .glow-card:hover::before {
+    animation-duration: 2s;
+  }
+
+  .hover-scale-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+    cursor: pointer;
+    background: transparent;
+  }
+
+  .hover-scale-card:hover {
+    transform: scale(1.03);
+    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.05);
+    background: white;
+    border-radius: 0.5rem;
+  }
+</style>
+
 <section class="bg-win-dark py-24">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <span class="text-xs font-semibold tracking-widest uppercase text-win-orange">{% trans "Notre identité" %}</span>
@@ -16,7 +82,6 @@
   </div>
 </section>
 
-<!-- PRÉSENTATION -->
 <section class="py-20 bg-white">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="grid lg:grid-cols-2 gap-16 items-start">
@@ -32,8 +97,8 @@
         </p>
         <div class="mt-8 p-6 rounded-xl bg-win-dark border border-win-green border-opacity-20">
           <div class="text-xs font-semibold tracking-widest uppercase text-win-green mb-2">{% trans "Notre vision" %}</div>
-          <p class="text-white text-xl font-semibold leading-relaxed">
-            {% trans "Devenir une institution financière de référence en Afrique centrale reconnue pour sa solidité et son impact." %}
+          <p id="vision-text" class="text-white text-xl font-semibold leading-relaxed min-h-[3rem]">
+            <span class="border-r-2 border-win-orange animate-pulse ml-1"></span>
           </p>
         </div>
         <div class="mt-6 p-6 rounded-xl bg-orange-50 border border-orange-100">
@@ -42,75 +107,102 @@
         </div>
       </div>
 
-      <!-- VALEURS -->
       <div>
         <div class="text-xs font-semibold tracking-widest uppercase text-win-green mb-5">{% trans "Nos valeurs" %}</div>
         <div class="space-y-4">
-          <div class="border-l-4 border-win-green pl-5 py-2 hover:border-win-orange smooth-transition">
+          <div class="border-l-4 border-win-green pl-5 py-2 hover:border-win-orange hover-scale-card smooth-transition">
             <h3 class="font-bold text-win-dark">{% trans "Confiance" %}</h3>
             <p class="text-gray-500 text-sm mt-1">{% trans "Transparence totale et respect rigoureux de nos engagements envers chaque client." %}</p>
           </div>
-          <div class="border-l-4 border-win-green pl-5 py-2 hover:border-win-orange smooth-transition">
+          <div class="border-l-4 border-win-green pl-5 py-2 hover:border-win-orange hover-scale-card smooth-transition">
             <h3 class="font-bold text-win-dark">{% trans "Équité" %}</h3>
             <p class="text-gray-500 text-sm mt-1">{% trans "Des solutions adaptées aux réalités économiques et sociales locales." %}</p>
           </div>
-          <div class="border-l-4 border-win-orange pl-5 py-2 hover:border-win-green smooth-transition">
+          <div class="border-l-4 border-win-orange pl-5 py-2 hover:border-win-green hover-scale-card smooth-transition">
             <h3 class="font-bold text-win-dark">{% trans "Responsabilité" %}</h3>
             <p class="text-gray-500 text-sm mt-1">{% trans "Gestion prudente, conformité réglementaire et protection des déposants." %}</p>
           </div>
-          <div class="border-l-4 border-win-orange pl-5 py-2 hover:border-win-green smooth-transition">
+          <div class="border-l-4 border-win-orange pl-5 py-2 hover:border-win-green hover-scale-card smooth-transition">
             <h3 class="font-bold text-win-dark">{% trans "Proximité" %}</h3>
             <p class="text-gray-500 text-sm mt-1">{% trans "Un accompagnement humain de qualité, présent à chaque étape de votre parcours." %}</p>
           </div>
-          <div class="border-l-4 border-win-green pl-5 py-2 hover:border-win-orange smooth-transition">
+          <div class="border-l-4 border-win-green pl-5 py-2 hover:border-win-orange hover-scale-card smooth-transition">
             <h3 class="font-bold text-win-dark">{% trans "Impact" %}</h3>
             <p class="text-gray-500 text-sm mt-1">{% trans "Contribution mesurable et durable au développement économique local." %}</p>
           </div>
         </div>
       </div>
-    </div>
-  </div>
-</section>
-
-<!-- MISSIONS -->
-<section class="py-20 bg-gray-50">
+    </div> </div> </section> <section class="py-20 bg-gray-50">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="text-center mb-14">
       <span class="text-xs font-semibold tracking-widest uppercase text-win-green">{% trans "Ce que nous faisons" %}</span>
       <h2 class="text-4xl font-extrabold text-win-dark mt-2">{% trans "Nos missions fondamentales" %}</h2>
       <div class="w-12 h-1 bg-win-green mx-auto mt-4"></div>
     </div>
+
     <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-      <div class="bg-white p-8 rounded-xl hover-lift text-center">
-        <div class="w-16 h-16 rounded-full bg-green-50 flex items-center justify-center mx-auto mb-5">
+      <div class="glow-card p-8 rounded-xl hover-lift text-center">
+        <div class="w-16 h-16 rounded-full bg-green-50 flex items-center justify-center mx-auto mb-5 relative z-10">
           <svg class="w-8 h-8 text-win-green" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
         </div>
-        <h3 class="font-bold text-win-dark">{% trans "Inclusion financière" %}</h3>
-        <p class="text-gray-500 text-sm mt-2">{% trans "Rendre les services financiers accessibles au plus grand nombre" %}</p>
+        <h3 class="font-bold text-win-dark relative z-10">{% trans "Inclusion financière" %}</h3>
+        <p class="text-gray-500 text-sm mt-2 relative z-10">{% trans "Rendre les services financiers accessibles au plus grand nombre" %}</p>
       </div>
-      <div class="bg-white p-8 rounded-xl hover-lift text-center">
-        <div class="w-16 h-16 rounded-full bg-green-50 flex items-center justify-center mx-auto mb-5">
+
+      <div class="glow-card p-8 rounded-xl hover-lift text-center">
+        <div class="w-16 h-16 rounded-full bg-green-50 flex items-center justify-center mx-auto mb-5 relative z-10">
           <svg class="w-8 h-8 text-win-green" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/></svg>
         </div>
-        <h3 class="font-bold text-win-dark">{% trans "Sécurisation de l'épargne" %}</h3>
-        <p class="text-gray-500 text-sm mt-2">{% trans "Protection et valorisation des dépôts de nos clients" %}</p>
+        <h3 class="font-bold text-win-dark relative z-10">{% trans "Sécurisation de l'épargne" %}</h3>
+        <p class="text-gray-500 text-sm mt-2 relative z-10">{% trans "Protection et valorisation des dépôts de nos clients" %}</p>
       </div>
-      <div class="bg-white p-8 rounded-xl hover-lift text-center">
-        <div class="w-16 h-16 rounded-full bg-yellow-50 flex items-center justify-center mx-auto mb-5">
+
+      <div class="glow-card p-8 rounded-xl hover-lift text-center">
+        <div class="w-16 h-16 rounded-full bg-yellow-50 flex items-center justify-center mx-auto mb-5 relative z-10">
           <svg class="w-8 h-8 text-win-orange" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/></svg>
         </div>
-        <h3 class="font-bold text-win-dark">{% trans "Financement productif" %}</h3>
-        <p class="text-gray-500 text-sm mt-2">{% trans "Soutien aux activités économiques créatrices de valeur" %}</p>
+        <h3 class="font-bold text-win-dark relative z-10">{% trans "Financement productif" %}</h3>
+        <p class="text-gray-500 text-sm mt-2 relative z-10">{% trans "Soutien aux activités économiques créatrices de valeur" %}</p>
       </div>
-      <div class="bg-white p-8 rounded-xl hover-lift text-center">
-        <div class="w-16 h-16 rounded-full bg-yellow-50 flex items-center justify-center mx-auto mb-5">
+
+      <div class="glow-card p-8 rounded-xl hover-lift text-center">
+        <div class="w-16 h-16 rounded-full bg-yellow-50 flex items-center justify-center mx-auto mb-5 relative z-10">
           <svg class="w-8 h-8 text-win-orange" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"/></svg>
         </div>
-        <h3 class="font-bold text-win-dark">{% trans "Accompagnement durable" %}</h3>
-        <p class="text-gray-500 text-sm mt-2">{% trans "Suivi et conseil sur le long terme pour chaque client" %}</p>
+        <h3 class="font-bold text-win-dark relative z-10">{% trans "Accompagnement durable" %}</h3>
+        <p class="text-gray-500 text-sm mt-2 relative z-10">{% trans "Suivi et conseil sur le long terme pour chaque client" %}</p>
       </div>
     </div>
   </div>
 </section>
 
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const visionElement = document.getElementById('vision-text');
+        const visionFullText = "{% trans 'Devenir une institution financière de référence en Afrique centrale reconnue pour sa solidité et son impact.' %}";
+
+        let visionIndex = 0;
+        const visionSpeed = 40;
+
+        function typeVision() {
+            if (visionIndex < visionFullText.length) {
+                visionElement.innerHTML = visionFullText.substring(0, visionIndex + 1) +
+                    '<span class="border-r-2 border-win-orange animate-pulse ml-1"></span>';
+                visionIndex++;
+                setTimeout(typeVision, visionSpeed);
+            }
+        }
+
+        const visionObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    typeVision();
+                    visionObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.5 });
+
+        visionObserver.observe(visionElement);
+    });
+</script>
 {% endblock %}

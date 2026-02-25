@@ -79,7 +79,9 @@
       <div class="grid lg:grid-cols-2 gap-12 items-start">
         <div>
           <span class="text-xs font-semibold tracking-widest uppercase text-win-green">{% trans "Notre politique" %}</span>
-          <h2 class="text-3xl font-extrabold text-white mt-3">{% trans "Une politique d'octroi responsable" %}</h2>
+          <h2 id="typing-policy" class="text-3xl font-extrabold text-white mt-3 min-h-[3.5rem]">
+              <span class="border-r-4 border-win-orange animate-pulse ml-1"></span>
+          </h2>
           <div class="w-12 h-1 bg-win-green mt-4 mb-6"></div>
           <p class="text-gray-400 leading-relaxed">{% trans "Nous analysons chaque demande avec rigueur pour vous proposer un financement réellement adapté à votre capacité de remboursement." %}</p>
         </div>
@@ -110,4 +112,35 @@
   </div>
 </section>
 
+<script>
+
+  document.addEventListener('DOMContentLoaded', function() {
+    const policyElement = document.getElementById('typing-policy');
+    const policyFullText = "{% trans 'Une politique d\'octroi responsable' %}";
+
+    let policyIndex = 0;
+    const policySpeed = 50; // Vitesse de frappe en ms
+
+    function typePolicy() {
+        if (policyIndex < policyFullText.length) {
+            policyElement.innerHTML = policyFullText.substring(0, policyIndex + 1) +
+                '<span class="border-r-4 border-win-orange animate-pulse ml-1"></span>';
+            policyIndex++;
+            setTimeout(typePolicy, policySpeed);
+        }
+    }
+
+    // Déclenchement au scroll
+    const policyObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                typePolicy();
+                policyObserver.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.5 });
+
+    if (policyElement) policyObserver.observe(policyElement);
+});
+</script>
 {% endblock %}
