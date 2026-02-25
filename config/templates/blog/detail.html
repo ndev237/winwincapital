@@ -8,8 +8,13 @@
 {% block content %}
 
 <!-- HERO ARTICLE -->
-<section class="bg-win-dark pt-24 pb-12">
-  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+<section class="relative text-white py-20 lg:py-32 overflow-hidden">
+  <div class="absolute inset-0 z-0">
+        <img src="{% static 'image/blog.jpg' %}" alt="Epargne" class="w-full h-full object-cover">
+        <!-- Overlay sombre pour rendre le texte lisible -->
+        <div class="absolute inset-0 bg-gradient-to-br from-black/60 to-black/40"></div>
+  </div>
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
     <div class="flex items-center gap-2 mb-6 text-sm">
       <a href="{% url 'blog:list' %}" class="text-gray-400 hover:text-win-green smooth-transition">{% trans "Actualités" %}</a>
       <span class="text-gray-600">›</span>

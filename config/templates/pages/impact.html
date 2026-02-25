@@ -7,8 +7,13 @@
 
 {% block content %}
 
-<section class="bg-win-dark py-24">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<section class="relative text-white py-20 lg:py-32 overflow-hidden">
+  <div class="absolute inset-0 z-0">
+        <img src="{% static 'image/impact.jpg' %}" alt="Epargne" class="w-full h-full object-cover">
+        <!-- Overlay sombre pour rendre le texte lisible -->
+        <div class="absolute inset-0 bg-gradient-to-br from-black/60 to-black/40"></div>
+  </div>
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
     <span class="text-xs font-semibold tracking-widest uppercase text-win-orange">{% trans "Résultats concrets" %}</span>
     <h1 class="text-5xl font-extrabold text-white mt-3 max-w-3xl leading-tight">{% trans "Notre impact sur l'économie réelle" %}</h1>
     <div class="w-12 h-1 bg-win-green mt-6"></div>

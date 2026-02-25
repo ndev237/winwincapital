@@ -6,36 +6,27 @@
 
 {% block content %}
 <!-- Hero Section -->
-<section class="relative text-white py-20 lg:py-32 overflow-hidden hero-section">
-    <!-- IMAGE EN BACKGROUND (décommentez pour activer) -->
-    <!--
+<section class="relative text-white py-20 lg:py-32 overflow-hidden">
+    <!-- IMAGE EN BACKGROUND -->
     <div class="absolute inset-0 z-0">
-        <img src="{% static 'image/serer_main.jpg' %}" alt="Win Win Capital" class="w-full h-full object-cover opacity-30">
-        <div class="absolute inset-0 bg-gradient-to-br from-win-green/80 to-teal-600/80"></div>
-    </div>
-    -->
-
-    <!-- COULEUR EN BACKGROUND (par défaut) -->
-    <div class="absolute inset-0 z-0 bg-gradient-to-br from-win-green to-teal-600"></div>
-
-    <!-- Pattern décoratif (optionnel) -->
-    <div class="absolute inset-0 z-0 opacity-10">
-        <div class="absolute inset-0" style="background-image: url('data:image/svg+xml,%3Csvg width=\'60\' height=\'60\' viewBox=\'0 0 60 60\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cg fill=\'none\' fill-rule=\'evenodd\'%3E%3Cg fill=\'%23ffffff\' fill-opacity=\'1\'%3E%3Cpath d=\'M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z\'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E');"></div>
+        <img src="{% static 'image/serer_main.jpg' %}" alt="Win Win Capital" class="w-full h-full object-cover">
+        <!-- Overlay sombre pour rendre le texte lisible -->
+        <div class="absolute inset-0 bg-gradient-to-br from-black/60 to-black/40"></div>
     </div>
 
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
-                <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6">
+                <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight mb-6 text-white drop-shadow-2xl">
                     WIN WIN CAPITAL
                 </h1>
-                <p class="text-2xl md:text-3xl font-semibold text-win-orange mb-6">
+                <p class="text-2xl md:text-3xl font-bold text-win-orange mb-6 drop-shadow-xl">
                     {% trans "La finance qui crée de la valeur partagée" %}
                 </p>
-                <p class="text-lg md:text-xl mb-8 text-white/90 leading-relaxed">
+                <p class="text-lg md:text-xl mb-8 text-white leading-relaxed drop-shadow-lg">
                     {% trans "Institution de microfinance de première catégorie, Win Win Capital accompagne particuliers, entrepreneurs et organisations dans la sécurisation de leur épargne et le financement responsable de leurs projets." %}
                 </p>
-                <p class="text-lg font-medium mb-10 text-win-orange">
+                <p class="text-lg font-bold mb-10 text-win-orange drop-shadow-xl bg-white/10 backdrop-blur-sm inline-block px-6 py-3 rounded-lg border-2 border-win-orange/30">
                     {% trans "Une finance utile doit être stable, compréhensible et durable." %}
                 </p>
 
@@ -50,7 +41,7 @@
             </div>
 
             <div class="hidden lg:flex justify-center">
-                <img src="{% static 'image/Logo_WinWin-01.png' %}" alt="Win Win Capital" class="w-96 h-auto opacity-90">
+
             </div>
         </div>
     </div>
@@ -368,7 +359,7 @@
             <a href="{% url 'pages:agencies' %}" class="bg-white hover:bg-gray-100 text-win-dark px-8 py-4 rounded-lg font-semibold text-lg smooth-transition shadow-lg">
                 {% trans "Trouver une agence" %}
             </a>
-            <a href="{% static 'pdf/cahier de charge.pdf' %}" download="cahier de charge.pdf" class="bg-white/10 hover:bg-white/20 text-white px-8 py-4 rounded-lg font-semibold text-lg smooth-transition border-2 border-white">
+            <a href="{% static 'pdf/Win_Win_Capital_Prospectus.pdf' %}" download="Win_Win_Capital_Prospectus.pdf" class="bg-white/10 hover:bg-white/20 text-white px-8 py-4 rounded-lg font-semibold text-lg smooth-transition border-2 border-white">
                 {% trans "Télécharger la présentation" %}
             </a>
         </div>
