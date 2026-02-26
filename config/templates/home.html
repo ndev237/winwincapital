@@ -5,6 +5,79 @@
 {% block title %}Win Win Capital - La finance qui crée de la valeur partagée{% endblock %}
 
 {% block content %}
+
+<style>
+    
+.animate-typing-cursor {
+    margin-left: 2px;
+    color: #22c55e; /* Couleur win-green */
+    animation: blink 0.8s infinite;
+}
+
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+}
+
+
+    @keyframes pulse-fast {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+}
+.animate-pulse {
+    animation: pulse-fast 0.8s infinite;
+}
+
+@keyframes rotate-beam {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+.beam-card {
+    position: relative;
+    z-index: 0;
+    overflow: hidden;
+    background: white;
+}
+
+/* Le faisceau lumineux */
+.beam-card::before {
+    content: "";
+    position: absolute;
+    /* On agrandit le fond pour que la rotation couvre les coins */
+    inset: -50%; 
+    z-index: -1;
+    background: conic-gradient(
+        from 0deg,
+        transparent 0%,
+        transparent 75%,
+        #22c55e 90%, /* Couleur win-green */
+        transparent 100%
+    );
+    animation: rotate-beam 4s linear infinite;
+}
+
+/* Le masque pour ne garder que la bordure */
+.beam-card::after {
+    content: "";
+    position: absolute;
+    inset: 2px; /* Épaisseur de la bordure */
+    background: white;
+    border-radius: calc(0.75rem - 2px); /* On ajuste l'arrondi intérieur */
+    z-index: -1;
+}
+
+/* Optionnel : Une version orange pour les cartes spécifiques */
+.beam-card-orange::before {
+    background: conic-gradient(
+        from 0deg,
+        transparent 0%,
+        transparent 75%,
+        #f97316 90%, /* Couleur win-orange */
+        transparent 100%
+    );
+}
+</style>
 <!-- Hero Section -->
 <section class="relative text-white py-20 lg:py-32 overflow-hidden">
     <!-- IMAGE EN BACKGROUND -->
@@ -46,10 +119,11 @@
 </section>
 
 <!-- Trust Indicators -->
-<section class="py-16 bg-white border-b">
+<section class="py-16 bg-white border-b overflow-hidden">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
-            <div class="text-center">
+        <div id="reveal-container" class="grid grid-cols-2 md:grid-cols-4 gap-8">
+            
+            <div class="reveal-item opacity-0 translate-y-10 transition-all duration-700 ease-out text-center">
                 <div class="flex justify-center mb-4">
                     <svg class="h-12 w-12 text-win-green" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
@@ -59,7 +133,7 @@
                 <p class="text-sm text-gray-600">{% trans "Organisation rigoureuse et transparente" %}</p>
             </div>
 
-            <div class="text-center">
+            <div class="reveal-item opacity-0 translate-y-10 transition-all duration-700 ease-out text-center">
                 <div class="flex justify-center mb-4">
                     <svg class="h-12 w-12 text-win-green" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/>
@@ -69,7 +143,7 @@
                 <p class="text-sm text-gray-600">{% trans "Protection des déposants garantie" %}</p>
             </div>
 
-            <div class="text-center">
+            <div class="reveal-item opacity-0 translate-y-10 transition-all duration-700 ease-out text-center">
                 <div class="flex justify-center mb-4">
                     <svg class="h-12 w-12 text-win-green" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/>
@@ -79,7 +153,7 @@
                 <p class="text-sm text-gray-600">{% trans "Finance éthique et durable" %}</p>
             </div>
 
-            <div class="text-center">
+            <div class="reveal-item opacity-0 translate-y-10 transition-all duration-700 ease-out text-center">
                 <div class="flex justify-center mb-4">
                     <svg class="h-12 w-12 text-win-green" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
@@ -89,6 +163,7 @@
                 <h3 class="font-semibold text-win-dark mb-2">{% trans "Proximité locale" %}</h3>
                 <p class="text-sm text-gray-600">{% trans "Accompagnement personnalisé" %}</p>
             </div>
+
         </div>
     </div>
 </section>
@@ -97,14 +172,20 @@
 <section class="py-20 bg-gray-50">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="text-center mb-16">
-            <h2 class="text-3xl md:text-4xl font-bold text-win-dark mb-4">{% trans "Nos missions" %}</h2>
+           <h2 class="text-3xl md:text-4xl font-bold text-win-dark mb-4">
+                <span id="typing-text"></span><span class="animate-pulse">|</span>
+            </h2>
+
+            <div id="source-text" class="hidden">{% trans "Nos missions" %}</div>
             <p class="text-lg text-gray-600 max-w-3xl mx-auto">
                 {% trans "Au service du développement économique et de l'inclusion financière" %}
             </p>
         </div>
 
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            <div class="bg-white rounded-xl p-8 hover-lift">
+    
+        <div class="beam-card rounded-xl p-8 hover-lift shadow-sm">
+            <div class="relative z-10">
                 <div class="bg-win-green/10 rounded-full w-16 h-16 flex items-center justify-center mb-6">
                     <svg class="h-8 w-8 text-win-green" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
@@ -113,8 +194,10 @@
                 <h3 class="text-xl font-semibold text-win-dark mb-3">{% trans "Sécuriser l'épargne" %}</h3>
                 <p class="text-gray-600">{% trans "Protection et valorisation de votre capital avec des produits d'épargne adaptés." %}</p>
             </div>
+        </div>
 
-            <div class="bg-white rounded-xl p-8 hover-lift">
+        <div class="beam-card beam-card-orange rounded-xl p-8 hover-lift shadow-sm">
+            <div class="relative z-10">
                 <div class="bg-win-orange/10 rounded-full w-16 h-16 flex items-center justify-center mb-6">
                     <svg class="h-8 w-8 text-win-orange" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"/>
@@ -123,8 +206,10 @@
                 <h3 class="text-xl font-semibold text-win-dark mb-3">{% trans "Faciliter le financement" %}</h3>
                 <p class="text-gray-600">{% trans "Crédits responsables pour vos projets personnels et professionnels." %}</p>
             </div>
+        </div>
 
-            <div class="bg-white rounded-xl p-8 hover-lift">
+        <div class="beam-card rounded-xl p-8 hover-lift shadow-sm">
+            <div class="relative z-10">
                 <div class="bg-win-green/10 rounded-full w-16 h-16 flex items-center justify-center mb-6">
                     <svg class="h-8 w-8 text-win-green" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/>
@@ -133,8 +218,10 @@
                 <h3 class="text-xl font-semibold text-win-dark mb-3">{% trans "Structurer les flux" %}</h3>
                 <p class="text-gray-600">{% trans "Gestion professionnelle des transactions et opérations financières." %}</p>
             </div>
+        </div>
 
-            <div class="bg-white rounded-xl p-8 hover-lift">
+        <div class="beam-card beam-card-orange rounded-xl p-8 hover-lift shadow-sm">
+            <div class="relative z-10">
                 <div class="bg-win-orange/10 rounded-full w-16 h-16 flex items-center justify-center mb-6">
                     <svg class="h-8 w-8 text-win-orange" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
@@ -143,6 +230,7 @@
                 <h3 class="text-xl font-semibold text-win-dark mb-3">{% trans "Soutenir l'économie" %}</h3>
                 <p class="text-gray-600">{% trans "Contribution active au développement de l'économie réelle." %}</p>
             </div>
+        </div>
         </div>
     </div>
 </section>
@@ -230,12 +318,20 @@
 
 <!-- Services Overview -->
 <section class="py-20 bg-gray-50">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="text-center mb-16">
-            <h2 class="text-3xl md:text-4xl font-bold text-win-dark mb-4">{% trans "Nos solutions financières" %}</h2>
-            <p class="text-lg text-gray-600 max-w-3xl mx-auto">
-                {% trans "Des produits adaptés à vos besoins, conçus pour votre sécurité et votre développement" %}
-            </p>
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <div class="text-center mb-16">
+                    <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-win-dark mb-4">
+                    <span id="type-title"></span><span id="cursor-title" class="animate-typing-cursor">|</span>
+                </h2>
+                
+                <p class="text-lg text-gray-600 max-w-3xl mx-auto">
+                    <span id="type-desc"></span><span id="cursor-desc" class="animate-typing-cursor hidden">|</span>
+                </p>
+
+                <span id="src-title" class="hidden">{% trans "Nos solutions financières" %}</span>
+                <span id="src-desc" class="hidden">{% trans "Des produits adaptés à vos besoins, conçus pour votre sécurité et votre développement" %}</span>
+            </div>
         </div>
 
         <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -338,6 +434,7 @@
                     </a>
                 </div>
             </div>
+
         </div>
     </div>
 </section>
@@ -363,5 +460,113 @@
         </div>
     </div>
 </section>
+
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    // 1. On récupère le conteneur et tous les éléments à révéler
+    const container = document.querySelector('#reveal-container');
+    const items = document.querySelectorAll('.reveal-item');
+
+    // 2. Configuration de l'observateur
+    const observerOptions = {
+        root: null, // Utilise le viewport
+        threshold: 0.15 // Se déclenche quand 15% de la section est visible
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                // 3. Boucle sur chaque item avec un délai croissant
+                items.forEach((item, index) => {
+                    setTimeout(() => {
+                        // On retire les classes de départ et on met les classes d'arrivée
+                        item.classList.remove('opacity-0', 'translate-y-10');
+                        item.classList.add('opacity-100', 'translate-y-0');
+                    }, index * 200); // 200ms de décalage entre chaque élément
+                });
+                
+                // 4. On arrête d'observer une fois l'animation lancée
+                observer.unobserve(entry.target);
+            }
+        });
+    }, observerOptions);
+
+    // Lancer l'observation sur le conteneur
+    if (container) {
+        observer.observe(container);
+    }
+});
+
+
+document.addEventListener("DOMContentLoaded", function() {
+    const destination = document.getElementById("typing-text");
+    const source = document.getElementById("source-text").innerText;
+    let index = 0;
+    const speed = 100; // Vitesse en millisecondes (plus petit = plus rapide)
+
+    function typeWriter() {
+        if (index < source.length) {
+            destination.innerHTML += source.charAt(index);
+            index++;
+            setTimeout(typeWriter, speed);
+        }
+    }
+
+    // Optionnel : Lancer l'animation seulement quand on arrive au niveau du titre
+    const observer = new IntersectionObserver((entries) => {
+        if (entries[0].isIntersecting) {
+            typeWriter();
+            observer.disconnect(); // On ne le fait qu'une fois
+        }
+    }, { threshold: 1.0 });
+
+    observer.observe(destination);
+});
+
+
+document.addEventListener("DOMContentLoaded", function() {
+    const titleDest = document.getElementById("type-title");
+    const descDest = document.getElementById("type-desc");
+    const titleSrc = document.getElementById("src-title").innerText;
+    const descSrc = document.getElementById("src-desc").innerText;
+    
+    const cursorTitle = document.getElementById("cursor-title");
+    const cursorDesc = document.getElementById("cursor-desc");
+
+    function typeEffect(element, text, speed, callback) {
+        let i = 0;
+        function typing() {
+            if (i < text.length) {
+                element.innerHTML += text.charAt(i);
+                i++;
+                setTimeout(typing, speed);
+            } else if (callback) {
+                callback();
+            }
+        }
+        typing();
+    }
+
+    // Observer pour déclencher l'animation au scroll
+    const observer = new IntersectionObserver((entries) => {
+        if (entries[0].isIntersecting) {
+            // 1. On tape le titre
+            typeEffect(titleDest, titleSrc, 70, () => {
+                // 2. Une fois fini, on cache le curseur du titre et montre celui du paragraphe
+                cursorTitle.classList.add('hidden');
+                cursorDesc.classList.remove('hidden');
+                
+                // 3. On tape la description
+                typeEffect(descDest, descSrc, 40);
+            });
+            observer.disconnect();
+        }
+    }, { threshold: 0.5 });
+
+    observer.observe(titleDest);
+});
+
+
+</script>
 
 {% endblock %}

@@ -6,6 +6,59 @@
 {% block meta_description %}{% trans "Découvrez l'impact de Win Win Capital sur l'économie réelle : financement d'activités productives, accompagnement éducatif et soutien entrepreneurial." %}{% endblock %}
 
 {% block content %}
+<style>
+  
+@keyframes rotate-border {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* Base de la carte */
+.glow-card {
+  position: relative;
+  overflow: hidden;
+  background: #f9fafb; /* bg-gray-50 */
+  z-index: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+/* La bande lumineuse qui tourne */
+.glow-card::before {
+  content: '';
+  position: absolute;
+  z-index: -2;
+  left: -50%;
+  top: -50%;
+  width: 200%;
+  height: 200%;
+  background-repeat: no-repeat;
+  background-size: 50% 50%, 50% 50%;
+  background-position: 0 0, 100% 0, 100% 100%, 0 100%;
+  /* Dégradé qui crée l'effet de "bande" */
+  background-image: linear-gradient(var(--glow-color, #22c55e), var(--glow-color, #22c55e));
+  animation: rotate-border 4s linear infinite;
+}
+
+/* Le masque intérieur pour créer la bordure fine */
+.glow-card::after {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  left: 3px; /* Épaisseur de la bordure */
+  top: 3px;
+  width: calc(100% - 6px);
+  height: calc(100% - 6px);
+  background: #f9fafb; /* Doit être identique au fond de la carte */
+  border-radius: 0.70rem; /* Un peu moins que le parent pour épouser l'arrondi */
+}
+
+/* On s'assure que le contenu est bien au-dessus */
+.card-content {
+  position: relative;
+  z-index: 10;
+}
+</style>
 
 <section class="relative text-white py-20 lg:py-32 overflow-hidden">
   <div class="absolute inset-0 z-0">
@@ -29,49 +82,99 @@
     </div>
 
     <!-- STATS -->
-    <div class="grid md:grid-cols-3 gap-6 mb-16">
-      <div class="text-center p-10 rounded-xl border border-gray-100 hover-lift">
-        <div class="text-6xl font-extrabold text-win-green">5 000+</div>
-        <div class="text-xs font-semibold tracking-widest text-win-green mt-3 mb-2">{% trans "CLIENTS ACCOMPAGNÉS" %}</div>
-        <p class="text-gray-500 text-sm">{% trans "Particuliers, entrepreneurs et organisations ayant bénéficié de nos services" %}</p>
-      </div>
-      <div class="text-center p-10 rounded-xl border border-gray-100 hover-lift">
-        <div class="text-6xl font-extrabold text-win-orange">85%</div>
-        <div class="text-xs font-semibold tracking-widest text-win-orange mt-3 mb-2">{% trans "PROJETS ABOUTIS" %}</div>
-        <p class="text-gray-500 text-sm">{% trans "Des projets financés qui ont atteint leurs objectifs économiques" %}</p>
-      </div>
-      <div class="text-center p-10 rounded-xl border border-gray-100 hover-lift">
-        <div class="text-6xl font-extrabold text-win-green">3</div>
-        <div class="text-xs font-semibold tracking-widest text-win-green mt-3 mb-2">{% trans "AGENCES ACTIVES" %}</div>
-        <p class="text-gray-500 text-sm">{% trans "Présence physique pour un accompagnement de proximité au Gabon" %}</p>
-      </div>
+   <div class="grid md:grid-cols-3 gap-6 mb-16">
+  <div class="text-center p-10 rounded-xl border border-gray-100 hover-lift">
+    <div class="text-6xl font-extrabold text-win-green">
+      <span class="counter" data-target="5000">0</span>+
     </div>
+    <div class="text-xs font-semibold tracking-widest text-win-green mt-3 mb-2">{% trans "CLIENTS ACCOMPAGNÉS" %}</div>
+    <p class="text-gray-500 text-sm">{% trans "Particuliers, entrepreneurs et organisations" %}</p>
+  </div>
+
+  <div class="text-center p-10 rounded-xl border border-gray-100 hover-lift">
+    <div class="text-6xl font-extrabold text-win-orange">
+      <span class="counter" data-target="85">0</span>%
+    </div>
+    <div class="text-xs font-semibold tracking-widest text-win-orange mt-3 mb-2">{% trans "PROJETS ABOUTIS" %}</div>
+    <p class="text-gray-500 text-sm">{% trans "Des projets financés qui ont atteint leurs objectifs" %}</p>
+  </div>
+
+  <div class="text-center p-10 rounded-xl border border-gray-100 hover-lift">
+    <div class="text-6xl font-extrabold text-win-green">
+      <span class="counter" data-target="3">0</span>
+    </div>
+    <div class="text-xs font-semibold tracking-widest text-win-green mt-3 mb-2">{% trans "AGENCES ACTIVES" %}</div>
+    <p class="text-gray-500 text-sm">{% trans "Présence physique pour un accompagnement de proximité" %}</p>
+  </div>
+</div>
 
     <!-- DOMAINES D'IMPACT -->
-    <div class="grid md:grid-cols-3 gap-8">
-      <div class="p-8 rounded-xl bg-gray-50 hover-lift">
-        <div class="w-14 h-14 rounded-full bg-green-100 flex items-center justify-center mb-5">
-          <svg class="w-7 h-7 text-win-green" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/></svg>
-        </div>
-        <h3 class="text-xl font-bold text-win-dark">{% trans "Activités productives" %}</h3>
-        <p class="text-gray-500 mt-3 text-sm leading-relaxed">{% trans "Financement de commerces, artisans et petites entreprises contribuant à l'économie locale gabonaise." %}</p>
+    <div class="grid md:grid-cols-3 gap-8 p-4">
+  
+  <div class="glow-card p-8 rounded-xl hover-lift" style="--glow-color: #22c55e;">
+    <div class="card-content">
+      <div class="w-14 h-14 rounded-full bg-green-100 flex items-center justify-center mb-5">
+        <svg class="w-7 h-7 text-win-green" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/></svg>
       </div>
-      <div class="p-8 rounded-xl bg-gray-50 hover-lift">
-        <div class="w-14 h-14 rounded-full bg-yellow-100 flex items-center justify-center mb-5">
-          <svg class="w-7 h-7 text-win-orange" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 14l9-5-9-5-9 5 9 5zm0 0l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0112 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z"/></svg>
-        </div>
-        <h3 class="text-xl font-bold text-win-dark">{% trans "Accompagnement éducatif" %}</h3>
-        <p class="text-gray-500 mt-3 text-sm leading-relaxed">{% trans "Soutien à la scolarisation et à la formation professionnelle pour investir dans le capital humain." %}</p>
-      </div>
-      <div class="p-8 rounded-xl bg-gray-50 hover-lift">
-        <div class="w-14 h-14 rounded-full bg-green-100 flex items-center justify-center mb-5">
-          <svg class="w-7 h-7 text-win-green" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
-        </div>
-        <h3 class="text-xl font-bold text-win-dark">{% trans "Soutien entrepreneurial" %}</h3>
-        <p class="text-gray-500 mt-3 text-sm leading-relaxed">{% trans "Accompagnement des porteurs de projets depuis l'idée jusqu'à la concrétisation commerciale." %}</p>
-      </div>
+      <h3 class="text-xl font-bold text-win-dark">{% trans "Activités productives" %}</h3>
+      <p class="text-gray-500 mt-3 text-sm leading-relaxed">{% trans "Financement de commerces, artisans et petites entreprises contribuant à l'économie locale gabonaise." %}</p>
     </div>
   </div>
+
+  <div class="glow-card p-8 rounded-xl hover-lift" style="--glow-color: #f97316;">
+    <div class="card-content">
+      <div class="w-14 h-14 rounded-full bg-yellow-100 flex items-center justify-center mb-5">
+        <svg class="w-7 h-7 text-win-orange" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 14l9-5-9-5-9 5 9 5zm0 0l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0112 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z"/></svg>
+      </div>
+      <h3 class="text-xl font-bold text-win-dark">{% trans "Accompagnement éducatif" %}</h3>
+      <p class="text-gray-500 mt-3 text-sm leading-relaxed">{% trans "Soutien à la scolarisation et à la formation professionnelle pour investir dans le capital humain." %}</p>
+    </div>
+  </div>
+
+  <div class="glow-card p-8 rounded-xl hover-lift" style="--glow-color: #22c55e;">
+    <div class="card-content">
+      <div class="w-14 h-14 rounded-full bg-green-100 flex items-center justify-center mb-5">
+        <svg class="w-7 h-7 text-win-green" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+      </div>
+      <h3 class="text-xl font-bold text-win-dark">{% trans "Soutien entrepreneurial" %}</h3>
+      <p class="text-gray-500 mt-3 text-sm leading-relaxed">{% trans "Accompagnement des porteurs de projets depuis l'idée jusqu'à la concrétisation commerciale." %}</p>
+    </div>
+  </div>
+
+</div>
 </section>
+
+<script>
+
+document.addEventListener('DOMContentLoaded', () => {
+    const counters = document.querySelectorAll('.counter');
+    const speed = 200; // Plus le chiffre est grand, plus c'est lent
+
+    const startCount = (el) => {
+        const target = +el.getAttribute('data-target');
+        const count = +el.innerText;
+        const increment = target / speed;
+
+        if (count < target) {
+            el.innerText = Math.ceil(count + increment);
+            setTimeout(() => startCount(el), 15);
+        } else {
+            el.innerText = target.toLocaleString(); // Formate avec des espaces (ex: 5 000)
+        }
+    };
+
+    // Déclenchement au défilement (Scroll)
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if(entry.isIntersecting) {
+                startCount(entry.target);
+                observer.unobserve(entry.target); // L'animation ne se joue qu'une fois
+            }
+        });
+    }, { threshold: 0.5 }); // Se déclenche quand 50% de l'élément est visible
+
+    counters.forEach(counter => observer.observe(counter));
+});
+</script>
 
 {% endblock %}

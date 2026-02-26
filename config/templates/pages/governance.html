@@ -7,6 +7,19 @@
 
 {% block content %}
 
+<style>
+    @keyframes blink-cursor {
+        0%, 100% { opacity: 1; }
+        50% { opacity: 0; }
+    }
+    .typing-cursor {
+        display: inline-block;
+        width: 2px;
+        margin-left: 4px;
+        animation: blink-cursor 0.8s infinite;
+    }
+</style>
+
 <!-- HERO -->
 <section class="relative text-white py-20 lg:py-32 overflow-hidden">
   <div class="absolute inset-0 z-0">
@@ -29,8 +42,11 @@
       <div class="w-16 h-16 rounded-full bg-green-50 flex items-center justify-center mx-auto mb-6">
         <svg class="w-8 h-8 text-win-green" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
       </div>
-      <h2 class="text-3xl font-extrabold text-win-dark">{% trans "Séparation stricte entre décision, exécution et contrôle" %}</h2>
-      <p class="text-gray-500 mt-4 leading-relaxed">{% trans "Notre organisation interne repose sur plusieurs organes indépendants assurant la protection des déposants et la transparence de la gestion." %}</p>
+      <h2 class="text-3xl font-extrabold text-win-dark">
+        <span id="type-separation"></span><span id="cursor-separation" class="typing-cursor text-win-green">|</span>
+        <span id="src-separation" class="hidden"> {% trans "Séparation stricte entre décision, exécution et contrôle" %}</span>
+      </h2>
+    <p class="text-gray-500 mt-4 leading-relaxed">{% trans "Notre organisation interne repose sur plusieurs organes indépendants assurant la protection des déposants et la transparence de la gestion." %}</p>
     </div>
   </div>
 </section>
@@ -123,4 +139,37 @@
   </div>
 </section>
 
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    const target = document.getElementById("type-separation");
+    const source = document.getElementById("src-separation").innerText.trim();
+    const cursor = document.getElementById("cursor-separation");
+    
+    let charIndex = 0;
+    const typingSpeed = 60; // Vitesse de frappe
+
+    function typeSeparation() {
+        if (charIndex < source.length) {
+            target.innerHTML += source.charAt(charIndex);
+            charIndex++;
+            setTimeout(typeSeparation, typingSpeed);
+        } else {
+            // Effet de disparition du curseur après la fin
+            setTimeout(() => {
+                cursor.style.display = 'none';
+            }, 2500);
+        }
+    }
+
+    // Déclencheur au scroll
+    const observer = new IntersectionObserver((entries) => {
+        if (entries[0].isIntersecting) {
+            typeSeparation();
+            observer.disconnect(); // Une seule exécution
+        }
+    }, { threshold: 0.7 });
+
+    if (target) observer.observe(target);
+});
+</script>
 {% endblock %}
