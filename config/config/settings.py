@@ -13,6 +13,7 @@ https://docs.djangoproject.com/en/5.0/ref/settings/
 from pathlib import Path
 import os
 from decouple import config
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -21,12 +22,12 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/5.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-e8)fg_v18zdvvh+s6%g*(&3bro%66*z2tv7^ls@&7i6+&e7%h('
+SECRET_KEY = config('SECRET_KEY', default='django-insecure-e8)fg_v18zdvvh+s6%g*(&3bro%66*z2tv7^ls@&7i6+&e7%h(')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = config('DEBUG', default=True, cast=bool)
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = config('ALLOWED_HOSTS', default='localhost,127.0.0.1', cast=lambda v: [s.strip() for s in v.split(',')])
 
 
 # Application definition
@@ -38,7 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-# Local apps
+    # Local apps
     'core',
     'pages',
     'blog',
@@ -46,7 +47,9 @@ INSTALLED_APPS = [
     'tailwind',
     'theme'
 ]
-NPM_BIN_PATH = "C:/Program Files/nodejs/npm.cmd"
+
+# Tailwind configuration (uniquement pour développement local)
+NPM_BIN_PATH = config('NPM_BIN_PATH', default='npm')
 TAILWIND_APP_NAME = "theme"
 
 MIDDLEWARE = [
@@ -81,14 +84,9 @@ TEMPLATES = [
 WSGI_APPLICATION = 'config.wsgi.application'
 
 
-# Database
-# https://docs.djangoproject.com/en/5.0/ref/settings/#databases
-
 # ========================================
-# CONFIGURATION BASE DE DONNÉES
+# DATABASE CONFIGURATION
 # ========================================
-
-from decouple import config
 
 # Détection automatique de l'environnement
 USE_MYSQL = config('USE_MYSQL', default=False, cast=bool)
@@ -110,13 +108,14 @@ if USE_MYSQL:
         }
     }
 else:
-    # DÉVELOPPEMENT - SQLite
+    # DEVELOPMENT - SQLite
     DATABASES = {
         'default': {
             'ENGINE': 'django.db.backends.sqlite3',
             'NAME': BASE_DIR / 'db.sqlite3',
         }
     }
+
 
 # Password validation
 # https://docs.djangoproject.com/en/5.0/ref/settings/#auth-password-validators
@@ -172,7 +171,11 @@ MEDIA_ROOT = BASE_DIR / 'media'
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-# Security settings for production
+
+# ========================================
+# SECURITY SETTINGS FOR PRODUCTION
+# ========================================
+
 if not DEBUG:
     SECURE_SSL_REDIRECT = True
     SESSION_COOKIE_SECURE = True
@@ -184,7 +187,16 @@ if not DEBUG:
     SECURE_HSTS_INCLUDE_SUBDOMAINS = True
     SECURE_HSTS_PRELOAD = True
 
-# Email configuration (to be configured)
+    # CSRF Trusted Origins for production
+    CSRF_TRUSTED_ORIGINS = [
+        'https://winwincapital.africa',
+        'https://www.winwincapital.africa',
+    ]
+
+# ========================================
+# EMAIL CONFIGURATION
+# ========================================
+
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
-DEFAULT_FROM_EMAIL = 'noreply@winwincapital.africa'
-CONTACT_EMAIL = 'contact@winwincapital.africa'
+DEFAULT_FROM_EMAIL = config('DEFAULT_FROM_EMAIL', default='noreply@winwincapital.africa')
+CONTACT_EMAIL = config('CONTACT_EMAIL', default='contact@winwincapital.africa')
