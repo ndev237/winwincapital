@@ -90,9 +90,21 @@ WSGI_APPLICATION = 'config.wsgi.application'
 
 # Détection automatique de l'environnement
 USE_MYSQL = config('USE_MYSQL', default=False, cast=bool)
+db_engine = config('DB_ENGINE', default='django.db.backends.sqlite3')
 
-if USE_MYSQL:
-    # PRODUCTION - MySQL
+
+if 'postgresql' in db_engine:
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.postgresql',
+            'NAME': config('DB_NAME'),
+            'USER': config('DB_USER'),
+            'PASSWORD': config('DB_PASSWORD'),
+            'HOST': config('DB_HOST', default='localhost'),
+            'PORT': config('DB_PORT', default='5432'),
+        }
+    }
+elif USE_MYSQL:
     DATABASES = {
         'default': {
             'ENGINE': 'django.db.backends.mysql',
@@ -101,14 +113,9 @@ if USE_MYSQL:
             'PASSWORD': config('DB_PASSWORD'),
             'HOST': config('DB_HOST', default='localhost'),
             'PORT': config('DB_PORT', default='3306'),
-            'OPTIONS': {
-                'charset': 'utf8mb4',
-                'init_command': "SET sql_mode='STRICT_TRANS_TABLES'",
-            },
         }
     }
 else:
-    # DEVELOPMENT - SQLite
     DATABASES = {
         'default': {
             'ENGINE': 'django.db.backends.sqlite3',
