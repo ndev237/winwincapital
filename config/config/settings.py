@@ -204,6 +204,17 @@ if not DEBUG:
 # EMAIL CONFIGURATION
 # ========================================
 
-EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+if DEBUG:
+    # En développement : emails dans la console
+    EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+else:
+    # En production : vrais emails via Hostinger SMTP
+    EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+    EMAIL_HOST = 'smtp.hostinger.com'
+    EMAIL_PORT = 587
+    EMAIL_USE_TLS = True
+    EMAIL_HOST_USER = config('EMAIL_HOST_USER')
+    EMAIL_HOST_PASSWORD = config('EMAIL_HOST_PASSWORD')
+
 DEFAULT_FROM_EMAIL = config('DEFAULT_FROM_EMAIL', default='noreply@winwincapital.africa')
 CONTACT_EMAIL = config('CONTACT_EMAIL', default='contact@winwincapital.africa')
