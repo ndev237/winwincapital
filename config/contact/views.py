@@ -73,10 +73,8 @@ Lun–Ven : 8h–16h30 | Sam : 12h30
                     fail_silently=True,
                 )
         except Exception as e:
-            import logging
-            logger = logging.getLogger(__name__)
-            logger.error(f"Erreur envoi email: {str(e)}")
-            print(f"ERREUR EMAIL: {str(e)}")
+            # L'email échoue silencieusement, le formulaire est quand même sauvegardé
+            pass
 
         messages.success(
             self.request,
@@ -108,7 +106,7 @@ Prénom     : {instance.first_name}
 Email      : {instance.email or 'Non renseigné'}
 Téléphone  : {instance.phone}
 Besoin     : {instance.get_need_display()}
-Agence     : {instance.get_preferred_agency_display() if instance.preferred_agency else 'Non renseignée'}
+Agence     : {str(instance.preferred_agency) if instance.preferred_agency else 'Non renseignée'}
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 INFORMATIONS COMPLÉMENTAIRES
@@ -157,10 +155,7 @@ Lun–Ven : 8h–16h30 | Sam : 12h30
                     fail_silently=True,
                 )
         except Exception as e:
-            import logging
-            logger = logging.getLogger(__name__)
-            logger.error(f"Erreur envoi email: {str(e)}")
-            print(f"ERREUR EMAIL: {str(e)}")
+            pass
 
         messages.success(
             self.request,
