@@ -139,7 +139,7 @@ Un conseiller vous contactera prochainement au {instance.phone} pour fixer un re
 RÉCAPITULATIF DE VOTRE DEMANDE
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 Besoin     : {instance.get_need_display()}
-Agence     : {instance.get_preferred_agency_display() if instance.preferred_agency else 'Non renseignée'}
+Agence     : {str(instance.preferred_agency) if instance.preferred_agency else 'Non renseignée'}
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 WIN WIN CAPITAL

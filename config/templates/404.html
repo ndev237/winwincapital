@@ -1,0 +1,147 @@
+{% load static %}
+{% load i18n %}
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page introuvable – Win Win Capital</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'win-green': '#7FD8BE',
+                        'win-orange': '#F5A623',
+                        'win-dark': '#1F2937',
+                        'win-gray': '#6B7280',
+                    },
+                    fontFamily: {
+                        'sans': ['Inter', 'system-ui', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="{% static 'image/favicon.ico' %}">
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        .smooth-transition { transition: all 0.3s ease-in-out; }
+
+        /* Cercles décoratifs animés */
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+        @keyframes float2 {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(15px); }
+        }
+        .float-1 { animation: float 4s ease-in-out infinite; }
+        .float-2 { animation: float2 5s ease-in-out infinite; }
+        .float-3 { animation: float 6s ease-in-out infinite; }
+
+        /* Gradient texte 404 */
+        .text-gradient {
+            background: linear-gradient(135deg, #7FD8BE 0%, #F5A623 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 min-h-screen flex flex-col">
+
+    <!-- NAVBAR simplifiée -->
+    <nav class="bg-white shadow-md">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center h-20">
+                <a href="/" class="flex items-center space-x-3">
+                    <img src="{% static 'image/Logo_WinWin-01.png' %}" alt="Win Win Capital" class="h-12 w-auto">
+                    <div class="hidden md:block">
+                        <div class="text-xl font-bold text-win-green">WIN WIN CAPITAL</div>
+                        <div class="text-xs text-win-gray">Votre potentiel, notre priorité</div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- CONTENU PRINCIPAL -->
+    <main class="flex-1 flex items-center justify-center px-4 py-16">
+        <div class="max-w-2xl w-full text-center relative">
+
+            <!-- Cercles décoratifs -->
+            <div class="absolute top-0 left-0 w-32 h-32 bg-win-green bg-opacity-10 rounded-full float-1 -translate-x-8 -translate-y-8"></div>
+            <div class="absolute top-10 right-0 w-20 h-20 bg-win-orange bg-opacity-10 rounded-full float-2 translate-x-6"></div>
+            <div class="absolute bottom-0 left-1/4 w-16 h-16 bg-win-green bg-opacity-15 rounded-full float-3"></div>
+
+            <!-- Icône -->
+            <div class="relative z-10 flex justify-center mb-6">
+                <div class="w-24 h-24 bg-win-green bg-opacity-15 rounded-full flex items-center justify-center">
+                    <svg class="w-12 h-12 text-win-green" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9.172 16.172a4 4 0 015.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                    </svg>
+                </div>
+            </div>
+
+            <!-- 404 -->
+            <h1 class="text-gradient text-8xl font-extrabold mb-4 relative z-10">404</h1>
+
+            <!-- Message principal -->
+            <h2 class="text-2xl md:text-3xl font-bold text-win-dark mb-4 relative z-10">
+                Page introuvable
+            </h2>
+
+            <!-- Description -->
+            <p class="text-win-gray text-lg mb-2 relative z-10">
+                Oops ! La page que vous recherchez n'existe pas ou a été déplacée.
+            </p>
+            <p class="text-win-gray text-sm mb-10 relative z-10">
+                Revenez à l'accueil ou contactez-nous si vous pensez qu'il s'agit d'une erreur.
+            </p>
+
+            <!-- Boutons d'action -->
+            <div class="flex flex-col sm:flex-row gap-4 justify-center relative z-10">
+                <a href="/"
+                   class="flex items-center justify-center gap-2 bg-win-green hover:bg-opacity-90 text-white px-8 py-3.5 rounded-xl font-semibold smooth-transition shadow-lg shadow-green-100">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/>
+                    </svg>
+                    Retour à l'accueil
+                </a>
+                <a href="/fr/contact/"
+                   class="flex items-center justify-center gap-2 bg-win-orange hover:bg-opacity-90 text-white px-8 py-3.5 rounded-xl font-semibold smooth-transition shadow-lg shadow-orange-100">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                    </svg>
+                    Contactez-nous
+                </a>
+            </div>
+
+            <!-- Liens rapides -->
+            <div class="mt-12 relative z-10">
+                <p class="text-win-gray text-sm mb-4 font-medium">Vous cherchez peut-être :</p>
+                <div class="flex flex-wrap gap-3 justify-center">
+                    <a href="/fr/a-propos/" class="px-4 py-2 bg-white border border-gray-200 rounded-lg text-sm text-win-gray hover:text-win-orange hover:border-win-orange smooth-transition">À propos</a>
+                    <a href="/fr/services/epargne/" class="px-4 py-2 bg-white border border-gray-200 rounded-lg text-sm text-win-gray hover:text-win-orange hover:border-win-orange smooth-transition">Épargne</a>
+                    <a href="/fr/services/financement/" class="px-4 py-2 bg-white border border-gray-200 rounded-lg text-sm text-win-gray hover:text-win-orange hover:border-win-orange smooth-transition">Financement</a>
+                    <a href="/fr/blog/" class="px-4 py-2 bg-white border border-gray-200 rounded-lg text-sm text-win-gray hover:text-win-orange hover:border-win-orange smooth-transition">Actualités</a>
+                    <a href="/fr/contact/devenir-client/" class="px-4 py-2 bg-white border border-gray-200 rounded-lg text-sm text-win-gray hover:text-win-orange hover:border-win-orange smooth-transition">Devenir client</a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- FOOTER simplifié -->
+    <footer class="bg-win-dark text-white py-6">
+        <div class="max-w-7xl mx-auto px-4 text-center text-sm text-gray-400">
+            <p>&copy; {% now "Y" %} Win Win Capital. Tous droits réservés.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
