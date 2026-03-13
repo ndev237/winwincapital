@@ -107,7 +107,8 @@
       {% if training_partners %}
       <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
         {% for partner in training_partners %}
-        <div class="bg-gray-50 rounded-lg p-5 text-center border border-transparent hover:border-win-green hover:bg-white smooth-transition">
+          <div class="bg-gray-50 rounded-lg p-5 text-center border border-transparent hover:border-win-green hover:bg-white smooth-transition">
+          {% if partner.logo %}<img src="{{ partner.logo.url }}" alt="{{ partner.name }}" class="h-10 object-contain mx-auto mb-2">{% endif %}
           <div class="font-semibold text-sm text-win-dark">{{ partner.name }}</div>
         </div>
         {% endfor %}
@@ -138,7 +139,8 @@
       {% if economic_partners %}
       <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
         {% for partner in economic_partners %}
-        <div class="bg-gray-50 rounded-lg p-5 text-center border border-transparent hover:border-win-orange hover:bg-white smooth-transition">
+         <div class="bg-gray-50 rounded-lg p-5 text-center border border-transparent hover:border-win-green hover:bg-white smooth-transition">
+          {% if partner.logo %}<img src="{{ partner.logo.url }}" alt="{{ partner.name }}" class="h-10 object-contain mx-auto mb-2">{% endif %}
           <div class="font-semibold text-sm text-win-dark">{{ partner.name }}</div>
         </div>
         {% endfor %}
